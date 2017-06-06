@@ -1,0 +1,570 @@
+\documentclass[12pt,titlepage,a4paper] {report}
+\usepackage[latin1]{inputenc}
+\usepackage{ngerman}
+
+%\usepackage[cspex,bbgreekl]{mathbbol}
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{bbm}
+\usepackage{amsmath}
+
+\usepackage{pslatex}
+\usepackage{graphicx}
+\usepackage[bottom,marginal]{footmisc}
+\usepackage{setspace}
+\usepackage{vmargin}
+
+%\setpapersize{USletter}
+%\setmargins{2.8cm}{1.1cm}% % linker & oberer Rand
+%             {16cm}{23.5cm}%   % Textbreite und -hoehe
+%             {12pt}{25pt}%   % Kopfzeilenhoehe und -abstand
+%             {0pt}{30pt}%    % \footheight (egal) und Fusszeilenabstand
+
+%\usepackage{atbeginend}
+
+%\AfterBegin{itemize}{\setlength{\itemsep}{-2pt} }
+
+
+%\renewcommand{\familydefault}{ppl}
+
+\parskip5pt plus3pt
+\parindent0pt
+%\doublespace      
+\linespread{1.2}
+%\onehalfspacing  
+\title{Polynomielle Kombinatorische Optimierungsalgorithmen}
+\author{Hartmut Wahl}
+%\setcounter{tocdepth}{4}
+%\setcounter{secnumdepth}{4}
+\usepackage{textcomp}
+
+
+\def\abstractname{Hinweise}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+
+%\selectlanguage{USenglish}
+\begin{document}
+\begin{titlepage}
+\begin{singlespacing}
+\begin{tabular}{l}
+{\Large Universität zu Köln}\\
+
+\vspace{9cm}\\
+
+
+{\bf \large Polynomielle Kombinatorische Optimierungsalgorithmen }\\
+Mitschrift der Vorlesung von Prof. M. Jünger\\
+WS 2002/2003
+\\
+\vspace{9cm}
+\\
+Hartmut Wahl\\
+hwahl@hwahl.de\\
+\vspace{7mm}\\
+
+\end{tabular}
+\end{singlespacing}
+\end{titlepage}
+
+\pagenumbering{Roman}
+
+\begin{abstract}
+Diese Mitschrift wurde von mir angefertigt, um mir das Lernen des Stoffes zu
+erleichtern und ist keine offizielle Mitschrift des Lehrstuhls. Sie ist
+nicht fehlerkorrigiert und sollte mit einer gehörigen Portion Misstrauen
+genossen werden. Korrekturen und Anregungen bitte an mich.\\
+\\
+Ich übernehme keine Garantie für Richtigkeit: Wer eine Garantie will kaufe
+sich einen Toaster!\\
+\\
+Literatur:\\
+Prof. Jünger wies auf dem Semesterapparat hin, der sich in der Bibliothek
+der Informatik im Polighaus befindet in dem sich ein Buch befindet:\\
+{\bf Willam J. Cook, William H. Cunningham, William R. Pulleyblank, 
+Alexander Schrijver} "`Combinatorial Optimization"', New York: Wiley 1998.\\
+Dieses Buch umfasst einen Großteil des Stoffes der Vorlesung.
+
+\end{abstract}
+
+
+\begin{onehalfspacing}
+\tableofcontents
+\end{onehalfspacing}
+\pagebreak
+%\listoftables
+\pagenumbering{arabic}
+
+%{\sffamily\texteuro}
+
+
+\setcounter{chapter}{-1}
+
+\chapter{Einführung}
+
+\newtheorem{satz}{Satz}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+
+Vor der Einführung machte Prof. Jünger eine ganz kurze informelle 
+Vorstellung der kombinatorischen Optimierung, bei der er uns bat nicht 
+mit zuschreiben. Dieser Teil ist deshalb hier nicht wieder gegeben. 
+
+\section{Allgmeine Formulierungen von Optimierungsproblemen}
+
+\subsection{Generisches Optimierungsproblem}
+\begin{tabular}{ll}
+Gegeben: & $ A \in \RR^{p \times r},\;  B \in \RR^{p\times r},\; 
+C \in \RR^{q\times r}, \; D \in \RR^{q\times s} $\\
+& $a \in \RR^{r}, \; b \in \RR^{s}, \; c \in \RR^{p},\; d \in \RR^{q}$\\
+(LP)&$\max a^{T}x + b^{T}y$\\
+&$Ax+ By = c$\\
+&$Cx+Dy \leq d$\\
+&$x \geq 0$\\
+\end{tabular}\\
+
+Dies ist die allgemeine Formulierung eines (linearen) generischen
+Optimierungsproblems. Für ein ganzzahliges Optimierungsproblem (IP) gilt
+zusätzlich zum LP noch:
+
+\[x \in \ZZ^{r}, \; \in \ZZ^{s} \]
+
+Ein gemischt ganzzahliges Optimierungsproblem liegt vor wenn nur Teile
+der Vektoren x und y integral (ganzzahlig) sind.
+
+
+\subsection{Kombinatorisches Optimierungsproblem}
+
+\begin{tabular}{ll}
+Gegeben:& $E$ eine endliche Grundmenge\\
+&$y \subseteqq 2^{E},\;$ y ist eine zulässige Teilmenge von $E$\\
+&$c$: $E \rightarrow \RR$ (z.b. Zuweisung von Entfernungen zu den
+Kanten)\\
+&Für $F \subseteqq E$: $c(F) = \sum_{e\in F} c(e)$\\
+Gesucht:& $I^{\star} \in Y$ mit $c(I^{\star} \geqq c(I),\;$ für alle $I \in
+Y$\\
+\hspace{3mm} oder:&$I^{\star} \in Y$ mit $c(I^{\star} \leqq c(I),\;$ für
+alle $I \in Y$
+\end{tabular}
+
+
+\subsubsection{Kleine Aufwärmaufgabe}
+
+Für $A \in \RR^{m\times n}, \; b \in \RR^{m}$ gilt:\\
+($\exists x \in \RR^{n}$) $\;Ax = b$ (Gleichungssystem ist lösbar)\\
+genau dann wenn:\\
+($\nexists y \in \RR^{m}$) $\;y^{T}A=0$, $\;y^{T} b=-1$
+
+Hiernach erklärte Prof. Jünger noch kurz und informell die Triangulation
+für Input-/Outputmodelle. In der Nächsten Stunde wurden zunächst 
+Reihenfolgeprobleme mit einigen Beispielen im Graphenzeichnen und in der 
+Flugplanung veranschaulicht.
+
+\section{Einführung in die lineare Optimierung}
+
+Es folgt ein Beispiel aus der Ölraffinierung: Beim Prozess des so genannten
+"`Crackens"' wird Rohöl in drei Produkte aufgespalten: Schweres Öl (S),
+mittelschweres Öl (M) und leichtes Öl (L). Nun gibt es zwei verschiedene
+Crack-Prozesse die zu einer unterschiedlichen Aufteilung der Endprodukte
+führen.
+
+\[\mbox{Prozess 1: 10 ME (= Mengeneinheiten) Rohöl ergibt} \longrightarrow 
+\left. \begin{array}{l}
+\mbox{2 ME S}\\
+\mbox{2 ME M}\\
+\mbox{1 ME L}\\
+\end{array}\right\} \mbox{Kosten 3 GE}\]
+
+\[\mbox{Prozess 1: 10 ME (= Mengeneinheiten) Rohöl ergibt} \longrightarrow
+\left.
+\begin{array}{l}
+\mbox{1 ME S}\\
+\mbox{2 ME M}\\
+\mbox{4 ME L}\\
+\end{array}\right\}\mbox{Kosten 5 GE}\]
+
+Die Firma hat Lieferverpflichtungen, deswegen muss sie mindestens 3 ME S, 5
+ME M und 4 ME L produzieren.
+
+\[\begin{array}{ll}
+\mbox{Variablen:}& x_{1}\mbox{, Produktionsniveau von Crackprozess 1}\\
+&x_{2}\mbox{, Produktionsniveau von Crackprozess 2}\\
+&x_{1}\geqq 0, x_{2}\geqq 0\\
+&\mbox{z.B. }x_{1} = 1,5 \Leftrightarrow \mbox{ 15 ME Rohöl für Prozess 1}
+\end{array}\]
+
+Damit erhalten wie das folgende lineare Optimierungsproblem:\\
+\[\begin{array}{l}
+\min\; 3x_{1}+5x_{2} \;\;\; \mbox{(Zielfunktion)}\\
+\left.\begin{array}{l}\mbox{s.t.}\begin{array}[t]{rl}
+(1)& 2x_{1} + x_{2} \geqq 3\\
+(2)&2x_{1}+ x_{2} \geqq 5\\
+(3)&x_{1}+ 4x_{2} \geqq 4\\
+(4)&x_{1} \geqq 0\\
+(5)&x_{2} \geqq 0\\
+\end{array}\end{array}\right\}\mbox{Restriktionen}\end{array}
+\]
+
+Jeder Vektor ${\scriptsize\left(\begin{array}{c}x_{1}\\x_{2}\end{array}\right)} \in \RR^{2}$, der
+(1), (2)...., (5) erfüllt heißt zulässige Lösung.
+
+Graphische Darstellung (grad keine Lust auf xfig, das bekommt ihr ja wohl
+selber hin :)
+
+Aus der n.v. Graphik kann man ganz einfach die optimale Lösung erkennen:
+$x^{*} = {\scriptsize\left(\begin{array}{c}2\\0,5\end{array}\right)}$, Wert = 8,5.
+
+Nähme man nun aber eine beliebige Zielfunktion $ax_{1}+bx_{2}$ sowie $a < 0$ 
+und definiere eine Folge von Punkten $x^{(n)}= {\scriptsize\left(
+\begin{array}{c}n\\ 0\end{array}\right)}$ mit $n \in \NN$. Weiterhin gilt: 
+$ax_{1}^{(n)} + bx_{2}^{(n)} = na$. Da a negativ 
+ist ist der Wert der Zielfunktion offensichtlich nicht nach unten
+beschränkt.
+
+\subsection{Lösungen für Lineare Probleme}
+
+\subsubsection{Simpler Lösungsalgorithmus für ein LP}  
+
+Zunächst stellen wir eine Vermutung an. Wenn eine Optimallösung
+existiert, so existiert eine die im Durchschnitt von n Hyperebenen liegt
+(wird später bewiesen). Eine Hyperebene ist ein (n-1)-dimensionaler
+Unterraum also im $R^{2}$ eine Gerade im $R^{3}$ eine Ebene, u.s.w.
+
+Davon ausgehend konstruieren wie eine einfache Lösungsmethode. Man
+schreibe (1), (2), ..., (5) als Gleichungen und löse alle ${5\choose 2}
+= 10$ Gleichungen mit 2 der Gleichungen. Von allen Lösungen, die
+zulässig sind, ist die mit dem kleinsten Zielfunktionswert optimal.
+
+{\bf Aufwand:} Benötigen ${m\choose n}$ Aufrufe des Gleichungssytemlösers mit
+n Variablen und n Gleichungen. $\rightarrow$ Viel zu langsam in der
+Praxis.
+
+\subsubsection{Idee des Simplexalgorithmus}
+
+Der Simplexalgorithmus geht folgendermaßen vor:\\
+(a) Finde eine erste Lösung wie im simplen Algorithmus.\\
+(b) Gehe durch Austausch je einer Hyperebene zu einer benachbarten
+Lösung deren Zielfunktionswertes nicht schlechter ist.
+(c) Wiederhole (b) bis Optimalität festgestellt ist. ($\rightarrow$ via
+Qualitätstheorie, die später noch behandelt wird).
+
+\subsubsection{Bestimmung von Schranken}
+
+Wir zeigen nun, dass $x^{*} =
+{\scriptsize\left(\begin{array}{c}2\\0,5\end{array}\right)}$ optimal
+ist:\\
+{\bf Beobachtung 1:} Die Lösungsmenge einer Ungleichung ist invariant
+unter Skalierung mit positiven Skalaren, z.B. (1):
+\[\{x|2x_{1}+x_{2} \geqq 3\} = \{x|4x_{1}+2x_{2} \geqq 6\}\]
+
+Negative Faktoren kehren die Ungleichung um.
+
+{\bf Beobachtung 2:} Erfüllt ein Vektor zwei gleich gerichtete (beide
+"`$\leqq$"' oder beide "`$\geqq$"') so auch die Summe der beiden
+Ungleichungen. z.B. (1) + (3):
+\[\begin{array}{llcl}
+(1)&2x_{1}+x_{2} &\geqq& 3\\
+(3)&x_{1}+4x_{2}&\geqq&4\\
+\hline
+&\underbrace{3x_{1} + 5x_{2}}_{ZF}&\geqq& 7
+\end{array}\] 
+
+Nun können wir behaupten, dass wir mindestens 7 GE ausgeben müssen.
+$\rightarrow$ Jeder Vektor der (1)...(5) erfüllt hat einen ZF-Wert von
+wenigstens 7. Also ist 7 eine untere Schranke für das Minimum. Nun versuchen
+wir eine bessere schranke zu finden:
+\[\begin{array}{llcl}
+(1)&2x_{1}+x_{2} &\geqq& 3\\
+(2)&2x_{1}+2x_{2}&\geqq&5\\
+\hline
+&4x_{1} + 3x_{2}&\geqq& 8
+\end{array}\]
+In dieser Ungleichung ist der Koeffizient für $x_{1}$ 4 und ist damit
+größer als der Koeffizient in der Zielfunktion. Damit ist dies Ungleichung
+nicht zum Abschätzen einer unteren Schranke geeignet. Also ein erneuter
+Versuch indem wir (2) mit 1,5 multiplizieren. Damit erhalten wir:
+\[3x_{1}+3x_{2} \geqq 7,5\]
+
+\subsubsection{Dualität}
+
+Zwar haben wir nun eine bessere untere Schranke aber dieser Probieransatz ist
+etwas unbefriedigend. Darum nun ein systematischer Ansatz
+zum Finden der Faktoren für die Gleichungen um eine Schranke zu finden. Da
+die Nichtnegativbedingen in diesem Fall irrelevant sind suchen wir für
+unser Problem drei Multiplikatoren ($y_{1}$, $y_{2}$, $y_{3}$) für die
+Gleichungen (1) (2) (3).
+\[\begin{array}{l}\max \; 3y_{1} + 5y_{2} + 4y_{3} \rightarrow \mbox{Die Rechte
+Seite (Schranke) maximieren)}\\
+\left.\begin{array}{l}\mbox{s.t.}\begin{array}[t]{lcl}
+2y_{1}+2y_{2}+3y_{3} &\leqq & 3 \\
+y_{1}+2y_{2}+4y_{3} &\leqq & 5
+\end{array} \end{array} \right\}\mbox{Damit die ZF-Koeffizienten nicht
+überschritten werden}\end{array}\]
+Damit haben wir nun das entsprechende duale Optimierungsproblem. Nach
+dessen Konstruktion liefert der Zielfunktionswert jeder zulässigen Lösung
+des dualen Problems eine untere Schranke für den Zielfunktionswer des
+primalen Problems. Wir betrachten:
+\[y^{*}=\left(\begin{array}{c}y^{*}_{1}\\y^{*}_{2}\\y^{*}_{3}\end{array}\right)
+=\left(\begin{array}{c}0\\\frac{7}{6}\\\frac{2}{3}\end{array}\right)\] 
+dies entspricht:
+\[\begin{array}{llcl}
+\frac{7}{6} \cdot (2):\; & \frac{14}{6}x_{1} + \frac{14}{6}x_{2} &\geqq&
+\frac{35}{6}\\
+\frac{2}{3} \cdot (3):\; & \frac{4}{6}x_{1} + \frac{16}{6}x_{2} &\geqq&
+\frac{16}{6}\\
+\hline
+&3x_{1} + 5x_{2} &\geqq& 8,5
+\end{array}
+\]
+
+\begin{satz}
+Schwacher Dualitätssatz:\\
+Es seien $c \in \RR^{n}$, $b \in \RR^{m}$, $A \in \RR^{m \times n}$ für die
+Optimierungsaufgaben:
+
+\begin{tabular}{ll}
+(P)&$\min \{c^{T}x | A \geqq b, \; x\geqq 0\}$\\
+&d.h. bestimme $x^{*} \in \RR$ mit $Ax^{*} \geqq b$, $x^{*} \geqq 0 $ und
+$c{T}x^{*}$ so klein wie möglich.\\
+(D)&$\max \{y^{T}b|y^{T}A \leqq c^{T}, \; y \geqq 0\}$\\
+&d.h. bestimme  $y^{*} \in \RR^{m}$ mit $g^{*T}A \leqq c^{T}, \; y ^{*}
+\geqq 0$ und $y^{*T}b$ so groß wie möglich.
+\end{tabular}
+
+so gilt folgendes: Seien $x_{0} \in \RR^{n} und y_{0} \in \RR^{m}$ Punkte
+mit $Ax_{0} \geqq b $, $x_{0} \geqq 0$ und $y_{0}^{T}A \leqq c^{T}$,
+$y_{0} \geqq 0$ dann gilt $y_{0}^{T}b \leqq c^{T} x_{0}$\\
+Beweis:
+\[y_{0}^{T}b \leqq y_{0}^{T}(Ax_{0}) = (y_{0}^{T}A)x_{0} \leqq c^{T}x_{0}
+\; \; \; \; \mbox{q.e.d.}\] 
+\end{satz}
+
+Der starke Dualitätssatz (später) besagt $y^{*T}b =c^{T}x^{*}$ für
+Optimallösung $x^{*}$ von (P) und $y^{*}$ von (D).
+
+\subsubsection{Ökonomische Interpretation des Dualen Programms}
+
+Ein Manager der Ölraffinie würde sich nun die Frage stellen, ob es sinnvoll
+L, M uns S selbst herzustellen, oder ob man es auf dem Markt kaufen solte 
+b.z.w.  bei welchen Marktpreis eine Produktion nicht mehr lonht. In diesem Fall
+drückt $y_{1}$ den Preis in GE für S aus, $y_{2}$ für M, $y_{3}$ für L. Der
+Marktpreis für die benötignen Mengen beträgt somit:
+\[3y_{1} + 5y_{5} + 4y_{3} \; \; \mbox{GE}\]
+der Ausstoß von Crackprozess 1 hat den Marktpreis:
+\[2y_{1}+2y_{2}+3y_{3} \; \; \mbox{GE} > 3 \;\;\;\; \rightarrow \mbox{Produktion Lohnt}\]
+der Ausstoß von Crackprozess 2 hat den Marktpreis:
+\[y_{1}+2y_{2}+4y_{3} \;\; \mbox{GE} > 5 \;\;\;\; \rightarrow \mbox{Produktion Lohnt}\]
+$y_{i}$ werden auch als Schattenpreise bezeichnet. In unserem Beispiel
+betragen sie:
+\[\begin{array}{lll}(S):\; y_{1}^{*}=0& (M):\; y_{2}^{*} =
+\frac{7}{6}&(L):\;
+y_{3}^{*} = \frac{2}{3}
+\end{array}\]
+Hier ist zu erkennen dass S praktisch "`wertlos"' für die Firma ist. In der
+tat ist es in der Optimallösung im Überfluss vorhanden (also mehr als die
+Lieferverpflichtungen der Firma verlangen. D.h. man würde das Öl zunächst
+zu jedem Preis verkaufen (solange man die insgesamte Produktionsmenge
+dadurch nicht erhöhen muss).
+
+\subsection{Formen von Linearen Problemen}
+
+\subsubsection{Kanonische Form eines LPs}
+
+Die Kanonische Form eines LPs lautet:
+\[\begin{array}{lcl}
+\max\; c^{T}x\\
+Ax&\leqq& b\\
+x&\geqq& 0
+\end{array}\]
+Transformationen von anderen Standardformen in die kanonische Form:
+\[\begin{array}{l@{\hspace{3mm}}rcl@{\hspace{8mm}}c@{\hspace{8mm}}rcl}
+1)&\max  a^{T}y&&&&\max a^{T}x\\
+&By&=&d&\stackrel{x=y}{\longrightarrow}&{\scriptsize\left(\begin{array}{r}B\\-B\\\end{array}
+\right)}x&\leqq&{\scriptsize\left(\begin{array}{r}d\\-d\end{array}
+\right)}\\
+&y&\geqq& 0&&x&\geqq& 0\vspace{5mm}\\
+2)&\max a^{T}y&&&&\max {\scriptsize\left(\begin{array}{r}a\\-a\end{array}\right)}^{T}x\vspace{2mm}\\
+&By&\leqq&d&\stackrel{x={\scriptsize\left(\begin{array}{r}y+\\y-\end{array}
+\right)}}{\longrightarrow}&(B, -B)x&\leqq& d\\
+&&&&&x&\geqq& 0\vspace{5mm}\\
+3)&\max a^{T}y&&&&\max
+{\scriptsize\left(\begin{array}{r}a\\-a\end{array}\right)}^{T}x\vspace{2mm}\\
+&By&=&d&\stackrel{x={\scriptsize\left(\begin{array}{r}y+\\y-\end{array}
+\right)}}{\longrightarrow}&   
+{\scriptsize\left(\begin{array}{rr}B&-B\\-B&B\end{array}\right)}
+x&\leqq& {\scriptsize\left(\begin{array}{r}d\\-d\end{array}
+\right)}\\
+&&&&&x&\geqq& 0
+\end{array}\]
+Als Hausaufgabe dürfen wir die Transformationen in die andere Richtung
+machen :), (bei $By=d$ geht es nicht).
+
+Jedes LP kann also auch in die Form $\max \{c^{T}| Ax \leqq b\}$ transformiert
+weden.
+
+\begin{satz} Farkas Lemma\\
+Wir suchen ein Analogon zur "`Aufwärmaufgabe"':\\
+$A \in \RR^{m\times n}, \; \; b \in \RR^{m}$\\
+$(\exists x) \; \;\; Ax = b$ genau dann wenn $(\not\exists y) \; \; y^{T}A
+= 0, \; \; y^{T}b=-1$ für Ungleichungsprobleme der Form $Ax\leqq b$
+
+\end{satz}
+
+\paragraph{Fourier-Motzkin Elimination}
+
+Durch Multiplikation der Ungleichungen mit positiven Skalaren und Umordnung
+erhalten wir:
+\[
+(*)\left\{\begin{array}{rcl}
+x_{1} + (a_{i}')^{T}  x'&\leqq& b^{*}_{i} \;\; \forall \; i\; \in \{1,2,3,...m'\}\;\;\; \mbox{aus allen wird 1}\\
+-x_{1} + (a_{i}')^{T}  x'&\leqq& b^{*}_{i} \;\; \forall \; i\; \in
+\{m'+1,...m''\}\;\;\; \mbox{aus allen wird -1}\\
+x_{1} + (a_{i}')^{T}  x'&\leqq& b^{*}_{i} \;\; \forall \; i\; \in
+\{m''+1,...m\}\\
+\end{array}\right.
+\]
+\begin{tabular}{ll}
+wobei&$x'=(x_{2}, x_{3},...x_{n})$\\
+&$(a_{i}')^{T}$ ist die i-te Zeile von A ohne den ersten Eintrag
+\end{tabular}
+
+Die ersten beiden Zeilen von (*) sind äquivalent zu
+\[\max_{m'+1\leqq j \leqq m''} \left((a_{j}')^{T} x' -b_{j}\right) \leqq x_{i}
+\leqq \min_{1\leqq i \leqq m'} \left(b_{i} - (a_{i}')^{T}x'\right)\]
+
+d.h. das Orginalsystem $A \leqq b$ hat eine Lösung genau dann wenn (in
+Zukunft g.d.w.) das System:
+\[
+(**)\left\{\begin{array}{rcl}
+(a_{j}')^{T}x' -b_{j} &\leqq& b_{i} - (a_{i}')^{T}x'\;\;\; \forall \; i \; \in
+\{1,2,3,...m'\}\\
+(a_{j}')^{T}x' -b_{j} &\leqq& b_{i} - (a_{i}')^{T}x'\;\;\; \forall \; i \; \in
+\{m'+1,...m''\}\\
+(a_{j}')^{T}x' -b_{j} &\leqq& b_{i} - (a_{i}')^{T}x'\;\;\; \forall \; i \; \in
+\{m''+1,...m\}\\
+\end{array}\right.
+\]
+eine Lösung hat ($x_{i}$ kann geeignet gewählt werden).\\
+Umformulierung von (**)
+\[
+(***)\left\{\begin{array}{rcl}
+(a_{i}'+a_{j}')^{T} x' &\leqq& b_{i} + b_{j}\;\;\; \forall \; i \; \in
+\{1,2,3,...m'\}\\
+(a_{i}'+a_{j}')^{T} x' &\leqq& b_{i} + b_{j}\;\;\; \forall \; i \; \in
+\{m'+1,...m''\}\\
+(a_{i}'+a_{j}')^{T} x' &\leqq& b_{i} + b_{j}\;\;\; \forall \; i \; \in
+\{m''+1,...m\}\\
+\end{array}\right.
+\]
+Schreibe (***) als $A'x'\leqq b'$\\
+Also $(\exists x) \; \; Ax\leqq b$ g.d.w. $(\exists x') A' x' \leqq b'$
+
+Fazit: Wir haben die Variable x eliminiert und haben jetzt in (***) $n-1$
+Variablen und $m'(m''-m')+m-m''$ Ungleichungen $\rightarrow$ weniger
+Variablen aber mehr Ungleichungen.
+
+Diese Iteration liefert ein nicht polynomielles Verfahren zur Lösung von
+Ungleichungssystemen.
+
+\begin{satz}
+Lemma von Farkas für Ungleichungen\\
+Seien $A \in \RR^{m\times n}$, $b\in \RR^{m}$\\
+$(\exists x \in \RR^{n})$ $Ax \leqq b\;$ g.d.w. $\;(\not\exists y \in \RR^{m})$
+$y\geqq 0$, $y^{T}A=0$, $y^{T}b < 0$
+\end{satz}
+
+
+%
+%  Ab hier weiter gemacht
+%
+
+Fall 1 $\mu =0$:
+\[\Rightarrow \left\{ \begin{array}{rcl}
+Az &\geqq & 0\\
+c^{T}z&<&0\\
+\end{array}\right.\]
+Sei $x^{0}$ Lösung von$Ax\leqq b$. Für $r$ hinreichend groß gilt dann:
+\[\begin{array}{rcl}A(x^{0} -rz) &\leqq& b\\
+c^{T}(x^{0}-rz)&>&\delta\end{array}\]
+$\bar{X}=x^{0} -rz$ ist Lösung die $c^{T}\bar{x} \leqq \delta$ verletzt.
+
+Fall 2 $\mu > 0$:\\
+Es gilt $Az + b \mu \geqq 0$
+\[\begin{array}{crcl}
+\Rightarrow & Az &\geqq & -b \mu\\
+\Rightarrow & A\left(-\frac{z}{\mu} \right)&>& \delta
+\end{array}\]
+aber $c^{T}z + \delta\mu < 0$
+\[\begin{array}{crcl}
+\Rightarrow & c^{T}z &<& - \delta \mu \\
+\Rightarrow & c^{T}\left(-\frac{z}{\mu}\right) &>&
+\end{array}\]
+
+Also liefert die Lösung $\bar{x}=-\frac{z}{\mu}$ den Widerspruch.
+
+\section{Qualitätstheorem}
+
+Für das lineare Optimierugsproblem:
+\[(P) ;\; \; \{\max c^{T}x | Ax \leqq b\}\]
+bezeichnen wir:
+\begin{itemize}
+\item Jede Lösung $\bar{x}$ von $Ax \leqq b$ als zulässige Lösung
+\item Jede zuläassige Lösung $\bar{x} die c^{T} x $ maximiert als
+Optimallösung. 
+\end{itemize}
+Wir definieren das duale lineare Optimierungsproblem zu (P)
+als (D) \[\min \{y^{T}b| y \leqq 0 , \; \; y^{T}A = c^{T} \}\]
+
+\begin{satz} \label{SchwQual} Schwaches Qualitätstheorem\\
+Seien $A \in \RR^{m \times n}, \; \; b \in \RR^{m}, \;\; c \in \RR^{n}$ und
+$\bar{x}$ zulässig  für (P) und y zulässig für (D). Dann gilt $c^{T}\bar{x}
+\leqq \bar{y}^{T} b$
+\end{satz}
+Beweis: $c^ {T}\bar{x} = (y^{T}A) \bar{X} = y^{T}(Ax) \leqq y^{T}b$ q.e.d.
+
+\begin{satz} 
+Qualitätstheorem (von Neumann, 1947)\\
+Seien $A \in \RR^{m \times n}, \; \;  b \in \RR^{m}, \;\; c \in \RR^{n}$.
+Dann gilt:
+\[\max c^{T}x | Ax \leqq b\}=\min \{y^{T}b| y \leqq 0 , \; \; y^{T}A = 
+c^{T} \}\]
+\end{satz}
+Beweis:
+\begin{enumerate}
+\item Schwache Dualität (Satz \ref{SchwQual}) implizerit:
+\[\begin{array}{clcl}\]
+
+
+\end{enumerate}
+
+
+
+%\chapter{Probleme, Schranken, Zetifikate}
+
+
+%\chapter{Optimale Bäume und Wege}
+%\chapter{Maximale Flüsse}
+%\chapter{Minimale Kostenflüsse}
+%\chapter{Optimale Matchingsysteme}
+
+
+
+
+%\small
+%\begin{thebibliography}{99}
+%\input{ISO14000_bib}
+%\end{thebibliography}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
