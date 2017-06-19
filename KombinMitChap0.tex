@@ -1,11 +1,11 @@
 
-Vor der Einführung machte Prof. Jünger eine ganz kurze informelle 
+Vor der EinfÃ¼hrung machte Prof. JÃ¼nger eine ganz kurze informelle 
 Vorstellung der kombinatorischen Optimierung, bei der er uns bat nicht 
 mit zuschreiben. Dieser Teil ist deshalb hier nicht wieder gegeben. 
 
 \section{Matrizen Exkurs}
 
-Auf Bitten von Kommilitonen machte Prof. Jünger einen kleinen Exkurs in die
+Auf Bitten von Kommilitonen machte Prof. JÃ¼nger einen kleinen Exkurs in die
 Matrizen--Schreibweise, die er verwendet. 
 
 $A x = b\;$ $A \in \RR^{m\times n}\;$ $b \in \RR^{m}$\\
@@ -16,10 +16,10 @@ $A = (a_{i j}) = \left(\begin{array}{ccc}a_{11}&\ldots&a_{1n}\\
 Matrizen-Multiplikation:\\
 $A \in \RR^{m\times k}\;$ $B \in \RR^{k \times n};$ $C \in \RR^{m\times n}$ 
 
-$A \cdot B = C$ läuft dann folgendermaßen:
+$A \cdot B = C$ lÃ¤uft dann folgendermaÃŸen:
 
 \begin{equation*} 
-c_{i j}= \sum^{k}_{p=1} a_{i p} * b_{pi} \; \; \forall\; {i} \;\;\; \mbox{für alle i
+c_{i j}= \sum^{k}_{p=1} a_{i p} * b_{pi} \; \; \forall\; {i} \;\;\; \mbox{fÃ¼r alle i
 Zeilen}
 \end{equation*}
 
@@ -48,7 +48,7 @@ $a,\; b \in \RR^{n}$\\
 
 \[ab = \sum^{n}_{i=1} a_{i} b_{i} = (a_{1}, \ldots, a_{n})
 \left(\begin{array}{c}b_{1}\\ \vdots\\ b_{n} \end{array}\right)\]
-Eigentlich müsste man $a^{T}b$ schreiben, da $a$ ja ein transponierter
+Eigentlich mÃ¼sste man $a^{T}b$ schreiben, da $a$ ja ein transponierter
 Vektor ist. Mathematiker vergessen so etwas aber schon mal gerne, das es ja
 ohnehin klar ist... 
 
@@ -67,8 +67,8 @@ C \in \RR^{q\times r}, \; D \in \RR^{q\times s} $\\
 \end{tabular}\\
 
 Dies ist die allgemeine Formulierung eines (linearen) generischen
-Optimierungsproblems. Für ein ganzzahliges Optimierungsproblem (IP) gilt
-zusätzlich zum LP noch:
+Optimierungsproblems. FÃ¼r ein ganzzahliges Optimierungsproblem (IP) gilt
+zusÃ¤tzlich zum LP noch:
 
 \[x \in \ZZ^{r}, \;y \in \ZZ^{s} \]
 
@@ -80,45 +80,45 @@ der Vektoren x und y integral (ganzzahlig) sind.
 
 \begin{tabular}{ll}
 Gegeben:& $E$ eine endliche Grundmenge\\
-&$y \subseteqq 2^{E},\;$ y ist eine zulässige Teilmenge von $E$\\
+&$y \subseteqq 2^{E},\;$ y ist eine zulÃ¤ssige Teilmenge von $E$\\
 &$c$: $E \rightarrow \RR$ (z.b. Zuweisung von Entfernungen zu den
 Kanten)\\
-&Für $F \subseteqq E$: $c(F) = \displaystyle \sum_{e\in F} c(e)$\\
-Gesucht:& $I^{\star} \in  y$ mit $c(I^{\star}) \geqq c(I),\;$ für alle $I \in
+&FÃ¼r $F \subseteqq E$: $c(F) = \displaystyle \sum_{e\in F} c(e)$\\
+Gesucht:& $I^{\star} \in  y$ mit $c(I^{\star}) \geqq c(I),\;$ fÃ¼r alle $I \in
  y$\\
-\hspace{3mm} oder:&$I^{\star} \in  y$ mit $c(I^{\star}) \leqq c(I),\;$ für
+\hspace{3mm} oder:&$I^{\star} \in  y$ mit $c(I^{\star}) \leqq c(I),\;$ fÃ¼r
 alle $I \in  y$
 \end{tabular}
 
 
-\subsubsection{Kleine Aufwärmaufgabe}
+\subsubsection{Kleine AufwÃ¤rmaufgabe}
 
-Für $A \in \RR^{m\times n}, \; b \in \RR^{m}$ gilt:\\
-($\exists x \in \RR^{n}$) $\;A x = b$ (Gleichungssystem ist lösbar)\\
+FÃ¼r $A \in \RR^{m\times n}, \; b \in \RR^{m}$ gilt:\\
+($\exists x \in \RR^{n}$) $\;A x = b$ (Gleichungssystem ist lÃ¶sbar)\\
 genau dann wenn:\\
 ($\nexists y \in \RR^{m}$) $\;y^{T}A=0$, $\;y^{T} b=-1$
 
-Hiernach erklärte Prof. Jünger noch kurz und informell die Triangulation
-für Input-/Outputmodelle. In der Nächsten Stunde wurden zunächst 
+Hiernach erklÃ¤rte Prof. JÃ¼nger noch kurz und informell die Triangulation
+fÃ¼r Input-/Outputmodelle. In der NÃ¤chsten Stunde wurden zunÃ¤chst 
 Reihenfolgeprobleme mit einigen Beispielen im Graphenzeichnen und in der 
 Flugplanung veranschaulicht.
 
-\section{Einführung in die lineare Optimierung}
+\section{EinfÃ¼hrung in die lineare Optimierung}
 
-Es folgt ein Beispiel aus der Ölraffinierung: Beim Prozess des so genannten
-"`Crackens"' wird Rohöl in drei Produkte aufgespalten: Schweres Öl (S),
-mittelschweres Öl (M) und leichtes Öl (L). Nun gibt es zwei verschiedene
+Es folgt ein Beispiel aus der Ã–lraffinierung: Beim Prozess des so genannten
+"`Crackens"' wird RohÃ¶l in drei Produkte aufgespalten: Schweres Ã–l (S),
+mittelschweres Ã–l (M) und leichtes Ã–l (L). Nun gibt es zwei verschiedene
 Crack-Prozesse die zu einer unterschiedlichen Aufteilung der Endprodukte
-führen.
+fÃ¼hren.
 
-\[\mbox{Prozess 1: 10 ME (= Mengeneinheiten) Rohöl ergibt} \longrightarrow 
+\[\mbox{Prozess 1: 10 ME (= Mengeneinheiten) RohÃ¶l ergibt} \longrightarrow 
 \left. \begin{array}{l}
 \mbox{2 ME S}\\
 \mbox{2 ME M}\\
 \mbox{1 ME L}\\
 \end{array}\right\} \mbox{Kosten 3 GE}\]
 
-\[\mbox{Prozess 1: 10 ME (= Mengeneinheiten) Rohöl ergibt} \longrightarrow
+\[\mbox{Prozess 1: 10 ME (= Mengeneinheiten) RohÃ¶l ergibt} \longrightarrow
 \left.
 \begin{array}{l}
 \mbox{1 ME S}\\
@@ -133,7 +133,7 @@ ME M und 4 ME L produzieren.
 \mbox{Variablen:}& x_{1}\mbox{, Produktionsniveau von Crackprozess 1}\\
 &x_{2}\mbox{, Produktionsniveau von Crackprozess 2}\\
 &x_{1}\geqq 0, x_{2}\geqq 0\\
-&\mbox{z.B. }x_{1} = 1,5 \L\Leftrightarrow \mbox{ 15 ME Rohöl für Prozess 1}
+&\mbox{z.B. }x_{1} = 1,5 \L\Leftrightarrow \mbox{ 15 ME RohÃ¶l fÃ¼r Prozess 1}
 \end{array}\]
 
 Damit erhalten wir das folgende lineare Optimierungsproblem:\\
@@ -149,61 +149,61 @@ Damit erhalten wir das folgende lineare Optimierungsproblem:\\
 \]
 
 Jeder Vektor {\scriptsize$\left(\begin{array}{c}x_{1}\\x_{2}\end{array}\right)$} $\in \RR^{2}$, der
-(1), (2)...., (5) erfüllt heißt zulässige Lösung.
+(1), (2)...., (5) erfÃ¼llt heiÃŸt zulÃ¤ssige LÃ¶sung.
 
 Graphische Darstellung (gerade keine Lust auf xfig, das bekommt ihr ja wohl
 selber hin :)
 
-Aus der n.v. Grafik kann man ganz einfach die optimale Lösung erkennen:
+Aus der n.v. Grafik kann man ganz einfach die optimale LÃ¶sung erkennen:
 $x^{*} = \mbox{\scriptsize
 $\left(\begin{array}{c}2\\0,5\end{array}\right)$}, Wert = 8,5$.
 
-Nähme man nun aber eine beliebige Zielfunktion $a x_{1}+b x_{2}$ sowie $a < 0$ 
+NÃ¤hme man nun aber eine beliebige Zielfunktion $a x_{1}+b x_{2}$ sowie $a < 0$ 
 und definiere eine Folge von Punkten $x^{(n)}= \mbox{\scriptsize$\left(
 \begin{array}{c}n\\ 0\end{array}\right)$}$ mit $n \geq 4$. Weiterhin gilt: 
 $a x_{1}^{(n)} + b x_{2}^{(n)} =  n a$. Da a negativ 
 ist ist der Wert der Zielfunktion offensichtlich nicht nach unten
-beschränkt.
+beschrÃ¤nkt.
 
-\subsection{Lösungen für Lineare Probleme}
+\subsection{LÃ¶sungen fÃ¼r Lineare Probleme}
 
-\subsubsection{Simpler Lösungsalgorithmus für ein LP}  
+\subsubsection{Simpler LÃ¶sungsalgorithmus fÃ¼r ein LP}  
 
-Zunächst stellen wir eine Vermutung an. Wenn eine Optimallösung
+ZunÃ¤chst stellen wir eine Vermutung an. Wenn eine OptimallÃ¶sung
 existiert, so existiert eine die im Durchschnitt von n Hyperebenen liegt
-(wird später bewiesen). Eine Hyperebene ist ein (n-1)-dimensionaler
+(wird spÃ¤ter bewiesen). Eine Hyperebene ist ein (n-1)-dimensionaler
 Unterraum also im $R^{2}$ eine Gerade im $R^{3}$ eine Ebene, u.s.w.
 
-Davon ausgehend konstruieren wie eine einfache Lösungsmethode. Man
-schreibe (1), (2), ..., (5) als Gleichungen und löse alle ${5\choose 2}
-= 10$ Gleichungssysteme mit 2 Gleichungen. Von allen Lösungen, die
-zulässig sind, ist die mit dem kleinsten Zielfunktionswert optimal.
+Davon ausgehend konstruieren wie eine einfache LÃ¶sungsmethode. Man
+schreibe (1), (2), ..., (5) als Gleichungen und lÃ¶se alle ${5\choose 2}
+= 10$ Gleichungssysteme mit 2 Gleichungen. Von allen LÃ¶sungen, die
+zulÃ¤ssig sind, ist die mit dem kleinsten Zielfunktionswert optimal.
 
-{\bf Aufwand:} Benötigen ${m\choose n}$ Aufrufe des Gleichungssytemlösers mit
+{\bf Aufwand:} BenÃ¶tigen ${m\choose n}$ Aufrufe des GleichungssytemlÃ¶sers mit
 n Variablen und n Gleichungen. $\rightarrow$ Viel zu langsam in der
 Praxis.
 
 \subsubsection{Idee des Simplexalgorithmus}
 
-Der Simplexalgorithmus geht folgendermaßen vor:\\
-(a) Finde eine erste Lösung wie im simplen Algorithmus.\\
+Der Simplexalgorithmus geht folgendermaÃŸen vor:\\
+(a) Finde eine erste LÃ¶sung wie im simplen Algorithmus.\\
 (b) Gehe durch Austausch je einer Hyperebene zu einer benachbarten
-Lösung deren Zielfunktionswertes nicht schlechter ist.
-(c) Wiederhole (b) bis Optimalität festgestellt ist. ($\rightarrow$ via
-Dualitätstheorie, die später noch behandelt wird).
+LÃ¶sung deren Zielfunktionswertes nicht schlechter ist.
+(c) Wiederhole (b) bis OptimalitÃ¤t festgestellt ist. ($\rightarrow$ via
+DualitÃ¤tstheorie, die spÃ¤ter noch behandelt wird).
 
 \subsubsection{Bestimmung von Schranken}
 
 Wir zeigen nun, dass $x^{*} =
 \mbox{\scriptsize$\left(\begin{array}{c}2\\0,5\end{array}\right)$}$ optimal
 ist:\\
-{\bf Beobachtung 1:} Die Lösungsmenge einer Ungleichung ist invariant
+{\bf Beobachtung 1:} Die LÃ¶sungsmenge einer Ungleichung ist invariant
 unter Skalierung mit positiven Skalaren, z.B. (1):
 \[\{x|2x_{1}+x_{2} \geqq 3\} = \{x|4x_{1}+2x_{2} \geqq 6\}\]
 
 Negative Faktoren kehren die Ungleichung um.
 
-{\bf Beobachtung 2:} Erfüllt ein Vektor zwei gleich gerichtete (beide
+{\bf Beobachtung 2:} ErfÃ¼llt ein Vektor zwei gleich gerichtete (beide
 "`$\leqq$"' oder beide "`$\geqq$"') so auch die Summe der beiden
 Ungleichungen. z.B. (1) + (3):
 \[\begin{array}{llcl}
@@ -213,9 +213,9 @@ Ungleichungen. z.B. (1) + (3):
 &\underbrace{3x_{1} + 5x_{2}}_{ZF}&\geqq& 7
 \end{array}\] 
 
-Nun können wir behaupten, dass wir mindestens 7 GE ausgeben müssen.
-$\rightarrow$ Jeder Vektor der (1)...(5) erfüllt hat einen ZF-Wert von
-wenigstens 7. Also ist 7 eine untere Schranke für das Minimum. Nun versuchen
+Nun kÃ¶nnen wir behaupten, dass wir mindestens 7 GE ausgeben mÃ¼ssen.
+$\rightarrow$ Jeder Vektor der (1)...(5) erfÃ¼llt hat einen ZF-Wert von
+wenigstens 7. Also ist 7 eine untere Schranke fÃ¼r das Minimum. Nun versuchen
 wir eine bessere Schranke zu finden:
 \[\begin{array}{llcl}
 (1)&2x_{1}+x_{2} &\geqq& 3\\
@@ -223,19 +223,19 @@ wir eine bessere Schranke zu finden:
 \hline
 &4x_{1} + 3x_{2}&\geqq& 8
 \end{array}\]
-In dieser Ungleichung ist der Koeffizient für $x_{1} = 4$  und ist damit
-größer als der Koeffizient in der Zielfunktion. Damit ist dies Ungleichung
-nicht zum Abschätzen einer unteren Schranke geeignet. Also ein erneuter
+In dieser Ungleichung ist der Koeffizient fÃ¼r $x_{1} = 4$  und ist damit
+grÃ¶ÃŸer als der Koeffizient in der Zielfunktion. Damit ist dies Ungleichung
+nicht zum AbschÃ¤tzen einer unteren Schranke geeignet. Also ein erneuter
 Versuch indem wir (2) mit 1,5 multiplizieren. Damit erhalten wir:
 \[3x_{1}+3x_{2} \geqq 7,5\]
 
-\subsubsection{Dualität}
+\subsubsection{DualitÃ¤t}
 
 Zwar haben wir nun eine bessere untere Schranke aber dieser Probier-Ansatz ist
 etwas unbefriedigend. Darum nun ein systematischer Ansatz
-zum Finden der Faktoren für die Gleichungen um eine Schranke zu finden. Da
-die Nichtnegativ-Bedingungen in diesem Fall irrelevant sind suchen wir für
-unser Problem drei Multiplikatoren ($y_{1}$, $y_{2}$, $y_{3}$) für die
+zum Finden der Faktoren fÃ¼r die Gleichungen um eine Schranke zu finden. Da
+die Nichtnegativ-Bedingungen in diesem Fall irrelevant sind suchen wir fÃ¼r
+unser Problem drei Multiplikatoren ($y_{1}$, $y_{2}$, $y_{3}$) fÃ¼r die
 Gleichungen (1) (2) (3).
 \[\begin{array}{l}\max \; 3y_{1} + 5y_{2} + 4y_{3} \rightarrow \mbox{Die Rechte
 Seite (Schranke) maximieren)}\\
@@ -243,10 +243,10 @@ Seite (Schranke) maximieren)}\\
 2y_{1}+2y_{2}+y_{3} &\leqq & 3 \\
 y_{1}+2y_{2}+4y_{3} &\leqq & 5
 \end{array} \end{array} \right\}\mbox{Damit die ZF-Koeffizienten nicht
-überschritten werden}\end{array}\]
+Ã¼berschritten werden}\end{array}\]
 Damit haben wir nun das entsprechende duale Optimierungsproblem. Nach
-dessen Konstruktion liefert der Zielfunktionswert jeder zulässigen Lösung
-des dualen Problems eine untere Schranke für den Zielfunktionswert des
+dessen Konstruktion liefert der Zielfunktionswert jeder zulÃ¤ssigen LÃ¶sung
+des dualen Problems eine untere Schranke fÃ¼r den Zielfunktionswert des
 primalen Problems. Wir betrachten:
 \[y^{*}=\left(\begin{array}{c}y^{*}_{1}\\y^{*}_{2}\\y^{*}_{3}\end{array}\right)
 =\left(\begin{array}{c}0\\\frac{7}{6}\\\frac{2}{3}\end{array}\right)\] 
@@ -261,17 +261,17 @@ dies entspricht:
 \end{array}
 \]
 
-\paragraph{Schwacher Dualitätssatz}
-Es seien $c \in \RR^{n}$, $b \in \RR^{m}$, $A \in \RR^{m \times n}$ für die
+\paragraph{Schwacher DualitÃ¤tssatz}
+Es seien $c \in \RR^{n}$, $b \in \RR^{m}$, $A \in \RR^{m \times n}$ fÃ¼r die
 Optimierungsaufgaben:
 
 \begin{tabular}{ll}
 (P)&$\min \{c^{T}x | A x \geqq b, \; x\geqq 0\}$\\
 &d.h. bestimme $x^{*} \in \RR$ mit $A x^{*} \geqq b$, $x^{*} \geqq 0 $ und
-$c^{T}x^{*}$ so klein wie möglich.\\
+$c^{T}x^{*}$ so klein wie mÃ¶glich.\\
 (D)&$\max \{y^{T}b|y^{T}A \leqq c^{T}, \; y \geqq 0\}$\\
 &d.h. bestimme  $y^{*} \in \RR^{m}$ mit $g^{*T}A \leqq c^{T}, \; y ^{*}
-\geqq 0$ und $y^{*T}b$ so groß wie möglich.
+\geqq 0$ und $y^{*T}b$ so groÃŸ wie mÃ¶glich.
 \end{tabular}
 
 so gilt folgendes: Seien $x_{0} \in \RR^{n}$, $ y_{0} \in \RR^{m}$ Punkte
@@ -281,20 +281,20 @@ Beweis:
 \[y_{0}^{T}b \leqq y_{0}^{T}(A x_{0}) = (y_{0}^{T}A)x_{0} \leqq c^{T}x_{0}
 \; \; \; \; \mbox{q.e.d.}\] 
 
-Der starke Dualitätssatz (später) besagt $y^{*T}b =c^{T}x^{*}$ für
-Optimallösung $x^{*}$ von (P) und $y^{*}$ von (D).
+Der starke DualitÃ¤tssatz (spÃ¤ter) besagt $y^{*T}b =c^{T}x^{*}$ fÃ¼r
+OptimallÃ¶sung $x^{*}$ von (P) und $y^{*}$ von (D).
 
-\subsubsection{Ökonomische Interpretation des Dualen Programms}
+\subsubsection{Ã–konomische Interpretation des Dualen Programms}
 
-Ein Manager der Ölraffinerie würde sich nun die Frage stellen, ob es sinnvoll
+Ein Manager der Ã–lraffinerie wÃ¼rde sich nun die Frage stellen, ob es sinnvoll
 L, M uns S selbst herzustellen, oder ob man es auf dem Markt kaufen sollte 
 b.z.w.  bei welchen Marktpreis eine Produktion nicht mehr lohnt. In diesem Fall
-drückt $y_{1}$ den Preis in GE für S aus, $y_{2}$ für M, $y_{3}$ für L. Der
-Marktpreis für die benötigten Mengen beträgt somit:
+drÃ¼ckt $y_{1}$ den Preis in GE fÃ¼r S aus, $y_{2}$ fÃ¼r M, $y_{3}$ fÃ¼r L. Der
+Marktpreis fÃ¼r die benÃ¶tigten Mengen betrÃ¤gt somit:
 \[3y_{1} + 5y_{5} + 4y_{3} \; \; \mbox{GE}\]
-der Ausstoß von Crackprozess 1 hat den Marktpreis:
+der AusstoÃŸ von Crackprozess 1 hat den Marktpreis:
 \[2y_{1}+2y_{2}+3y_{3} \; \; \mbox{GE} > 3 \;\;\;\; \rightarrow \mbox{Produktion Lohnt}\]
-der Ausstoß von Crackprozess 2 hat den Marktpreis:
+der AusstoÃŸ von Crackprozess 2 hat den Marktpreis:
 \[y_{1}+2y_{2}+4y_{3} \;\; \mbox{GE} > 5 \;\;\;\; \rightarrow \mbox{Produktion Lohnt}\]
 $y_{i}$ werden auch als Schattenpreise bezeichnet. In unserem Beispiel
 betragen sie:
@@ -302,11 +302,11 @@ betragen sie:
 \frac{7}{6}&(L):\;
 y_{3}^{*} = \frac{2}{3}
 \end{array}\]
-Hier ist zu erkennen dass S praktisch "`wertlos"' für die Firma ist. In der
-tat ist es in der Optimallösung im Überfluss vorhanden (also mehr als die
-Lieferverpflichtungen der Firma verlangen. D.h. man würde das Öl zunächst
+Hier ist zu erkennen dass S praktisch "`wertlos"' fÃ¼r die Firma ist. In der
+tat ist es in der OptimallÃ¶sung im Ãœberfluss vorhanden (also mehr als die
+Lieferverpflichtungen der Firma verlangen. D.h. man wÃ¼rde das Ã–l zunÃ¤chst
 zu jedem Preis verkaufen (solange man die insgesamte Produktionsmenge
-dadurch nicht erhöhen muss).
+dadurch nicht erhÃ¶hen muss).
 
 \subsection{Formen von Linearen Problemen \label{FormenLP}}
 
@@ -338,17 +338,17 @@ x&\leqq& \mbox{\scriptsize$\left(\begin{array}{r}d\\-d\end{array}
 \right)$}\\
 &&&&&x&\geqq& 0
 \end{array}\]
-Als Hausaufgabe dürfen wir die Transformationen in die andere Richtung
+Als Hausaufgabe dÃ¼rfen wir die Transformationen in die andere Richtung
 machen :), (bei $B y=d$ geht es nicht).
 
 Jedes LP kann also auch in die Form $\max \{c^{T}x| A x \leqq b\}$ transformiert
 werden.
 
 \paragraph{Farkas Lemma}
-Wir suchen ein Analogon zur "`Aufwärmaufgabe"':\\
+Wir suchen ein Analogon zur "`AufwÃ¤rmaufgabe"':\\
 $A \in \RR^{m\times n}, \; \; b \in \RR^{m}$\\
 $(\exists x) \; \;\; A x = b$ genau dann wenn $(\nexists y) \; \; y^{T}A
-= 0, \; \; y^{T}b=-1$ für Ungleichungsprobleme der Form $A x\leqq b$
+= 0, \; \; y^{T}b=-1$ fÃ¼r Ungleichungsprobleme der Form $A x\leqq b$
 
 
 \paragraph{Fourier-Motzkin Elimination}
@@ -370,11 +370,11 @@ wobei&$x'=(x_{2}, x_{3},...x_{n})$\\
 &$(a_{i}')^{T}$ ist die i-te Zeile von A ohne den ersten Eintrag
 \end{tabular}
 
-Die ersten beiden Zeilen von (*) sind äquivalent zu
+Die ersten beiden Zeilen von (*) sind Ã¤quivalent zu
 \[\max_{m'+1\leqq j \leqq m''} \left((a_{j}')^{T} x' -b_{j}\right) \leqq x_{i}
 \leqq \min_{1\leqq i \leqq m'} \left(b_{i} - (a_{i}')^{T}x'\right)\]
 
-d.h. das Orginalsystem $A \leqq b$ hat eine Lösung genau dann wenn (in
+d.h. das Orginalsystem $A \leqq b$ hat eine LÃ¶sung genau dann wenn (in
 Zukunft g.d.w.) das System:
 \[
 (**)\left\{\begin{array}{rcll}
@@ -387,7 +387,7 @@ Zukunft g.d.w.) das System:
 \{m''+1,...m\}\\
 \end{array}\right.
 \]
-eine Lösung hat ($x_{i}$ kann geeignet gewählt werden).\\
+eine LÃ¶sung hat ($x_{i}$ kann geeignet gewÃ¤hlt werden).\\
 Umformulierung von (**)
 \[
 (***)\left\{\begin{array}{rcll}
@@ -407,11 +407,11 @@ Fazit: Wir haben die Variable x eliminiert und haben jetzt in (***) $n-1$
 Variablen und $m'(m''-m')+m-m''$ Ungleichungen $\rightarrow$ weniger
 Variablen aber mehr Ungleichungen.
 
-Diese Iteration liefert ein nicht polynomielles Verfahren zur Lösung von
+Diese Iteration liefert ein nicht polynomielles Verfahren zur LÃ¶sung von
 Ungleichungssystemen.
 
 \begin{lemma}
-von Farkas für Ungleichungen\\
+von Farkas fÃ¼r Ungleichungen\\
 Seien $A \in \RR^{m\times n}$, $b\in \RR^{m}$\\
 $(\exists x \in \RR^{n})$ $A x \leqq b\;$ g.d.w. $\;(\nexists y \in \RR^{m})$
 $y\geqq 0$, $y^{T}A=0$, $y^{T}b < 0$\\
@@ -419,7 +419,7 @@ $y\geqq 0$, $y^{T}A=0$, $y^{T}b < 0$\\
 
 \begin{longtable}[l]{lp{13cm}}
 \multicolumn{2}{l}{{\bf Beweis}}\\
-"`$\Rightarrow$"'&$A x \leqq b$ habe eine Lösung $\bar{x}$\\
+"`$\Rightarrow$"'&$A x \leqq b$ habe eine LÃ¶sung $\bar{x}$\\
 &Annahme:  $(\exists y \geqq 0) \; \; y^{T} A = 0, \; \; y^{T}b < 0$\\
 &\[\begin{array}{rcl}
 \Rightarrow 0 &>& y^{T}b\\
@@ -427,22 +427,22 @@ $y\geqq 0$, $y^{T}A=0$, $y^{T}b < 0$\\
 &=& 0\; \; \lightning
 \end{array}\]\\
 &Mit $0>0$ ergibt sich also ein Widerspruch. Also gilt die Hin-Richtung.\\
-"`$\Leftarrow$"'& $A x \leqq b$ habe keine Lösung.\\
+"`$\Leftarrow$"'& $A x \leqq b$ habe keine LÃ¶sung.\\
 & 1) Induktionsverankerung: $A \in \RR^{m\times 1}$
 Nach Skalierung mit positiven Skalaren $\bar{y}$ haben alle Ungleichungen
 die Form:\\
 &\[(1) \; \; \; x_{n} \leqq \alpha ;\ \; \; \mbox{ oder } (2) \; \; \; 
 -x_{n} \leqq \beta\]\\
-&Nicht Lösbarkeit bedeutet also dass sich zwei Ungleichungen widersprechen.
-O.b.d.A (=Ohne Beschränkung der Allgemeinheit) widersprechen sich die i-te 
+&Nicht LÃ¶sbarkeit bedeutet also dass sich zwei Ungleichungen widersprechen.
+O.b.d.A (=Ohne BeschrÃ¤nkung der Allgemeinheit) widersprechen sich die i-te 
 Form (1) und die (j)-te der Form (2). D.h. $-\beta \leqq x_{n} \leqq \alpha$
 mit $\alpha < -\beta$ d.h. $\alpha + \beta = \gamma < 0$\\
 
-&Man wähle nun $\begin{array}[t]{rcl}
+&Man wÃ¤hle nun $\begin{array}[t]{rcl}
 y_{i} &=& - \frac{\bar{y}_{i}}{\gamma} > 0 \;\;\; \mbox{ da } \gamma <
 0\vspace{2mm}\\
 y_{j} &=&- \frac{\bar{y}_{j}}{\gamma} > 0 \vspace{2mm}\\
-y_{k} &=& 0 \; \; \; \mbox{ für } k \not\in \{i,j\}
+y_{k} &=& 0 \; \; \; \mbox{ fÃ¼r } k \not\in \{i,j\}
 \end{array}$\\
  
 &\[\begin{array}{lrcl}
@@ -457,7 +457,7 @@ y_{k} &=& 0 \; \; \; \mbox{ für } k \not\in \{i,j\}
 \end{array}\]\\
 
 &2) Induktion: $A \in \RR^{m \times n} \; \; n > 1 $\\
-& $A x \leqq b$ hat keine Lösung $\Leftrightarrow A'x \leqq b'$ hat keine Lösung\\
+& $A x \leqq b$ hat keine LÃ¶sung $\Leftrightarrow A'x \leqq b'$ hat keine LÃ¶sung\\
 & 3) Induktionsannahme $\begin{array}[t]{rcl}(\exists y' \geqq 0) 
 \; \; y'^{T}A' &=& 0\\ y'^{T}b'&=&-1\end{array}$\\
 &d.h.  $(\exists y' \geqq 0) y'^{T} [A'b'] =
@@ -480,13 +480,13 @@ A x&=&b&&y^{T}b &<& 0
 \end{array}\]
 \end{korollar}
 
-{\bf Beweis:} Für $\bar{A} = \left(
+{\bf Beweis:} FÃ¼r $\bar{A} = \left(
 \begin{array}{c}A\\-A\\-I\end{array}\right)$ (mit $I=$ Einheitsmatrix) und
 $\bar{b} = \left( \begin{array}{c}b\\-b\\0\end{array} \right)$ gilt:\\
 \[\begin{array}{rcrcl}
 (\exists x \geqq 0) \; A x = b &\stackrel{\mbox{\scriptsize Konstruktion}}{\Leftrightarrow}&
 (\exists \bar{x}) \; \; \bar{A} \bar{x} &\leqq&\bar{b}\\
-&\stackrel{\mbox{\scriptsize Satz 0.1 (Lemma für Ungl.)}}{\Leftrightarrow}&
+&\stackrel{\mbox{\scriptsize Satz 0.1 (Lemma fÃ¼r Ungl.)}}{\Leftrightarrow}&
 (\nexists \bar{y} \geqq 0) \; \; \bar{y}^{T} \bar{A} &=&0\\
 &&\bar{y}^{T}b&\leqq&0
 \end{array}\]
@@ -515,15 +515,15 @@ $y^{T}b < 0$ beschreibt wiederum eine "`halbe"' Ebene. Wenn jetzt nun $A x=b$
 gelten soll so muss $b$ sich als eine Linearkombination der Vektoren $A_{1}$ 
 und $A_{2}$ darstellen lassen. Anschaulich bedeutet dass das $b$ in der 
 Zeichnung "`zwischen"' $A_{1}$ und  $A_{2}$ liegen muss dann wiederum wird
-sich die Flächen die durch $y^{T}A \geqq 0$ und durch $y^{T}b < 0$
+sich die FlÃ¤chen die durch $y^{T}A \geqq 0$ und durch $y^{T}b < 0$
 beschrieben werden niemals schneiden. 
 
 Leider habe ich an dieser Stelle nicht die Zeit die Zeichnungen zu malen.
 Freiwillige vor.
 
 \begin{korollar} \label{eineLoesung}
-Das System $A x \leqq b$ habe wenigstens eine Lösung. Dann erfüllt jede
-Lösung $x$ von $A x\leqq b$ die Ungleichung $c^{T}x \leqq \delta$ genau dann,
+Das System $A x \leqq b$ habe wenigstens eine LÃ¶sung. Dann erfÃ¼llt jede
+LÃ¶sung $x$ von $A x\leqq b$ die Ungleichung $c^{T}x \leqq \delta$ genau dann,
 wenn ein $y\geqq 0$ existiert, so dass $y^{T}A=c^{T}$ und $y^{T}b \leqq
 \delta$.
 
@@ -533,7 +533,7 @@ Beweis:
 \begin{longtable}{lp{13cm}}
 "`$\Leftarrow$"'& $(\exists y \geqq 0) y^{T}A = c^{T}, \; \; y^{T}b \leqq
 \delta$\\
-&für alle $x \in \RR^{n}$ gilt:\\
+&fÃ¼r alle $x \in \RR^{n}$ gilt:\\
 &\[\begin{array}{r@{\Rightarrow}rcl}
 A x \leqq b & y^{T} A x&\leqq& y^{T}b\\
 &c^{T}x &\leqq& y^{T}b\\
@@ -560,10 +560,10 @@ Fall 1 $\mu =0$:
 A z &\geqq & 0\\
 c^{T}z&<&0\\
 \end{array}\right.\]
-Sei $x^{0}$ Lösung von $A x\leqq b$. Für $r$ hinreichend groß gilt dann:
+Sei $x^{0}$ LÃ¶sung von $A x\leqq b$. FÃ¼r $r$ hinreichend groÃŸ gilt dann:
 \[\begin{array}{rcl}A(x^{0} -r z) &\leqq& b\\
 c^{T}(x^{0}-r z)&>&\delta\end{array}\]
-$\bar{X}=x^{0} -r z$ ist Lösung die $c^{T}\bar{x} \leqq \delta$ verletzt.
+$\bar{X}=x^{0} -r z$ ist LÃ¶sung die $c^{T}\bar{x} \leqq \delta$ verletzt.
 
 Fall 2 $\mu > 0$:\\
 Es gilt $A z + b \mu \geqq 0$
@@ -577,30 +577,30 @@ aber $c^{T}z + \delta\mu < 0$
 \Rightarrow & c^{T}\left(-\frac{z}{\mu}\right) &>& \delta
 \end{array}\]
 
-Also liefert die Lösung $\bar{x}=-\frac{z}{\mu}$ den Widerspruch.
+Also liefert die LÃ¶sung $\bar{x}=-\frac{z}{\mu}$ den Widerspruch.
 
-\section{Dualitätstheorem}
+\section{DualitÃ¤tstheorem}
 
-Für das lineare Optimierungsproblem:
+FÃ¼r das lineare Optimierungsproblem:
 \[(P) \; \; \; \{\max c^{T}x | A x \leqq b\}\]
 bezeichnen wir:
 \begin{itemize} 
-\item Jede Lösung $\bar{x}$ von $A x \leqq b$ als zulässige Lösung
-\item Jede zulässige Lösung $\bar{x}$ die $c^{T} x $ maximiert als
-Optimallösung.
+\item Jede LÃ¶sung $\bar{x}$ von $A x \leqq b$ als zulÃ¤ssige LÃ¶sung
+\item Jede zulÃ¤ssige LÃ¶sung $\bar{x}$ die $c^{T} x $ maximiert als
+OptimallÃ¶sung.
 \end{itemize}
 Wir definieren das duale lineare Optimierungsproblem zu (P)
 als (D) \[\min \{y^{T}b| y \geqq 0 , \; \; y^{T}A = c^{T} \}\]
 
-\begin{satz} \label{SchwQual} Schwaches Dualitätstheorem\\
+\begin{satz} \label{SchwQual} Schwaches DualitÃ¤tstheorem\\
 Seien $A \in \RR^{m \times n}, \; \; b \in \RR^{m}, \;\; c \in \RR^{n}$ und
-$\bar{x}$ zulässig  für (P) und y zulässig für (D). Dann gilt $c^{T}\bar{x}
+$\bar{x}$ zulÃ¤ssig  fÃ¼r (P) und y zulÃ¤ssig fÃ¼r (D). Dann gilt $c^{T}\bar{x}
 \leqq \bar{y}^{T} b$
 \end{satz}
 Beweis: $c^ {T}\bar{x} = (y^{T}A) \bar{x} = y^{T}(A x) \leqq y^{T}b$ q.e.d.
 
 \begin{satz}
-Dualitätstheorem (von Neumann, 1947)\\
+DualitÃ¤tstheorem (von Neumann, 1947)\\
 Seien $A \in \RR^{m \times n}, \; \;  b \in \RR^{m}, \;\; c \in \RR^{n}$.
 Dann gilt:
 \[\max \{c^{T}x | A x \leqq b\}=\min \{y^{T}b| y \geqq 0 , \; \; y^{T}A = 
@@ -608,7 +608,7 @@ c^{T} \}\]
 \end{satz}
 Beweis:
 \begin{enumerate}
-\item Schwache Dualität (Satz \ref{SchwQual}) impliziert:
+\item Schwache DualitÃ¤t (Satz \ref{SchwQual}) impliziert:
 \[\begin{array}{ccl}
 (\ast)& \delta :=& \sup \{c^{T}x | A x \leqq b\} \leqq \inf \{y^{T}b | y
 \geqq 0, \; \; y^{T}A = c^{T} \}\\
@@ -625,7 +625,7 @@ $\Rightarrow$ Das Minimum existiert und ist $=\delta$
 \Rightarrow& (\nexists x) \left(\begin{array}{c}A\\-c^{T}\end{array}\right)
 x &\leqq&
 \left(\begin{array}{c}b\\-\delta\end{array}\right)\vspace{2mm}\\
-\stackrel{\mbox{\scriptsize \begin{tabular}{c}Lemma von Farkas\\ für
+\stackrel{\mbox{\scriptsize \begin{tabular}{c}Lemma von Farkas\\ fÃ¼r
 Ungleichungen\end{tabular}}}{\Longrightarrow}&\left(\exists \vect{z\\\lambda} \in
 \RR^{m+1}\right),\;\; \vect{z\\\lambda} &\geqq& 0 \; \; \mbox{bzw. }\;\; z
 \geqq 0, \; \; \lambda \geqq 0\vspace{2mm}\\
@@ -635,10 +635,10 @@ Ungleichungen\end{tabular}}}{\Longrightarrow}&\left(\exists \vect{z\\\lambda} \i
 - x \lambda \leqq 0
 \end{array}$
 
-$Ax \leqq b$ habe eine Lösung $x^{0}$\\
+$Ax \leqq b$ habe eine LÃ¶sung $x^{0}$\\
 Annahme $ x = 0 \Rightarrow 0 = z^{T}A x^{0} \leqq z^{T}b < 0 \lightning$\\
 Also gilt: $\lambda > 0$\\
-Für $y=\frac{z}{\lambda}$ gilt $\begin{array}[t]{rcl} y &\geqq&0 \; \; \; 
+FÃ¼r $y=\frac{z}{\lambda}$ gilt $\begin{array}[t]{rcl} y &\geqq&0 \; \; \; 
 \mbox{ da } \; \; \begin{array}{rcl}z&\geqq & 0\\\lambda &\geqq &
 0\end{array}\\
 y^{T} A &=& \frac{1}{\lambda} z^{T}A = \frac{1}{\lambda} \lambda c^{T} =
@@ -651,7 +651,7 @@ $\Rightarrow$ Infimum ist $< \delta \; \; \; \lightning$ zu ($\ast$)
 
 \section{Dualisieren von LPs}
 
-Im folgenden Abschnitt beschrieb Prof. Jünger ein "`Kochrezept"' zum
+Im folgenden Abschnitt beschrieb Prof. JÃ¼nger ein "`Kochrezept"' zum
 Dualisieren von LPs. Gegeben sei das folgende primale Problem:
 \[\begin{array}{rcl@{\hspace{7mm}}l}
 \mbox{(P)}\hspace{10mm} \max a^{T}x + b^{T}y\\
@@ -669,9 +669,9 @@ u^{T}A+v^{T} C &\mbox{(Un)gleichungsbeziehung}& a^{T}&[x]\\
 u^{T}B + v^{T}D &\mbox{(Un)gleichungsbeziehung}& b^{T}&[y]\\
 \end{array}\]
 
-Nun gilt: Multiplikatoren für Gleichungen ergeben nicht
-vorzeichenbeschränkte Variablen und Multiplikatoren für Ungleichungen
-ergeben Vorzeichenbeschränkte Variablen, in unserem Fall also:
+Nun gilt: Multiplikatoren fÃ¼r Gleichungen ergeben nicht
+vorzeichenbeschrÃ¤nkte Variablen und Multiplikatoren fÃ¼r Ungleichungen
+ergeben VorzeichenbeschrÃ¤nkte Variablen, in unserem Fall also:
 
 \[\begin{array}{rcl@{\hspace{7mm}}l}
 \mbox{(D)}\hspace{10mm} \min u^{T}c + v^{T} d\\
@@ -680,7 +680,7 @@ u^{T}B + v^{T}D &=& b^{T}&[y]\\
 v&\geqq& 0
 \end{array}\]
 
-Daraus kann man leicht die Spezialfälle ableiten:
+Daraus kann man leicht die SpezialfÃ¤lle ableiten:
 \[\begin{array}{lrcl@{\hspace{3mm}}c@{\hspace{3mm}}lrcl}
 (P)&\max a^{T}x&&&&(D)& \min v^{T}d\\
 &C x &\leqq& d & \rightarrow&& v^{T}C &\geqq& a^{T}\\
@@ -694,11 +694,11 @@ Daraus kann man leicht die Spezialfälle ableiten:
 \end{array}\]
 
 \begin{satz} \label{KomplSchl}
-Satz vom komplementären Schlupf.
+Satz vom komplementÃ¤ren Schlupf.
 Seien $A \in \RR^{m\times n},\;\; b \in \RR^{m},\; c \in \RR^{n}$\\
-Sei $x^{\ast}$ zulässig für $\max \{c^{T}x | A x \leqq b\}$ und\\
-sei $y^{\ast}$ zulässig für $\min \{y^{T}b|y\geqq 0, \;\; y^{T}A= c^{T}\}$\\
-Dann sind $x^{\ast}$ und $y^{\ast}$ Optimallösungen wenn gilt:\\
+Sei $x^{\ast}$ zulÃ¤ssig fÃ¼r $\max \{c^{T}x | A x \leqq b\}$ und\\
+sei $y^{\ast}$ zulÃ¤ssig fÃ¼r $\min \{y^{T}b|y\geqq 0, \;\; y^{T}A= c^{T}\}$\\
+Dann sind $x^{\ast}$ und $y^{\ast}$ OptimallÃ¶sungen wenn gilt:\\
 $y_{i}^{\ast} = 0$ oder $a_{i} x^{\ast} = b_{i} \; \; \forall i$\\
 wobei $a_{i}$ die i-te Zeile von $A$ bezeichnet. 
 \end{satz}
@@ -710,7 +710,7 @@ wobei $a_{i}$ die i-te Zeile von $A$ bezeichnet.
 
 Beweis:\\
 \begin{longtable}{cp{13cm}}
-"`$\Rightarrow$"'& $x^{\ast}$ und $y^{\ast}$ seien Optimallösungen\\
+"`$\Rightarrow$"'& $x^{\ast}$ und $y^{\ast}$ seien OptimallÃ¶sungen\\
 & sei $i \in \{1,2,\ldots,m\}$ mit $y_{i}^{\ast} > 0$ und $a_{i}x^{\ast} <
 b$\\
 &\[\begin{array}{crcl}
@@ -720,20 +720,20 @@ b$\\
 &&\geqq& y_{i}^{\ast} (b_{i} -a_{i}\xs)\\
 &&>&0 \;\;\;\; \lightning
 \end{array}\]\\
-"`$\Leftarrow$"'&Für alle $i\in \{1,2,\ldots,m\}$ gilt $y_{i}^{\ast} = 0$
+"`$\Leftarrow$"'&FÃ¼r alle $i\in \{1,2,\ldots,m\}$ gilt $y_{i}^{\ast} = 0$
 oder $a_{i} \xs = b_{i}$\\
 &\[\begin{array}{crcl}
 \Rightarrow&\ys^{T}b - c^{T}\xs &=& \ys^{T} (b-A\xs)\\
 &&=&\displaystyle \sum_{i=1}^{m} y_{i}^{\ast} (b_{i} - a_{i} \xs)\\\
 &&=&0 \hspace{7mm} \mbox{q.e.d.}
 \end{array}\]
-Dann folgt wegen starker Dualität \xs und \ys sind Optimallösungen.
+Dann folgt wegen starker DualitÃ¤t \xs und \ys sind OptimallÃ¶sungen.
 \end{longtable}
 }
 
 \section{Der Simplexalgorithmus}
 
-Es folgt eine Skizze des Verfahrens für LPs in der Form:
+Es folgt eine Skizze des Verfahrens fÃ¼r LPs in der Form:
 \[\begin{array}{rcl}
 (P) \hspace{10mm} \max c^{T} x\\
 A x&=&b\\
@@ -743,47 +743,47 @@ x&\geqq& 0
 
 mit $A \in \RR^{m \times n}$, $b \in \RR^{m}$, $c\in\RR^{n}$,
 rang$(A)=m$.\\
-Sei T die Menge der Spaltenindizes von $A$. Für $B\subseteq T$ sei $A_{B}$ die
+Sei T die Menge der Spaltenindizes von $A$. FÃ¼r $B\subseteq T$ sei $A_{B}$ die
 Submatrix von A mit den Spalten aus $B$ und $c_{B}$ der Subvektor von $c$
 mit den entsprechenden Komponenten.
 
-Falls $|B| = m$ und die Spalten von $A_{B}$ linear unabhängig sind so ist
-$B$ eine Basis von $A$, b.z.w. $A_{B}$ eine Basismatrix. Für eine Basis B
-ist die Lösung x von $A x=b$ mit $ x=\vect{x_{B}\\x_{N}}$:
+Falls $|B| = m$ und die Spalten von $A_{B}$ linear unabhÃ¤ngig sind so ist
+$B$ eine Basis von $A$, b.z.w. $A_{B}$ eine Basismatrix. FÃ¼r eine Basis B
+ist die LÃ¶sung x von $A x=b$ mit $ x=\vect{x_{B}\\x_{N}}$:
 \[\begin{array}{rcl}
 N&=& T \wout B, \hspace{7mm} \mbox{($N =$ die die nicht in der 
 Basis sind)}\\
 x_{B} &=& A_{B}^{-1} b, \; \; \;\; x_{N} =0
 \end{array}\]
-die zu B gehörige Basislösung.\\
-$x_{B}$ ist die eindeutige Lösung des Gleichungssystems $A_{B} x_{B} = b$.\\
-Weiterhin ist $y_{T}=c_{B}^{T}A_{B}^{-1}$ ( die eindeutige Lösung von 
+die zu B gehÃ¶rige BasislÃ¶sung.\\
+$x_{B}$ ist die eindeutige LÃ¶sung des Gleichungssystems $A_{B} x_{B} = b$.\\
+Weiterhin ist $y_{T}=c_{B}^{T}A_{B}^{-1}$ ( die eindeutige LÃ¶sung von 
 $y^{T}A_{B} = c_{B}^{T})$\\
-eine Lösung des dualen LPs:
+eine LÃ¶sung des dualen LPs:
 \[\begin{array}{rcl}
 (D) \hspace{10mm} \min y^{T} b\\
 y^{T}A&\geqq&c^{T}\\
 \end{array}\]
-Basislösungen $x$ und $y$ haben die Eigenschaft $x_{i} > 0 \Rightarrow
+BasislÃ¶sungen $x$ und $y$ haben die Eigenschaft $x_{i} > 0 \Rightarrow
 y^{T}a_{i} = c_{i}$, wobei $a_{i}$ die i-te Spalte von A ist.
 
-D.h. $x$ und $y$ sind zulässig für $(P)$ und $(D)$.\\
+D.h. $x$ und $y$ sind zulÃ¤ssig fÃ¼r $(P)$ und $(D)$.\\
 $\stackrel{\mbox{\scriptsize Satz vom kompl. Schlupf \ref{KomplSchl}}}{\Rightarrow}$
 $x$ und $y$ sind optimal.
 
-Eine Basis $B$ ist zulässig falls $x_{B} \geqq 0$.\\
-Der Simplexalgorithmus generiert eine Folge von zulässigen Basen. Jedes mal
-wird $y$ auf duale Zulässigkeit überprüft.\\
-$y$ dual zulässig $\rightarrow$ STOP (Optimalität)
+Eine Basis $B$ ist zulÃ¤ssig falls $x_{B} \geqq 0$.\\
+Der Simplexalgorithmus generiert eine Folge von zulÃ¤ssigen Basen. Jedes mal
+wird $y$ auf duale ZulÃ¤ssigkeit Ã¼berprÃ¼ft.\\
+$y$ dual zulÃ¤ssig $\rightarrow$ STOP (OptimalitÃ¤t)
 
-Sei $x$ zulässige aber nicht optimale Basislösung.\\
-Wähle $i\in T$ mit $y^{T}a_{i} < c_{i}$\\
-Plan: In $B$ wird ein Index entfernt und $i$ hinzugefügt.
+Sei $x$ zulÃ¤ssige aber nicht optimale BasislÃ¶sung.\\
+WÃ¤hle $i\in T$ mit $y^{T}a_{i} < c_{i}$\\
+Plan: In $B$ wird ein Index entfernt und $i$ hinzugefÃ¼gt.
 
-Wir lösen $A_{B}z = a_{i}$ (d.h. z ist die i-te Spalte nach
+Wir lÃ¶sen $A_{B}z = a_{i}$ (d.h. z ist die i-te Spalte nach
 Transformation durch die Basis).\\
-Für $\epsilon > 0$ ersetzen wir $x_{B}$ durch $x_{B} - \epsilon z$ und
-setzen $x_{i} = \epsilon$ und erhalten eine neue Lösung von $A x=b$ mit
+FÃ¼r $\epsilon > 0$ ersetzen wir $x_{B}$ durch $x_{B} - \epsilon z$ und
+setzen $x_{i} = \epsilon$ und erhalten eine neue LÃ¶sung von $A x=b$ mit
 Zielfunktionswert:\\
 \[\begin{array}{rcl}
 c_{B}^{T} (x_{B} - \epsilon z) + c_{i} \epsilon &=& c_{B}^{T} x_{B} +
@@ -792,15 +792,15 @@ c_{B}^{T} (x_{B} - \epsilon z) + c_{i} \epsilon &=& c_{B}^{T} x_{B} +
 &=&c_{B}^{T} x_{B} + \epsilon (c_{i} -y^{T} a_{i})\\
 \end{array}\] 
 Es gilt $c_{i} - y^{T} a_{i} > 0$, d.h. jedes $\epsilon > 0$ verbessert die
-Lösung.\\
-Die neue Lösung soll zulässig bleiben, d.h. wir wählen:
+LÃ¶sung.\\
+Die neue LÃ¶sung soll zulÃ¤ssig bleiben, d.h. wir wÃ¤hlen:
 \[ \max \{\epsilon | x_{B} -\epsilon {z} \geqq 0 \}\]
-Falls das Maximum nicht existiert so ist (P) unbeschränkt $\rightarrow$
-STOP (Unbeschränktheit)\\
+Falls das Maximum nicht existiert so ist (P) unbeschrÃ¤nkt $\rightarrow$
+STOP (UnbeschrÃ¤nktheit)\\
 sonst existiert ein Index $J$ mit $z > 0$ und $(x_{B} - \epsilon_{z})_{j}
-=0$. Wir wählen $j$ als die Basis verlassenden Index. Dieser Test heißt
-"`ratio test"' (Verhältnistest).\\
-$j\in B$ mit $z_{j} > 0$ und Verhältnis $\frac{x_{j}}{z_{j}}$ minimal unter
+=0$. Wir wÃ¤hlen $j$ als die Basis verlassenden Index. Dieser Test heiÃŸt
+"`ratio test"' (VerhÃ¤ltnistest).\\
+$j\in B$ mit $z_{j} > 0$ und VerhÃ¤ltnis $\frac{x_{j}}{z_{j}}$ minimal unter
 $\frac{x_{k}}{z_{k}}$ mit $k \in B$\\
 Die neue Basis ist also $(B \wout \{j\}) \cup \{i\}$.
 
@@ -815,17 +815,17 @@ An dieser stelle eine Formulierung in Pseudo-Code
 
 \begin{algorithmic}
 \LOOP
-\STATE Finde die eindeutige Lösung von $y^{T}A_{B} = c_{B}^{T}$
-\IF{für alle $i \in T \wout B$ gilt: $y^{T} a_{i} \geqq c_{i}$}
-\STATE STOP: die Lösung ist optimal.
+\STATE Finde die eindeutige LÃ¶sung von $y^{T}A_{B} = c_{B}^{T}$
+\IF{fÃ¼r alle $i \in T \wout B$ gilt: $y^{T} a_{i} \geqq c_{i}$}
+\STATE STOP: die LÃ¶sung ist optimal.
 \ELSE 
-\STATE wähle $i$ mit $y^{T}a_{i} < c_{i}$
-\STATE Finde die eindeutige Lösung von $A_{B}z=a_{i}$
-\STATE Finde größtes $\epsilon \geqq 0$ mit $ x_{b} - \epsilon z \geqq 0$
+\STATE wÃ¤hle $i$ mit $y^{T}a_{i} < c_{i}$
+\STATE Finde die eindeutige LÃ¶sung von $A_{B}z=a_{i}$
+\STATE Finde grÃ¶ÃŸtes $\epsilon \geqq 0$ mit $ x_{b} - \epsilon z \geqq 0$
 \IF{ $\nexists \epsilon$ }
-\STATE STOP: Problem ist unbeschränkt
+\STATE STOP: Problem ist unbeschrÃ¤nkt
 \ELSE
-\STATE wähle $j \in B$ mit $z_{j} > 0$ und $(x_{B} - \epsilon_{z})_{j}
+\STATE wÃ¤hle $j \in B$ mit $z_{j} > 0$ und $(x_{B} - \epsilon_{z})_{j}
 = 0$
 \STATE Ersetze $B$ durch $(B \cup \{i\}) \wout \{j\}$
 \STATE Ersetze $x_{B}$ durch $x_{B} - \epsilon z$
@@ -846,7 +846,7 @@ Gegeben ist das folgende lineare Problem:
 &\multicolumn{5}{r}{x_{1},\; x_{2}, \; x_{3}}&\geqq&0
 \end{array}
 \]
-Einführung von Schlupfvariablen um Gleichungen zu erhalten:
+EinfÃ¼hrung von Schlupfvariablen um Gleichungen zu erhalten:
 \[
 \begin{array}{rrcrcrcrcrcl}
 \max&3x_{1}&+&5x_{2}&+&4x_{3}\\
@@ -871,17 +871,17 @@ Die Anfangsbasis sei nun $B = \{4,\;5\}$ d.h. $A_{B} = \mat{rr}{1&0\\0&1}$
 {\bf 1. Iteration:}\\
 \[y^{T}A_{B} = c_{b}^{T} \Rightarrow (y_{1}, \; y_{2}) \mat{rr}{1&0\\0&1} = 
 (0, \; 0) \rightarrow y = \vect{0\\0}\]
-Für jedes $i$ aus $\{1, \; 2,\; 3\}$ gilt:
+FÃ¼r jedes $i$ aus $\{1, \; 2,\; 3\}$ gilt:
 \[ y^{T}a_{i} = 0 < c_{i}\]
 Wir nehmen $i=2$
 \[A_{B} z = a_{i} \; :\hspace{3mm} \mat{rr}{1&0\\0&1} \vect{z_{4}\\z_{5}} =
 \vect{2\\2} \rightarrow z = \vect{2\\2}\]
-größtes $\epsilon$ mit:
+grÃ¶ÃŸtes $\epsilon$ mit:
 \[x_{b} - \epsilon z \geqq 0  \; :\hspace{3mm} \vect{3\\5} - \epsilon
 \vect{2\\2} \geqq 0\]
 \[\rightarrow \epsilon = \frac{3}{2}\]
 
-Für $j=4$ ist $z_{j} =2 > 0$ und $\begin{array}[t]{cl}&(x_{B} -\epsilon z)\\ 
+FÃ¼r $j=4$ ist $z_{j} =2 > 0$ und $\begin{array}[t]{cl}&(x_{B} -\epsilon z)\\ 
 =&x_{4} -\epsilon z_{4}\\
 =&3- \frac{3}{2} \cdot 2 = 0\end{array}$
 
@@ -892,17 +892,17 @@ Neue Basis: $B=\{2,\; 5\}$
 {\bf 2. Iteration}\\
 \[y^{T} \mat{rr}{2&0\\2&1} = (5, \; 0) \rightarrow y =
 \vect{\frac{5}{2}\\0}\]
-Überprüfe $y^{T}a_{i} < c_{i}$
+ÃœberprÃ¼fe $y^{T}a_{i} < c_{i}$
 \[\begin{array}{l@{:\hspace{4mm}}rcrcl}
-\mbox{für } x_{1}& \mat{rr}{\frac{5}{2}&0} \vect{2\\1} &=& 5&\geqq&3
+\mbox{fÃ¼r } x_{1}& \mat{rr}{\frac{5}{2}&0} \vect{2\\1} &=& 5&\geqq&3
 \vspace{3mm}\\
-\mbox{für }x_{2}& \mat{rr}{\frac{5}{2}&0} \vect{1\\0}&=&\frac{5}{2}
+\mbox{fÃ¼r }x_{2}& \mat{rr}{\frac{5}{2}&0} \vect{1\\0}&=&\frac{5}{2}
 &\geqq&0\vspace{3mm}\\
-\mbox{für }x_{3}& \mat{rr}{\frac{5}{2}&0} \vect{1\\4}&=&\frac{5}{2} &<& 4
+\mbox{fÃ¼r }x_{3}& \mat{rr}{\frac{5}{2}&0} \vect{1\\4}&=&\frac{5}{2} &<& 4
 \rightarrow i=3\vspace{3mm}\\
 A_{B}z = a_{i} & \mat{rr}{2&0\\2&1} \vect{z_{2}\\z_{5}} &=&
 \vect{1\\4} &\rightarrow& z=\vect{\frac{1}{2}\\3}\end{array}\]
-Größtes $\epsilon$ mit:
+GrÃ¶ÃŸtes $\epsilon$ mit:
 \[x_{B} -\epsilon z \geqq 0: \;\; \vect{\frac{3}{2}\\2} - \epsilon
 \vect{\frac{1}{2}\\3} \geqq 0\]
 \[\rightarrow \epsilon = \frac{2}{3} \rightarrow j = 5\]
@@ -914,48 +914,48 @@ neue Basis $B = \{2, \; 3\}$
 {\bf 3. Iteration:}
 \[y^{T} \mat{rr}{2&1\\2&4} = (5, \; 4) \rightarrow y =
 \vect{2\\\frac{1}{2}}\]
-überprüfe $y^{T}a_{i} < c_{i}$
+Ã¼berprÃ¼fe $y^{T}a_{i} < c_{i}$
 \[\begin{array}{l@{:\hspace{4mm}}rcrcl}
-\mbox{für } x_{1}& \mat{rr}{2&\frac{1}{2}} \vect{2\\1}&=&
+\mbox{fÃ¼r } x_{1}& \mat{rr}{2&\frac{1}{2}} \vect{2\\1}&=&
 \frac{9}{2}&\geqq&
 3\vspace{3mm}\\
-\mbox{für } x_{4}& \mat{rr}{2&\frac{1}{2}} \vect{1\\0} &=& 2&\geqq
+\mbox{fÃ¼r } x_{4}& \mat{rr}{2&\frac{1}{2}} \vect{1\\0} &=& 2&\geqq
 &0\vspace{3mm} \\
-\mbox{für } x_{5}& \mat{rr}{2&\frac{1}{2}} \vect{0\\1} &=& \frac{1}{2}&\geqq&
+\mbox{fÃ¼r } x_{5}& \mat{rr}{2&\frac{1}{2}} \vect{0\\1} &=& \frac{1}{2}&\geqq&
 0\end{array}\]
-$\rightarrow$ Lösung ist optimal.\\
+$\rightarrow$ LÃ¶sung ist optimal.\\
 {\bf Frage:} Terminiert das Verfahren?\\
 Wenn immer $\epsilon > 0:$ Ja denn es gibt nur endlich viele Basen.\\
 {\bf Problem:} Im Fall $\epsilon = 0$ haben wir keine ZF-Verbesserung. Eine
-Folge solcher degenerierter Iterationen kann zurück zur selben Basis
-führen. $\rightarrow$ keine Terminierung.
+Folge solcher degenerierter Iterationen kann zurÃ¼ck zur selben Basis
+fÃ¼hren. $\rightarrow$ keine Terminierung.
 
 Aber es gibt Regeln zur Wahl von $i$ und $j$ die solche "`Zyklen"'
 verhindern. Mit einer solchen sog. Pivotregel terminiert das Verfahren
 immer. Blands Regel: Nimm den kleinsten Index.
 
-Wie erhält man nun aber die erste zulässige Basis:
+Wie erhÃ¤lt man nun aber die erste zulÃ¤ssige Basis:
 \begin{itemize}
 \item  Man multipliziere die
 Gleichungen mit negativer rechter Seite mit $-1$, so dass das neue System
 die rechte Seite $b\geqq0$ hat.
-\item  Man löse das folgende LP:
+\item  Man lÃ¶se das folgende LP:
 \[\begin{array}{rcl}
 (\mbox{HLP}) \hspace{6mm} \max \displaystyle \sum^{n}_{i=1} -x_{i}'\vspace{2mm}\\
 (A, \; I) \vect{x\\x'} &=&b\vspace{2mm}\\
 \vect{x\\x'}&\geqq&0
 \end{array}\]
-mit $I$ als erste Basismatrix ($I$ natürlich immer linear unabhängig).
+mit $I$ als erste Basismatrix ($I$ natÃ¼rlich immer linear unabhÃ¤ngig).
 
-{\bf Anmerkung:} Es gilt (P) hat eine zulässige Lösung g.d.w. (HLP) eine
-Optimallösung mit Wert 0 hat.
+{\bf Anmerkung:} Es gilt (P) hat eine zulÃ¤ssige LÃ¶sung g.d.w. (HLP) eine
+OptimallÃ¶sung mit Wert 0 hat.
 
 \item Ist der Optimalwert von (HLP) kleiner als 0:
 \begin{itemize}
-\item[\mbox{}] STOP: (P) hat keine Zulässige Lösung
+\item[\mbox{}] STOP: (P) hat keine ZulÃ¤ssige LÃ¶sung
 \end{itemize}
 sonst sei $B$ die optimale Basis.
-\item Löse:
+\item LÃ¶se:
 \[\begin{array}{rcl}
 (\mbox{P}') \hspace{6mm} \max (c^{T}, \; 0^{T}) \vect{x\\x'}\vspace {2mm}\\
 s.t. \hspace{6mm} (A, I) \vect{x\\x'} &=&b\vspace{2mm}\\
@@ -963,9 +963,9 @@ s.t. \hspace{6mm} (A, I) \vect{x\\x'} &=&b\vspace{2mm}\\
 \end{array}\]
 mit Startbasis $B$.
 
-{\bf Anmerkung:} Es gibt Techniken, um die künstliche Variablen im Laufe 
-des Verfahrens zu minimieren und zwar die künstlichen Nichtbasisvariablen 
-sofort und die künstlichen Basisvariablen durch geeignete Pivots.
+{\bf Anmerkung:} Es gibt Techniken, um die kÃ¼nstliche Variablen im Laufe 
+des Verfahrens zu minimieren und zwar die kÃ¼nstlichen Nichtbasisvariablen 
+sofort und die kÃ¼nstlichen Basisvariablen durch geeignete Pivots.
 \end{itemize}
 
 

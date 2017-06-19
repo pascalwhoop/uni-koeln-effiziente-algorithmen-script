@@ -1,5 +1,5 @@
 
-\subsubsection{Definitionen für ungerichtete Graphen}
+\subsubsection{Definitionen fÃ¼r ungerichtete Graphen}
 
 Ungerichteter Graph $G=(V,\; E)$\\
 Knotenmenge $V=V(G)$\\
@@ -33,7 +33,7 @@ entfernen der Knoten in $B$ und aller inzidenter Kanten. Kann auch als
 $G(V\wout B)$ oder als durch $V \wout B $ indizierter Subgraph
 bezeichnet werden. 
 
-"`$G \wout x$"' statt $G \wout \{x\}$ für $x \in V$ oder $x \in
+"`$G \wout x$"' statt $G \wout \{x\}$ fÃ¼r $x \in V$ oder $x \in
 E$\\
 
 $n=|V|$ \hspace{4mm} $m = |E|$ \hspace{4mm} Konvention\\
@@ -45,7 +45,7 @@ Weg $P$ in $G$: Folge $\begin{array}[t]{l}
 v_{0}, e_{1}, v_{1}, \ldots, e_{k}, v_{k}\\
 v_{0}, v_{1}, \ldots, v_{k} \in V, \hspace{3mm} e_{1}, e_{2}, \ldots, e_{k}
 \in E\\
-e_{i} = v_{i-1} v_{i} \; \; \; \mbox{für}\; \;  1 \leqq i \leqq k
+e_{i} = v_{i-1} v_{i} \; \; \; \mbox{fÃ¼r}\; \;  1 \leqq i \leqq k
 \end{array}$
 
 "`Weg von $v_{0}$ nach $v_{k}$"' oder "`$(v_{0}, v_{k})$-Weg"'\\
@@ -59,12 +59,12 @@ Ein Weg ist ein Kreis falls:
 \end{enumerate}
 
 $G$ hat $(u,v)$-Weg $\Rightarrow$ $G$ hat einen einfachen $(u,v)$-Weg\\
-Länge von $P= v_{0}, e_{1}, v_{1}, \ldots, e_{k}, v_{k}$: $k$
+LÃ¤nge von $P= v_{0}, e_{1}, v_{1}, \ldots, e_{k}, v_{k}$: $k$
 
-$G$ ist zusammenhängend :$\Leftrightarrow$ zu jedem Knotenpaar $(u,v)$ aus $V$
+$G$ ist zusammenhÃ¤ngend :$\Leftrightarrow$ zu jedem Knotenpaar $(u,v)$ aus $V$
 gibt es einen $(u,v)$-Weg
 
-\section{Minimal aufspanndende Bäume} 
+\section{Minimal aufspanndende BÃ¤ume} 
 
 Beispiel:
 
@@ -72,14 +72,14 @@ Beispiel:
 \includegraphics[width=10cm]{bilder/2-1NetzwerkP}
 
 Dieses Netzwerk sei ein Kommunikationsnetzwerk und bilde Terminals ab und 
-die den Kanten zugeordneten Zahlen entsprächen den Kosten für die direkte 
+die den Kanten zugeordneten Zahlen entsprÃ¤chen den Kosten fÃ¼r die direkte 
 Verbindung zwischen den Terminals damit ergibt sich das
 
 \subsubsection{Verbindungs-Problem}
 
-Gegeben: Ein zusammenhängender Graph $G=(V,E)$ und positive Kosten für alle
+Gegeben: Ein zusammenhÃ¤ngender Graph $G=(V,E)$ und positive Kosten fÃ¼r alle
 $e \in E$\\
-Gesucht: Ein aufspannender, zusammenhängender Subgraph mit minimalen
+Gesucht: Ein aufspannender, zusammenhÃ¤ngender Subgraph mit minimalen
 Kosten.
 
 \begin{lemma}
@@ -87,18 +87,18 @@ Eine Kante $e=u v \in E$ ist Kante eines Kreises in $G$ genau dann, wenn es
 einen $(u,v)$-Weg in $G \wout e$ gibt.
 \end{lemma}
 
-$\rightarrow$ die Optimallösung des Verbindungs-Problems hat keine Kreise
+$\rightarrow$ die OptimallÃ¶sung des Verbindungs-Problems hat keine Kreise
 
-Einen Graphen ohne Kreis nennt man auch Wald, einen zusammenhängenden Wald
+Einen Graphen ohne Kreis nennt man auch Wald, einen zusammenhÃ¤ngenden Wald
 nennt man auch Baum.
 
 \subsubsection{Minimal aufspannendes Baum-Problem}
 
-Gegeben: Ein zusammenhängender Graph $G(V,E)$ $c_{e} \in R$ für alle $e 
+Gegeben: Ein zusammenhÃ¤ngender Graph $G(V,E)$ $c_{e} \in R$ fÃ¼r alle $e 
 \in E$\\
 Gesucht: Der Aufspannende Baum in G mit minimalen Kosten (MSB) im
 Englischen (MST = minimal spanning tree). Das Verbindungs-Problem und das
-MSB-Problem sind äquivalent für $c_{e} > 0$.
+MSB-Problem sind Ã¤quivalent fÃ¼r $c_{e} > 0$.
 
 Nun ein bisschen Wiederholung aus Informatik I:\\
 Notation: $G = (V,E)$\\
@@ -108,23 +108,23 @@ $\delta(A)$ wird auch als "`Schnitt in G"' bezeichnet (indiziert von $A
 \subseteq V$)\\ 
 $\gamma(A) = \{u,v \in A, \; \; u v \in E\}$ ergibt alle Kanten in $A$
 
-\subsubsection{Prims Algorithmus für MSB}
+\subsubsection{Prims Algorithmus fÃ¼r MSB}
 
 \begin{algorithmic}
 \STATE Initialisiere $H=\left(V(H),T\right)$ als $\left\{\{r\},
 \varnothing\right\}$
 \WHILE{(H ist nicht aufspannender Baum)}
 
-\STATE Füge eine Kante minimaler Kosten aus $\delta\left(V(H)\right)$ zu $H$
+\STATE FÃ¼ge eine Kante minimaler Kosten aus $\delta\left(V(H)\right)$ zu $H$
 \ENDWHILE
 \end{algorithmic}
 
-In unserem Kommunikationsproblem erhält man nun, wenn man bei Knoten a 
-anfängt:
+In unserem Kommunikationsproblem erhÃ¤lt man nun, wenn man bei Knoten a 
+anfÃ¤ngt:
 
 \begin{tabular}{|c|r|}
 \hline
-{\bf Hinzugefügte Kante}& {\bf Kosten}\\
+{\bf HinzugefÃ¼gte Kante}& {\bf Kosten}\\
 \hline
 (a, b)& 16\\
 \hline
@@ -140,7 +140,7 @@ anfängt:
 \hline
 \end{tabular}
 
-\subsubsection{Kruskals Algorithmus für MSB}
+\subsubsection{Kruskals Algorithmus fÃ¼r MSB}
 
 \begin{algorithmic}
 \STATE Sortiere E als $<e_{1}, e_{2}, \ldots, e_{m}>$, so dass $c_{e_{1}} \leqq
@@ -148,17 +148,17 @@ c_{2} \leqq \ldots \leqq c_{e_{m}}$
 \STATE Initialisiere $H=(V,T)$ als $(V, \varnothing)$
 \FOR{ $i = 1$ to $m$} 
 \STATE {\bf if} Endknoten von $e_{i}$ in verschiedenen Komponenten von $H$
-{\bf Then} Füge
+{\bf Then} FÃ¼ge
 $e_{i}$ zu T hinzu.
 \ENDFOR
 \end{algorithmic}
 
 
-mit unserem Beispiel erhält man:
+mit unserem Beispiel erhÃ¤lt man:
 
 \begin{tabular}{|c|r|}
 \hline
-{\bf Hinzugefügte Kante}& {\bf Kosten}\\
+{\bf HinzugefÃ¼gte Kante}& {\bf Kosten}\\
 \hline
 (g, k)& 12\\
 \hline
@@ -174,13 +174,13 @@ mit unserem Beispiel erhält man:
 \hline
 \end{tabular}
 
-Beide Algorithmen können mit einer Laufzeit $O(m \log n)$ implementiert
+Beide Algorithmen kÃ¶nnen mit einer Laufzeit $O(m \log n)$ implementiert
 werden.
 
-Hier legte Prof. Jünger eine Folie auf mit Punkten um die herum ein
-Analogrechner Kreise "`auf bläst"' bis zwei Kreise aneinander stoßen. Wenn
-zwei Kreise aneinander stoßen und zwischen den Komponenten noch keine
-Verbindung besteht so wird eine Kante dort eingefügt. Mag es jemand malen?
+Hier legte Prof. JÃ¼nger eine Folie auf mit Punkten um die herum ein
+Analogrechner Kreise "`auf blÃ¤st"' bis zwei Kreise aneinander stoÃŸen. Wenn
+zwei Kreise aneinander stoÃŸen und zwischen den Komponenten noch keine
+Verbindung besteht so wird eine Kante dort eingefÃ¼gt. Mag es jemand malen?
 
 \subsubsection{MSB und lineare Optimierung}
 
@@ -196,17 +196,17 @@ x_{e} &\geqq& 0 \; \; \forall e \in E
 \end{array}$
 
 In diesem Fall wird explizit nicht $x_{e} \in \{0,1\}$ gefordert, da die
-Ganzzahligkeits-Bedingung das Problem sehr schwer werden lässt.
+Ganzzahligkeits-Bedingung das Problem sehr schwer werden lÃ¤sst.
 
-Die Inzidenzvektoren $x^{0}$ von aufspannenden Bäumen T sind zulässige
-Lösungen und $c^{T}x^{0} = c(T) $, d.h. gleicher Zielfunktionswert.\\
-$\Rightarrow$ der Wert von (LPMSB) ist eine untere Schranke für die Kosten
+Die Inzidenzvektoren $x^{0}$ von aufspannenden BÃ¤umen T sind zulÃ¤ssige
+LÃ¶sungen und $c^{T}x^{0} = c(T) $, d.h. gleicher Zielfunktionswert.\\
+$\Rightarrow$ der Wert von (LPMSB) ist eine untere Schranke fÃ¼r die Kosten
 eines MSB.
 
 \begin{satz}
-Sei $x^{0}$ der Inzidenzvektor eines MSB bezüglich der Kosten $c_{e}$. Dann
-ist $x^{0}$ eine Optimallösung von LPMSB.\\
-Beweis: Für eine Kanten-Teilmenge $A \subseteq E$ sei $\kappa(A)$ die Anzahl
+Sei $x^{0}$ der Inzidenzvektor eines MSB bezÃ¼glich der Kosten $c_{e}$. Dann
+ist $x^{0}$ eine OptimallÃ¶sung von LPMSB.\\
+Beweis: FÃ¼r eine Kanten-Teilmenge $A \subseteq E$ sei $\kappa(A)$ die Anzahl
 der Zusammenhangs-Komponenten des Subgraphen $(V,A)$ von $G=(V,E)$:
 
 \[\begin{array}{rcl}
@@ -217,8 +217,8 @@ x_{e} &\geqq& 0 \; \; \forall e \in E
 \end{array}\]
 \end{satz}
 
-Beweis: Das (LPMSB') hat die gleiche zulässigen Lösungen wie das (LPMSB)
-d.h. auch die gleiche Optimallösung. In $x(A) \leqq |V| - \kappa (A)$
+Beweis: Das (LPMSB') hat die gleiche zulÃ¤ssigen LÃ¶sungen wie das (LPMSB)
+d.h. auch die gleiche OptimallÃ¶sung. In $x(A) \leqq |V| - \kappa (A)$
 setzen wir speziell $A = \gamma(S)$ und erhalten:
 
 \[\begin{array}{rcl}
@@ -237,9 +237,9 @@ x(A) &\leqq & \displaystyle \sum_{i=1}^{k} x\left(\gamma (s_{i})\right)\\
 &=& |V|-k
 \end{array}$
 
-Es reicht also zu zeigen $x^{0}$ ist optimal für (LPMSB'). Wir zeigen dies
-nun für ein $x^{0}$ das Ergebnis aus Kruskals Algorithmus ist. Im (LPMSB')
-können wir für die Zielfunktion auch schreiben $\-max -c^{T}x$. Damit
+Es reicht also zu zeigen $x^{0}$ ist optimal fÃ¼r (LPMSB'). Wir zeigen dies
+nun fÃ¼r ein $x^{0}$ das Ergebnis aus Kruskals Algorithmus ist. Im (LPMSB')
+kÃ¶nnen wir fÃ¼r die Zielfunktion auch schreiben $\-max -c^{T}x$. Damit
 erhalten wir als duales LP:
 \[
 \begin{array}{rcl}
@@ -250,8 +250,8 @@ e \in A} y_{A} &\geqq& -c_{e} \; \; \forall e \in E\\
 y_{A} &\geqq& 0 \; \; \forall A \subset E
 \end{array}
 \]
-$y_{E}$ ist in diesem Fall nicht vorzeichen-beschränkt. Mittels Kruskals
-Algorithmus konstruieren wir nun eine Optimallösung von (DLPMSB').
+$y_{E}$ ist in diesem Fall nicht vorzeichen-beschrÃ¤nkt. Mittels Kruskals
+Algorithmus konstruieren wir nun eine OptimallÃ¶sung von (DLPMSB').
 
 Sei $e_{1}, e_{2}, \ldots, e_{m}$ die sortierte Folge der Kanten in
 Kruskals Algorithmus.
@@ -274,8 +274,8 @@ dass } e \in A} y^{0}_{A} &=& \displaystyle \sum^{m}_{j=1} y^{0}_{R_{j}} =
 &=& -c_{e_ {i}} = - c_{e} \end{array}
 \]
 
-$\Rightarrow$ alle "`$\geqq$"' sind mit "`="' erfüllt.\\
-$\Rightarrow \left\{ \begin{array}{l}y^{0} \mbox{ ist zulässig für
+$\Rightarrow$ alle "`$\geqq$"' sind mit "`="' erfÃ¼llt.\\
+$\Rightarrow \left\{ \begin{array}{l}y^{0} \mbox{ ist zulÃ¤ssig fÃ¼r
 (DLPMSB')}\\
 \mbox{kompl. Schlupf $x_{e}^{0} > 0 \Rightarrow \displaystyle \sum_{A
 \subset E \mbox{ so dass } e \in A} y_{A} = -c_{e} \; \; \forall e \in E$}
@@ -284,34 +284,34 @@ $\Rightarrow \left\{ \begin{array}{l}y^{0} \mbox{ ist zulässig für
 Noch zu zeigen:
 \[\mbox{Kompl. Schlupf: } y_{A}^{0} > 0 \Rightarrow x^{0}(A) = | V | -
 \kappa(A)\]
-Sei $y_{A} > 0 \Rightarrow A = R_{i}$ für $1\leqq i \leqq m$\\
+Sei $y_{A} > 0 \Rightarrow A = R_{i}$ fÃ¼r $1\leqq i \leqq m$\\
 Annahme: $x^{0} (R_{i}) < |V| - \kappa(R_{i})$\\
 $x^{0} (R_{0}) = |V| - \kappa(R_{0})$ 
-$\Rightarrow \exists e \in R_{i}$: Hinzufügen von $e$ zu $T \cap R_{i}$
+$\Rightarrow \exists e \in R_{i}$: HinzufÃ¼gen von $e$ zu $T \cap R_{i}$
 erniedrigt die Zahl der Zusammenhangs-Komponenten von $(V,R_{i} \cap T)$\\
-$\Rightarrow e \not \in T \hspace{3mm} \lightning$ denn Kruskal hätte $e$
-gewählt, d.h. $e \in T$
+$\Rightarrow e \not \in T \hspace{3mm} \lightning$ denn Kruskal hÃ¤tte $e$
+gewÃ¤hlt, d.h. $e \in T$
 
-Damit ergibt sich nun insgesamt: $x^{0},\;y^{0}$ sind zulässig und erfüllen
-die komplementären Schlupfbedingungen.\\
-$\Rightarrow x^{0}$ ist optimal für (LPMSB')\\
-$\Rightarrow x^{0}$ ist optimal für (LPMSB)
+Damit ergibt sich nun insgesamt: $x^{0},\;y^{0}$ sind zulÃ¤ssig und erfÃ¼llen
+die komplementÃ¤ren Schlupfbedingungen.\\
+$\Rightarrow x^{0}$ ist optimal fÃ¼r (LPMSB')\\
+$\Rightarrow x^{0}$ ist optimal fÃ¼r (LPMSB)
 
 Bemerkung: Dies beweist die Korrektheit von Kruskals Algorithmus.
 
-\section{Kürzeste Wege}
-Anwendung: Kürzeste Fahrstrecke von A nach B in einem Straßen-Netzwerk.\\
-Es gibt auch Einbahnstraßen $\rightarrow$ gerichtete Graphen\\
+\section{KÃ¼rzeste Wege}
+Anwendung: KÃ¼rzeste Fahrstrecke von A nach B in einem StraÃŸen-Netzwerk.\\
+Es gibt auch EinbahnstraÃŸen $\rightarrow$ gerichtete Graphen\\
 Gerichteter Graph $G=(V,E)$ auch genannt "`Digraph"' mit \\
 $V=V(G)$ Knoten \\
-$E(G)$ gerichtete Kanten oder auch Bögen (arc)\\
+$E(G)$ gerichtete Kanten oder auch BÃ¶gen (arc)\\
 \begin{tabular}{ll}
-Für $e \in E$:& $t(e)$: Ende von $e$ (tail)\\
+FÃ¼r $e \in E$:& $t(e)$: Ende von $e$ (tail)\\
 &$h(e)$: Spitze von $e$ (head)
 \end{tabular}
  
 Die anderen Begriffe gelten analog zu nicht gerichteten Graphen.\\
-Den zu einem gerichteten Graphen zugeordneten ungerichteten Graphen erhält
+Den zu einem gerichteten Graphen zugeordneten ungerichteten Graphen erhÃ¤lt
 man durch das weglassen der Richtung.\\
 Parallele Kanten sind Kanten die dieselbe Spitze und und die gleichen
 Enden haben. Antiparrallele Kanten sind zwei Kanten bei denen die eine dort
@@ -325,39 +325,39 @@ nicht.
 $e=u v \rightarrow t(e)=u$, $h(e) = v$
 
 Kanten $e_{i}$ eines Weges $P= v_{0}, e_{1}, v_{1}, e_{2}, \ldots e_{k},
-v_{k}$. Der Weg heißt vorwärts gerichtet falls $t(e_{i})=v_{i-1}$ und
+v_{k}$. Der Weg heiÃŸt vorwÃ¤rts gerichtet falls $t(e_{i})=v_{i-1}$ und
 $h(e_{i})=v_{i}$. Analog ist ein gerichteter Kreis ein Kreis bei dem alle
-Kanten vorwärts gerichtet sind.
+Kanten vorwÃ¤rts gerichtet sind.
 
-\subsubsection{Kürzeste Wege Problem}
+\subsubsection{KÃ¼rzeste Wege Problem}
 Gegeben: Digraph $G$, Knoten $v$ aus $V$, Gewichte $c_{e} \in \RR \; \forall 
 e \in E$ 
 
-Gesucht: Für alle $v \in V$ einen gerichteten Weg von $r$ nach $v$ mit
+Gesucht: FÃ¼r alle $v \in V$ einen gerichteten Weg von $r$ nach $v$ mit
 minimalen Kosten, falls ein solcher existiert.
 
-Konvention: Zur Vermeidung der Nicht-Existenz eines $(r,v)$-Weges fügt man
+Konvention: Zur Vermeidung der Nicht-Existenz eines $(r,v)$-Weges fÃ¼gt man
 Kanten $r v \in E$ mit sehr hohem Gewicht hinzu.
 
-Ohne Beschränkung der Allgemeinheit kann von einem einfachen Graphen
-ausgegangen werden, da man alle parallelen Kanten auf die günstigste Kante
+Ohne BeschrÃ¤nkung der Allgemeinheit kann von einem einfachen Graphen
+ausgegangen werden, da man alle parallelen Kanten auf die gÃ¼nstigste Kante
 reduziert.
 
-Die Grundidee der folgenden Algorithmen sieht dabei folgendermaßen aus:
+Die Grundidee der folgenden Algorithmen sieht dabei folgendermaÃŸen aus:
 \begin{itemize}
 \item $\forall v  \in V$ gerichteter Weg von $r$ nach $v$ mit Kosten 
 $y_{v}$
 \item Finde eine Kante $v w \in E$ mit $y_{v} + c_{v w} < y_{w}$: dann existiert ein
-kürzester Weg (in Bezug auf alle Wege die wir bisher kennen) von $v$ nach
+kÃ¼rzester Weg (in Bezug auf alle Wege die wir bisher kennen) von $v$ nach
 $w$ mit Kosten $y_{v} + c_{v w}$. 
-\item Sind die $y_{v}\;\; (v \in V)$ Kosten für kürzeste $(u,v)$-Wege so 
+\item Sind die $y_{v}\;\; (v \in V)$ Kosten fÃ¼r kÃ¼rzeste $(u,v)$-Wege so 
 gilt:\\ ($\ast$) $y_{v} + c_{v w} \geqq y_{w}$\\
-$y \in R^{v}$ heißt zul. Potential falls  ($\ast$) gilt und $y_{r}=0$
+$y \in R^{v}$ heiÃŸt zul. Potential falls  ($\ast$) gilt und $y_{r}=0$
 Falls $y_{r} \not= 0$, einfach $y_{v}$ durch $y_{v} - y_{r}$ ersetzen.  
 \end{itemize}
 
 \begin{lemma} \label{Potential}
-Sei $y$ ein zulässiges Potential und $P$ ein $(r,v)$-Weg (gerichtet), dann
+Sei $y$ ein zulÃ¤ssiges Potential und $P$ ein $(r,v)$-Weg (gerichtet), dann
 gilt: $c(P) \geqq y_{v}$\\
 \end{lemma}
 
@@ -368,12 +368,12 @@ y_{v_{i-1}}) = y_{v_{k}} - \underbrace{y_{v_{0}}}_{=0} = y_{v_{k}}
 \hspace{3mm} \mbox{q.e.d}\]
 
 \begin{lemma}
-Es existiert eine Lösung des Kürzeste Wege Problems, die nur Kanten eines
-aufspannenden Baumes enthält
+Es existiert eine LÃ¶sung des KÃ¼rzeste Wege Problems, die nur Kanten eines
+aufspannenden Baumes enthÃ¤lt
 \end{lemma}
 
-Beweis: Subwege von kürzesten Wegen sind kürzeste Wege\\
-$\Rightarrow \forall v \in V, \; \; v \not=r$ genügt die letzte Kante
+Beweis: Subwege von kÃ¼rzesten Wegen sind kÃ¼rzeste Wege\\
+$\Rightarrow \forall v \in V, \; \; v \not=r$ genÃ¼gt die letzte Kante
 eines gerichteten $(r,v)$-Weges
 
 \subsubsection{Fords Algorithmus}
@@ -433,12 +433,12 @@ Hier terminiert das Verfahren nicht, da $y_{a}, \; y_{b}, \; y_{c}, \;
 \rightarrow - \infty$.\\
 Grund: negativer Kreis $a b d$.
 
-Der Algorithmus soll dies erkennen. Es gibt aber auch Anwendungen für
-negative Kreise, z.B. im Währungstausch.
+Der Algorithmus soll dies erkennen. Es gibt aber auch Anwendungen fÃ¼r
+negative Kreise, z.B. im WÃ¤hrungstausch.
 
 \begin{tabular}{c}
 \includegraphics[width=8cm]{bilder/2-2Arbitrage}\\
-Arbitrage-Möglichkeiten mit den Kursen vom 18.11.2002
+Arbitrage-MÃ¶glichkeiten mit den Kursen vom 18.11.2002
 \end{tabular}
 
 Gesucht sind also Folgen $v_{0}, v_{1}, \ldots, v_{k} = v_{0}$ mit:
@@ -456,7 +456,7 @@ Algorithmus:
 \item Ist $y_{v} \not= \infty$ so ist $y_{v}$ Kosten eines einfachen 
 $(r,v)$-Weges 
 \item Ist $p(v) \not = -1$ so definiert $p$ einen einfachen $(r,v)$-Weg mit
-Kosten höchstens $y_{v}$ 
+Kosten hÃ¶chstens $y_{v}$ 
 \end{enumerate}
 \end{lemma}
 
@@ -482,12 +482,12 @@ $\Rightarrow \exists v_{0}, v_{1}, \ldots , v_{k}$, $v_{k}= v_{0}$\\
 $p(v_{i})=v_{i-1}$  \hspace{3mm} $(1\leqq i \leqq k)$\\
 Die Kosten des geschlossenen Weges sind $\leqq 0$, da $c_{p(v)v}  \leqq
 y_{v} - y_{p(v)}$\\
-Die letzte Änderung ergibt: $p(v)$ mit Verkleinerung von $y_{p}(v_{i})$
+Die letzte Ã„nderung ergibt: $p(v)$ mit Verkleinerung von $y_{p}(v_{i})$
 $\Rightarrow$ "`$<$"'\\
 $\Rightarrow$ negativer Kreis, Widerspruch  
 \end{enumerate}
 
-Die Kosten sind höchstens $y_{v}$:
+Die Kosten sind hÃ¶chstens $y_{v}$:
 Es gebe einen einfachen $(r,v)$-Weg und sei $v_{0}, e_{1}, v_{1}, \ldots,
 e_{k}, v_{k}$ mit $v_{0} = r$, $v_{k}=v$, $p(v_{i}) = v_{i-1}, \; \; \; 
 (1 \leqq i \leqq k)$\\
@@ -501,22 +501,22 @@ endlich vielen Schritten mit einem korrekten Ergebnis
 
 Beweis:\\
 $\exists$ nur endlich viele einfache gerichtete Wege in $G$.\\
-Lemma \ref{Ford1} $\Rightarrow$ Es gibt nur endlich viele mögliche Werte
-für die $y_{v}$. In jedem Schritt wird ein $y_{v}$ erniedrigt und keines
-erhöht $\rightarrow$ endlich viele Schritte.
+Lemma \ref{Ford1} $\Rightarrow$ Es gibt nur endlich viele mÃ¶gliche Werte
+fÃ¼r die $y_{v}$. In jedem Schritt wird ein $y_{v}$ erniedrigt und keines
+erhÃ¶ht $\rightarrow$ endlich viele Schritte.
 
-Bei Terminierung definiert $p$ einfache $(r,v)$-gerichtete Wege für alle
-$v \in V$ mit Kosten höchstens $y_{v}$.\\
-Lemma \ref{Potential} $\Rightarrow$ Es gibt keine kürzere
+Bei Terminierung definiert $p$ einfache $(r,v)$-gerichtete Wege fÃ¼r alle
+$v \in V$ mit Kosten hÃ¶chstens $y_{v}$.\\
+Lemma \ref{Potential} $\Rightarrow$ Es gibt keine kÃ¼rzere
 $(r,v)$-gerichtete Wege.
 
 \begin{satz} \label{Potential2}
-$(G,c)$ hat ein zulässiges Potential genau dann, wenn es keinen negativen
+$(G,c)$ hat ein zulÃ¤ssiges Potential genau dann, wenn es keinen negativen
 Kreis gibt.
 \end{satz}
 
 Beweis:\\
-"`$\Rightarrow$"' negativer Kreis $\Rightarrow$ kein zulässiges Potential
+"`$\Rightarrow$"' negativer Kreis $\Rightarrow$ kein zulÃ¤ssiges Potential
 
 "`$\Leftarrow$"' $(G,c)$ habe keinen negativen Kreis:\\
 Man konstruiere folgenden Graphen $(G',c')$:
@@ -525,8 +525,8 @@ Man konstruiere folgenden Graphen $(G',c')$:
 
 $r$ ist jeweils mit allen Knoten von $G$ durch gerichtete Kanten des
 Gewichtes 0 verbunden. Damit hat $(G',c')$ keinen negativen Kreis.
-Anwendung von Fords Algorithmus auf $(G',c')$ gibt zulässiges Potential für 
-$(G',c')$. Diese ist auch zulässiges Potential für $(G,c)$. q.e.d.
+Anwendung von Fords Algorithmus auf $(G',c')$ gibt zulÃ¤ssiges Potential fÃ¼r 
+$(G',c')$. Diese ist auch zulÃ¤ssiges Potential fÃ¼r $(G,c)$. q.e.d.
 
 Satz \ref{Potential2} Gilt auch ohne Annahme der Existenz von
 $(r,v)$-Wegen.\\
@@ -535,33 +535,33 @@ Die Suche nach einfachen (r,v)-Wegen (endlich viele!) ist jedoch
 NP-schwierig.
 
 \begin{satz}
-Falls $c_{e} \in \ZZ$ für alle $e \in E$:
+Falls $c_{e} \in \ZZ$ fÃ¼r alle $e \in E$:
 \[ c = 2 \max_{e \in E} | c_{e} | + 1 \]
 und $(G,c)$  hat keinen negativen Kreis so terminiert Fords Algorithmus
-nach höchstens $c n^{2}$ Iterationen
+nach hÃ¶chstens $c n^{2}$ Iterationen
 \end{satz}
-Beweis: Übungsaufgabe
+Beweis: Ãœbungsaufgabe
 
-\subsection{Zulässige Potentiale und lineare Optimierung}
+\subsection{ZulÃ¤ssige Potentiale und lineare Optimierung}
 
 \begin{satz} 
 
 Sei $G$ ein gerichteter Graph, $r,s \in V$, $c \in \RR^{E}$\\
-Falls für alle $v \in V$ ein kürzester  $(r,v)$-Weg existiert, so gilt:\\
+Falls fÃ¼r alle $v \in V$ ein kÃ¼rzester  $(r,v)$-Weg existiert, so gilt:\\
 \[\begin{array}{cl}
 &\min \left\{c(P) | P \mbox{ ist $(r,s)$ gerichteter Weg} \right\}\\
-=& \max \left\{ y_{s} | y \mbox{ ist ein zulässiges Potential}\right\}
+=& \max \left\{ y_{s} | y \mbox{ ist ein zulÃ¤ssiges Potential}\right\}
 \end{array}\]
 \end{satz}
 Beweis: Analyse von Fords Algorithmus
 
-Als duales LP formuliert erhält man (ohne Bedingung $y_{r}=0$):
+Als duales LP formuliert erhÃ¤lt man (ohne Bedingung $y_{r}=0$):
 \[\begin{array}{rcl}
 \mbox{(DLPKW)} \hspace{7mm} \max y_{s} -y_{r}\\
 y_{w} - y_{v} \leqq c_{v w} \; \; \; \forall v,w \in E
 \end{array}\]
 
-Für das LP definieren wir:\\
+FÃ¼r das LP definieren wir:\\
 Sei $b_{v} = \left\{ \begin{array}{l} 1 \mbox{ falls } v =s\\
 -1 \mbox{ falls } r =v\\
 0 \mbox{ sonst}\\
@@ -574,7 +574,7 @@ Sei $b_{v} = \left\{ \begin{array}{l} 1 \mbox{ falls } v =s\\
 x_{v w} &\geqq & 0  \; \; \; \forall v w \in E
 \end{array}\]
 
-Jedem $(r,s)$-gerichteten Weg $P$ entspricht eine zulässige Lösung für
+Jedem $(r,s)$-gerichteten Weg $P$ entspricht eine zulÃ¤ssige LÃ¶sung fÃ¼r
 (LPKW) mit Wert $c(P)$.
 $x_{e}^{P} = $ Anzahl des Vorkommens von $e$ in $P$. ($\in \{0,1\}$ falls
 $P$ einfach ist).
@@ -608,7 +608,7 @@ c\hspace{12mm}\begin{tabular}{|rrrr|}
 \hline 3&1&1&2\\ \hline
 \end{tabular}
 
-Der Simplexalgorithmus betrachtet nun eine Folge von Basislösungen wobei
+Der Simplexalgorithmus betrachtet nun eine Folge von BasislÃ¶sungen wobei
 eine Basis einer "`max. linear unabh. Kantenteilmenge"' entspricht. Es ist
 also eine "`Spaltenbasis"' von A.
 
@@ -617,14 +617,14 @@ e \not\in B$.
 \[y_{w} - y_{v} = c_{v w} \forall v w \in B\]
 
 \begin{satz} \label{Spaltenb-Baum}
-Sei $G$ ein zusammenhängender gerichteter Graph, $A$ die Knoten-Kanten
+Sei $G$ ein zusammenhÃ¤ngender gerichteter Graph, $A$ die Knoten-Kanten
 Inzidenzmatrix.
 
 $A_{\cdot J}, \; \; J \subseteq E$ ist eine Spaltenbasis von $A$ genau dann
 wenn $J$ die Kantenmenge eines Aufspannenden Baumes in $G$ ist.
 \end{satz}
 
-Beweis: Übungsaufgabe
+Beweis: Ãœbungsaufgabe
 
 Baum $T_{1}$
 
@@ -678,20 +678,20 @@ reduzierte Kosten: $3-2 = 1 > 0$
 Die Gleichungen $y_{w} - y_{v} = c_{v w} \forall v w \in B$ gelten in Fords
 Algorithmus nicht immer, d.h. jede Iteration dieses speziellen Simplex
 Verfahrens entspricht einer Folge von Iterationen in Fords Algorithmus
-(Änderung des Baumes gefolgt von $y$-Änderungen bei gleichem Baum. 
+(Ã„nderung des Baumes gefolgt von $y$-Ã„nderungen bei gleichem Baum. 
 
 \subsection{Varianten des Ford Algorithmus}
 
-Korrekturschritte in konstanter Zeit. Laufzeit abhängig von der
-Reihenfolge  $S= <f_{1}, f_{2}, \ldots, f_{e}>$ der gewählten Kanten. Bei
-schlechter Wahl erhält man eine Laufzeit von $\Theta(2^{|E|})$ (Übungen)
+Korrekturschritte in konstanter Zeit. Laufzeit abhÃ¤ngig von der
+Reihenfolge  $S= <f_{1}, f_{2}, \ldots, f_{e}>$ der gewÃ¤hlten Kanten. Bei
+schlechter Wahl erhÃ¤lt man eine Laufzeit von $\Theta(2^{|E|})$ (Ãœbungen)
 
 Ein $(r,v)$-Weg $P= \; \; r=v_{0}, e_{1}, v_{1}, \ldots, c_{k}, v_{k} = v$
 ist in $S$ eingebettet falls $e_{1}, e_{2},\ldots_{k}$ eine geordnete
 Subsequenz von $S$ ist.
 
 \begin{lemma} \label{Ford2}
-Wenn Fords Algorithmus die Sequenz $S$ benutzt, so gilt für jedes $v \in V$
+Wenn Fords Algorithmus die Sequenz $S$ benutzt, so gilt fÃ¼r jedes $v \in V$
 und jeden $(r,v)$-Weg der in $S$ eingebettet ist $y_{v} \leqq c(P)$
 \end{lemma}
 
@@ -704,9 +704,9 @@ Nach dritter Iteration mit$\begin{array}[t]{rcl}e_{k}: y_{v} = y_{v_{k}} &\leqq 
 &\leqq & \displaystyle \sum_{i=1}^{k} c_{e_{i}} = c(P). \hspace{3mm}
 \mbox{q.e.d}\end{array}$
 
-Also suchen wir $S$ mit kürzesten eingebetteten $(r,v)$-Wegen für alle $v
+Also suchen wir $S$ mit kÃ¼rzesten eingebetteten $(r,v)$-Wegen fÃ¼r alle $v
 \in V$ $S$
-"`kurz"' da die Laufzeit proportional zur Länge.
+"`kurz"' da die Laufzeit proportional zur LÃ¤nge.
 
 \subsubsection{Ford-Bellmann-Algorithmus}
 
@@ -718,7 +718,7 @@ e_{2}, \ldots, e_{m}\}$
 \begin{algorithmic}
 \STATE Initialisiere $y, \; p$;
 \STATE $i=0$;
-\WHILE{($i < n$ und $y$ kein zulässiges Potential)}
+\WHILE{($i < n$ und $y$ kein zulÃ¤ssiges Potential)}
 \STATE i := i+1;
 \FOR{ $e=e_{1}$ to $e_{m}$}
 \STATE $v=t(e)$; $w=h(e)$;
@@ -728,7 +728,7 @@ e_{2}, \ldots, e_{m}\}$
 \ENDFOR
 \ENDWHILE
 \IF{$(i < n)$} 
-\STATE "`Kürzester Weg gefunden"'
+\STATE "`KÃ¼rzester Weg gefunden"'
 \ELSE 
 \STATE STOP "`es existiert ein negativer Kreis"'
 \ENDIF
@@ -741,20 +741,20 @@ Der Ford-Bellmann Algorithmus ist korrekt und hat Laufzeit $O(n m)$.
 
 Beweis: Korrektheit wg. Lemma \ref{Ford2}, Laufzeit offensichtlich.
 
-Verbesserungen der Laufzeit sind nur bei speziellen Annahmen über $G$ und
-$c$ möglich. Vorgestellt werden nun Verbesserungen in der Praxis:
+Verbesserungen der Laufzeit sind nur bei speziellen Annahmen Ã¼ber $G$ und
+$c$ mÃ¶glich. Vorgestellt werden nun Verbesserungen in der Praxis:
 
-\paragraph{Vorwärts-Stern-Datenstruktur}
+\paragraph{VorwÃ¤rts-Stern-Datenstruktur}
 \mbox{} 
 
 \includegraphics[width=4cm]{bilder/2-2VorwaertsStern} $L(v)=<a,b,c>$
 
-Weiterhin benötigen wir:\\
+Weiterhin benÃ¶tigen wir:\\
 $Q= <f_{1}, f_{2}, \ldots, f_{e}>$ Schlange (Queue) von Kunden.\\
 $v \Leftarrow Q$ ergibt $v=q_{1},\; \;  Q = <f_{2}, f_{3}, \ldots,
 f_{e}>$\\
 $Q \Leftarrow v$ ergibt $Q= <f_{1}, f_{2}, \ldots, f_{e}, v>$\\
-Zusätzlich Inzidenzvektor: isinQ Q[v]\\
+ZusÃ¤tzlich Inzidenzvektor: isinQ Q[v]\\
 Anzahl der Knoten in Q: numQ 
 
 dies erlaubt delete, append $Q \stackrel{?}{=} \varnothing, \; \; v \stackrel{?}{\in} Q$ in konst.
@@ -779,9 +779,9 @@ Zeit (keine Negativen Kreise).
 \paragraph{Azyklische Graphen}
 \mbox{}\\
 Keine gerichteten Kreise, insbesondere keine negativen Kreise. Kompatible
-Knoten Sequenz $<v_{1}, v_{2}, \ldots, v_{n}>$ für alle Knoten $v_{i},
+Knoten Sequenz $<v_{1}, v_{2}, \ldots, v_{n}>$ fÃ¼r alle Knoten $v_{i},
 v_{j} \in E$ gilt: $i < j$ kann in Zeit $O(m)$ gefunden werden (Topologische
-Sortierung, siehe Übungsaufgabe 20).
+Sortierung, siehe Ãœbungsaufgabe 20).
 
 OBdA: sei $r=v_{1}$
 \[ r=v_{i} \; \Rightarrow \; v_{j} \; \; \; (j < i) \mbox{ nicht erreichbar} \]
@@ -800,25 +800,25 @@ wie oben, aber:
 \end{algorithmic}
 
 \begin{satz}
-In azyklischen Graphen kann das kürzeste Wege Problem in Zeit $O(m)$
-gelöst werden
+In azyklischen Graphen kann das kÃ¼rzeste Wege Problem in Zeit $O(m)$
+gelÃ¶st werden
 \end{satz}
 
 Nicht negative Kosten:
 \[ c_{e} \geqq 0 \; \; \forall e \in E\]
 Wie vorhin, aber Knotensequenz dynamisch bestimmt nach $v_{1}, v_{2},
 \ldots, v_{i}$.\\
-Wähle $v_{i+1} = v \in \{v_{1}, v_{2}, \ldots,v_{i}\}$ mit minimalem
+WÃ¤hle $v_{i+1} = v \in \{v_{1}, v_{2}, \ldots,v_{i}\}$ mit minimalem
 $y_{v}$.
 
 \begin{lemma} \label{UvorV}
-Für alle $w \in V$ sei $y'_{w}$ der Wert von $y_{w}$ wenn $w$ gewählt wird.
-Wird $u$ vor $v$ gewählt. So gilt $y'_{u} \leqq y'_{v}$.
+FÃ¼r alle $w \in V$ sei $y'_{w}$ der Wert von $y_{w}$ wenn $w$ gewÃ¤hlt wird.
+Wird $u$ vor $v$ gewÃ¤hlt. So gilt $y'_{u} \leqq y'_{v}$.
 \end{lemma}
 
 Beweis: Annahme $y'_{v} < y'_{u}$ und $v$ ist der erste Knoten bei dem das
 passiert.\\
-Als $u$ gewählt wurde galt: $y'_{u} = y_{u} \leqq y_{v}$. Nach Wahl von $u$
+Als $u$ gewÃ¤hlt wurde galt: $y'_{u} = y_{u} \leqq y_{v}$. Nach Wahl von $u$
 und vor Wahl von $v$ wurde $y_{v} < y'_{u}$, sagen wir das letzte Mal
 bei Wahl von $w$
 \[v_{1}, v_{2}, \ldots, u, \ldots, w, \ldots,v,\ldots\]
@@ -837,9 +837,9 @@ c_{v w} &\geqq& 0
 \STATE Initialisiere $y$, $p$;
 \STATE $S := V$
 \WHILE{$(S \not= \varnothing)$}
-\STATE wähle $v \in S$ mit $y_{v}$ minimal
+\STATE wÃ¤hle $v \in S$ mit $y_{v}$ minimal
 \STATE entferne $v$ aus $S$;
-\STATE Bearbeite Vorwärtsstern von $v$ (aber nur Kanten mit $vw$ mit $w \in
+\STATE Bearbeite VorwÃ¤rtsstern von $v$ (aber nur Kanten mit $vw$ mit $w \in
 S$!)
 \ENDWHILE
 \end{algorithmic}
@@ -847,7 +847,7 @@ S$!)
 
 \begin{satz}
 Falls $c_{e} \geqq 0 \; \; \forall e \in E$, so ist Dijkstras Algorithmus
-korrekt und läuft in $O(n^{2})$
+korrekt und lÃ¤uft in $O(n^{2})$
 \end{satz}
 
 Beweis:\\
@@ -856,37 +856,37 @@ E$
 
 Annahme: ($\ast$) gilt nicht\\
 ($\ast$) galt nach Bearbeitung von Knoten v $\Rightarrow y_{v}$ wurde
-später erniedrigt, etwa als $q$ bearbeitet wurde. \\
+spÃ¤ter erniedrigt, etwa als $q$ bearbeitet wurde. \\
 $\Rightarrow y_{v} = \underbrace{y'_{q}}_{\geqq y'_{v}} + \underbrace{c_{q v}}_{\geqq 0}  \geqq y'_{v}$ 
 also nicht erniedrigt $\lightning$\\
 denn wenn q nach v bearbeitet wurde $\stackrel{\mbox{\scriptsize Lemma
 \ref{UvorV}}}{\Rightarrow} y'_{q} \geqq y'_{v}$\\
 $w \not \in S$: $y_{v} \geqq y_{w} \stackrel{\mbox{\scriptsize Lemma
 \ref{UvorV}}}{\Rightarrow} y_{v} + \underbrace{c_{v w}}_{\geqq 0} \geqq
-y_{w v}$ also hier kein Test nötig. 
+y_{w v}$ also hier kein Test nÃ¶tig. 
 
-Laufzeit $O(m)$ für Vorwärtsstern plus die Zeit zum Finden von $v$ mit
-minimalem $y_{v}$. Naiv implementiert erhält man damit eine Laufzeit von
+Laufzeit $O(m)$ fÃ¼r VorwÃ¤rtsstern plus die Zeit zum Finden von $v$ mit
+minimalem $y_{v}$. Naiv implementiert erhÃ¤lt man damit eine Laufzeit von
 $O(n^{2})$
 
-Aus der Informatik I. Für Dünne Graphen mit Heaps $O(m \log n)$. Noch besser
+Aus der Informatik I. FÃ¼r DÃ¼nne Graphen mit Heaps $O(m \log n)$. Noch besser
 geht es mit Fibonacci Heaps (Wer hat die Fibonacci Beweise nicht geliebt?):
 $O(n \log n + m)$.
 
-Wie dem auch sei, sei $S(n,m)$ die Zeit, die benötigt wird.
+Wie dem auch sei, sei $S(n,m)$ die Zeit, die benÃ¶tigt wird.
 
 Beobachtung:\\
-Kennt man ein zulässiges Potential $y$ so kann man den Kostenvektor $c$
+Kennt man ein zulÃ¤ssiges Potential $y$ so kann man den Kostenvektor $c$
 nach $c' \geqq 0$ transformieren: $c'_{v w} = c_{v w} + y_{v} - y_{w} (\geqq 0)$ 
 denn  $\forall (r,s)$-Wege $P$: sind die Kosten: 
 \[c'(P) = c(P) + y_{r} - y_{s}\]  
-Anwendung: Kürzeste $(r,v)$-Wege für alle Paare (r,v). Allgemein beste
+Anwendung: KÃ¼rzeste $(r,v)$-Wege fÃ¼r alle Paare (r,v). Allgemein beste
 Methode: n mal wie gehabt.\\
 Zeit $O(n \cdot S(n,m))$, wenn $c \geqq 0$, also $O(n^{2}m)$ im allgemeinen
 Fall.
 
-Verbesserung von $O(n^{2}m)$: Wenn Ford Bellman einmal ausgeführt ist
-liefert er uns ein zulässiges Potential für jeden Punkt.
+Verbesserung von $O(n^{2}m)$: Wenn Ford Bellman einmal ausgefÃ¼hrt ist
+liefert er uns ein zulÃ¤ssiges Potential fÃ¼r jeden Punkt.
 \[\left. \begin{array}{l}
 \mbox{Transformation s.o.}\\
 \mbox{$(n-1)$ mal Dijkstra}\end{array} \right\} \mbox{zusammen } O(n \cdot
@@ -898,22 +898,22 @@ S(n,m))
 Finde $(r,v)$-Wege mit minimaler Kantenzahl.
 
 \begin{lemma} \label{ErsterW}
-Falls $c_{e} = 1$ für alle $e \in E$, so ist der erste endliche Wert für
-$y_{v}$ auch der endgültige. Wird $y_{v}$ vor $y_{w}$ zugewiesen, so gilt
+Falls $c_{e} = 1$ fÃ¼r alle $e \in E$, so ist der erste endliche Wert fÃ¼r
+$y_{v}$ auch der endgÃ¼ltige. Wird $y_{v}$ vor $y_{w}$ zugewiesen, so gilt
 $y_{v} \leqq y_{w}$.
 \end{lemma}
 
-Beweis: klar für $v=r$. Sei $v \not=r$ und $v$ später gewählt als Knoten
+Beweis: klar fÃ¼r $v=r$. Sei $v \not=r$ und $v$ spÃ¤ter gewÃ¤hlt als Knoten
 $u \Rightarrow y_{v} \geqq y_{u}$ (Lemma \ref{UvorV}).\\
-zu endgültig: Erster endliche Wert für $y_{v}$ wird gesetzt zu $y_{w+1}$
-[Knoten $w$ wird vor $v$ gewählt]
+zu endgÃ¼ltig: Erster endliche Wert fÃ¼r $y_{v}$ wird gesetzt zu $y_{w+1}$
+[Knoten $w$ wird vor $v$ gewÃ¤hlt]
 
 
-Behauptung $y_{v}$ wird nicht mehr geändert \\
+Behauptung $y_{v}$ wird nicht mehr geÃ¤ndert \\
 Annahme: bei  Wahl eines anderen Knotens z.B. $q$ wird $y_{v}$ erniedrigt
 zu $y'_{v}$.\\
 Situation: $\ldots w \ldots v \ldots q$\\
-$q$ wird nach $w$ gewählt $ \Rightarrow y_{q} \geqq y_{w}$\\
+$q$ wird nach $w$ gewÃ¤hlt $ \Rightarrow y_{q} \geqq y_{w}$\\
 $y'_{v} = y_{q} + 1 \geqq y_{w} + 1 = y_{v} \; \; \; \lightning$ zu
 erniedrigt.
 
@@ -921,10 +921,10 @@ erniedrigt.
 Bei Einheitskosten kann Dijkstras Algorithmus mit Laufzeit $O(m)$
 implementiert werden.
 \end{satz}
-Beweis: Wegen Lemma \ref{ErsterW} kann man den nächsten Knoten aus einer
-Schlange wählen ($y_{w}$ sind überflüssig).
+Beweis: Wegen Lemma \ref{ErsterW} kann man den nÃ¤chsten Knoten aus einer
+Schlange wÃ¤hlen ($y_{w}$ sind Ã¼berflÃ¼ssig).
 
-Dieser Algorithmus heißt auch Breitensuche.
+Dieser Algorithmus heiÃŸt auch Breitensuche.
 
 \begin{algorithmic}
 \STATE Initialisiere p;

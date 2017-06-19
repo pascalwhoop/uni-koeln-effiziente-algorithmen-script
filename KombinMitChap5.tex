@@ -7,17 +7,17 @@ Ungerichteter Graph $G=(V,E)$\\
 Definitionen:
 \begin{description}
 \item[Matching $M \subseteq E$] Jeder Knoten in $V$ ist inzident mit
-höchstens einer Kante in $M$.
-\item[$M$ überdeckt $v\in V$]
+hÃ¶chstens einer Kante in $M$.
+\item[$M$ Ã¼berdeckt $v\in V$]
 $(\exists e \in M) \; v$ inzident $e$\\
 sonst ist $v$ {\em $M$-exponiert}.
-Anzahl überdeckter Knoten: $2|M|$\\
+Anzahl Ã¼berdeckter Knoten: $2|M|$\\
 Anzahl der exponierten Knoten: $|V| - 2|M|$\\
-$\nu(G)$: Kardinalität eines maximum Matchings\\
+$\nu(G)$: KardinalitÃ¤t eines maximum Matchings\\
 $def(G)$: Minimum Anzahl exponierter Knoten
 \[def(G) = |V| - 2 \nu(G) \; \; \mbox{"`Defizit"'}\]
 \item[Perfektes Matching] Matching $M \subseteq E$ das alle Knoten in $V$
-überdeckt.
+Ã¼berdeckt.
 \end{description}
 
 Probleme:
@@ -32,13 +32,13 @@ Wenn $G$ bipartit: Max. Matching $\rightarrow$ ganzzahliges
 Max-Fluss-Problem
 
 $\left.\begin{array}{l}\mbox{min. Gewicht}\\\mbox{perf. Matching}\end{array}
-\right\} \rightarrow$ Min-Kosten-Flussproblem (Übungsaufgabe 35)
+\right\} \rightarrow$ Min-Kosten-Flussproblem (Ãœbungsaufgabe 35)
 
 
 Weitere Definitionen:
 \begin{description}
 \item[M-alternierender Weg] abwechselnd Kanten $e \in M$ und $e \notin M$
-\item[M-augmentierender (-erhöhender) Weg] \mbox{}
+\item[M-augmentierender (-erhÃ¶hender) Weg] \mbox{}
 
 \includegraphics[width=5cm]{bilder/5-1augmWeg} \hspace{5mm} Konvention:
 \begin{tabular}[c]{l}\includegraphics[width=0.6cm]{bilder/5-1augmWegKonv1}
@@ -48,7 +48,7 @@ $e \in M$\\
 
 ist ein M-alternierender Weg dessen Endknoten $M$-exponiert sind.
 \end{description}
-Für $G$ bipartit:\\
+FÃ¼r $G$ bipartit:\\
 $M$-augmentierender Weg $\leftrightarrow$ $x$ augmentierender Weg in der
 Max-Fluss-Formulierung.\\
 $\stackrel{\mbox{Kap. 3}}{\Rightarrow}$ $M$ Maximum $\leftrightarrow
@@ -61,8 +61,8 @@ $M$-augmentierender Weg existiert.
 Beweis:
 \begin{itemize}
 \item["`$\Rightarrow$"'] $\exists$ $M$-augmentierender Weg $P$\\
-$\Rightarrow M \; \Delta \; E(P)$ überdeckt 2 Knoten mehr ($\Delta$ steht
-für symetrische Differenz, "`Drehe Kanten um"')\\
+$\Rightarrow M \; \Delta \; E(P)$ Ã¼berdeckt 2 Knoten mehr ($\Delta$ steht
+fÃ¼r symetrische Differenz, "`Drehe Kanten um"')\\
 $\Rightarrow M$ ist nicht maximum
 \item["`$\Leftarrow$"'] $M$ ist nicht maximum\\
 $\Rightarrow \exists$ Matching $N$ mit $|N| > |M|$\\
@@ -73,29 +73,29 @@ Beispiel:
 \includegraphics[height=5cm]{bilder/5-1DiffMatch}
 
 $J:$ Knotendisjunkte alternierende Wege und alternierende Kreise gerader
-Kardinalität.\\
+KardinalitÃ¤t.\\
 $|N| > |M| \Rightarrow$ Ein Weg (von allen) in $J$ hat mehr $N$-Kanten als
 $M$-Kanten. Dieser ist ein $M$-augmentierender Weg. q.e.d.
 
 \end{itemize}
 
 \paragraph{ungerade Kreise:}\mbox{}\\
-Knotenüberdeckung: $A \subseteq V$ mit: Jede Kante hat wenigstens einen
+KnotenÃ¼berdeckung: $A \subseteq V$ mit: Jede Kante hat wenigstens einen
 Endknoten in $A$, also gilt:
-\[\mbox{Kardinalität einer Knotenüberdeckung} \geqq \mbox{Kardinalität eines
+\[\mbox{KardinalitÃ¤t einer KnotenÃ¼berdeckung} \geqq \mbox{KardinalitÃ¤t eines
 Matchings}\] 
 
-{\bf Satz} von König (Aufgabe 24)
+{\bf Satz} von KÃ¶nig (Aufgabe 24)
 \[\begin{array}{rcl}
-\mbox{Wenn $G$ bipartit} &\Rightarrow& (\exists \mbox{ Knotenüberdeckung }
+\mbox{Wenn $G$ bipartit} &\Rightarrow& (\exists \mbox{ KnotenÃ¼berdeckung }
 A)\\
 && ( \exists \mbox{ Matching } M)\\
 &&|A| = | M|
 \end{array}
 \]
 Das gilt {\em nicht} allgemein, so z.B. nicht in ungeraden kreisen wie dem
-folgenden mit der Länge $k+1$ (Eine
-minimale Knotenüberdeckung $A$ ist durch die grauen Kreise, ein 
+folgenden mit der LÃ¤nge $k+1$ (Eine
+minimale KnotenÃ¼berdeckung $A$ ist durch die grauen Kreise, ein 
 maximales Matching $M$ durch die gestrichelten Linien angedeutet):
 
 \includegraphics[height=4cm]{bilder/5-1UngerKreis}
@@ -103,7 +103,7 @@ maximales Matching $M$ durch die gestrichelten Linien angedeutet):
 Hier gilt offensichtlich $|M| \leqq k$ und $|A| \geqq k+1$. Wir suchen nun
 eine bessere Schranke:
 
-Sei $A\subseteq V$ mit $G\wout A$ (Knoten $A$ gelöscht hat $k$ Komponenten
+Sei $A\subseteq V$ mit $G\wout A$ (Knoten $A$ gelÃ¶scht hat $k$ Komponenten
 $h_1, h_2,\ldots,h_k$ mit $|V(H_i)|$ ungerade. 
 
 \includegraphics[height=5cm]{bilder/5-1ARausgenommen}
@@ -114,35 +114,35 @@ Nun definieren wir $OC(G) := $ Anzahl ungerader Komponenten von $G$, z.B.:
 
 Also $(\forall A \subseteq V)$:
 \[\nu(G) = \frac{1}{2} (|V| - OC(G\wout A) + |A|)\]
-Falls $A$ Knotenüberdeckung ist:\\
+Falls $A$ KnotenÃ¼berdeckung ist:\\
 $|V| -|A|$ ungerade Komponenten in $G\wout A$ (einzelne Knoten)\\
 $\Rightarrow \nu(G) \leqq \frac{1}{2} (|V| - (|V| - |A|) + |A|) = |A|$
 
 Spezialfall, d.h. die untere Schranke ist wenigstens so gut wie die
-Überdeckungsschranke, sogar besser:
+Ãœberdeckungsschranke, sogar besser:
 
 \includegraphics[height=3cm]{bilder/5-1UngerKreis2}\hspace{5mm} 
 \parbox[b]{10cm}{Ungerader Kreis der
-Länge $2k+1$\\$A = \varnothing$: $\nu(G) \leqq \frac{1}{2}(|V|-1) = k$\\
+LÃ¤nge $2k+1$\\$A = \varnothing$: $\nu(G) \leqq \frac{1}{2}(|V|-1) = k$\\
 (bisher nur $k+1$, also besser!)}
 
-Für jedes $A\subseteq V$ heißt die vorhin bewiesene Schranke für
-Kardinalität eines Matchings:
+FÃ¼r jedes $A\subseteq V$ heiÃŸt die vorhin bewiesene Schranke fÃ¼r
+KardinalitÃ¤t eines Matchings:
 
 \[\nu(G) \leqq \frac{1}{2}(|V| - OC(G\wout A) + |A|)\]
 
 Dies ist die "`Tutte-Berge-Schranke"'. Es folgt sofort die sog. "`Tutte
 Bedingung"':\\
-Hat $G=(V,E)$ ein perfektes Matching, so gilt für jede Teilmenge $A
+Hat $G=(V,E)$ ein perfektes Matching, so gilt fÃ¼r jede Teilmenge $A
 \subseteq V$: $OC(G\wout A) \leqq |A|$
 
-Wir werden später sehen, dass die Tutte Berge Schranke angenommen wird und
+Wir werden spÃ¤ter sehen, dass die Tutte Berge Schranke angenommen wird und
 die Tutte-Bedingung auch hinreichend ist.
 
 \section{Maximum Matching}
-Zunächst suche nach perfektem Matching (danach max. Matching)
+ZunÃ¤chst suche nach perfektem Matching (danach max. Matching)
 
-\paragraph{Alternierende Bäume} \mbox{}\\
+\paragraph{Alternierende BÃ¤ume} \mbox{}\\
 $G = (V,E)$, $M \subseteq E$ Matching, $r$ ein $M$-exponierter Knoten,
 $M$-alternierender Baum $T$:
 
@@ -156,12 +156,12 @@ $B(T)=\{v \in V(T)| v \mbox{ hat gerade Distanz von }r\}$ "`gerade Knoten
 Eigenschaften:
 \begin{itemize}
 \item Jedes $v \in V(T) \wout \{r\}$ wird von einer Kante $e \in M(T)$
-überdeckt.
-\item Für jedes $v\in V(T)$ ist der $(r,v)$-Weg in $T$ $M$-alternierend.
+Ã¼berdeckt.
+\item FÃ¼r jedes $v\in V(T)$ ist der $(r,v)$-Weg in $T$ $M$-alternierend.
 \item $|B(T)| = |A(T)| +1$
 \end{itemize}
 
-Zum Anfang der Vorlesung legte Prof. Jünger einen Beispielgraph auf:
+Zum Anfang der Vorlesung legte Prof. JÃ¼nger einen Beispielgraph auf:
 
 \includegraphics[height=4cm]{bilder/5-2altBaum2}
 
@@ -174,16 +174,16 @@ $|M| = 8$, d.h. zwei exponierte Knoten\\
 $OC(G\wout A) = 5$\\
 $\stackrel{\mbox{\scriptsize TB-Formel}}{\Rightarrow} \nu(G) \leqq
 \frac{1}{2}(18-5+3)=8$\\
-$\Rightarrow M$ Matching max. Kardinalität.
+$\Rightarrow M$ Matching max. KardinalitÃ¤t.
 
 \subsubsection{"`Unterprogramme"}
 \paragraph{Benutze $v w$ zur Baumerweiterung} \mbox{}\\
 Eingabe: Matching $M'$ von $G'$, $M'$ alternierender Baum $T$, $v w \in
-E(G')$ mit $v \in B(T)$, $w\notin V(T)$, $w \; M'$-überdeckt.
+E(G')$ mit $v \in B(T)$, $w\notin V(T)$, $w \; M'$-Ã¼berdeckt.
 
 \includegraphics[height=2cm]{bilder/5-2vwBaumerw}
 
-Aktion: Sei $w z$ die überdeckende Kante in $M'$\\
+Aktion: Sei $w z$ die Ã¼berdeckende Kante in $M'$\\
 $T \leftarrow (V(T) \cup\{w,z\},\; E(T) \cup \{v w, w z\})$
 
 \paragraph{Benutze $v w$ zur $M'$-Augmentierung} \mbox{}\\
@@ -203,12 +203,12 @@ Hat $G$ ein Matching $M$ und einen frustrierten $M$-alternierenden Baum
 $T$, so hat $G$ kein perfektes Matching.
 \end{lemma}
 Beweis: $\forall v \in B(T)$ ist $\{v\}$ ungerade Komponente von $G\wout
-A(T)$, d.h. für $A=A(T) \subseteq V$ gilt:\\
+A(T)$, d.h. fÃ¼r $A=A(T) \subseteq V$ gilt:\\
 $OC(G\wout A) \geqq |B(T)| > |A(T)| = |A|$\\
 $\stackrel{\mbox{\scriptsize Tutte-Bed.}}{\Rightarrow} G$ hat kein perf. Matching. 
 \subsubsection{Der Bipartite Fall}
 
-Perf. Matching Algorithmus für bipartite Graphen
+Perf. Matching Algorithmus fÃ¼r bipartite Graphen
 \begin{algorithmic}
 \STATE $M \leftarrow \varnothing$;
 \STATE $T \leftarrow (\{r\}, \varnothing)$; ($r$ beliebig)
@@ -228,7 +228,7 @@ Perf. Matching Algorithmus für bipartite Graphen
 \end{algorithmic}
 
 \begin{lemma}
-Ist in obigem Algorithmus die while-Bedingung nicht erfüllt, so hat $G$
+Ist in obigem Algorithmus die while-Bedingung nicht erfÃ¼llt, so hat $G$
 kein perf. Matching.
 \end{lemma}
 Beweis: Wir zeigen $T$ ist frustriert ($\stackrel{\mbox{\scriptsize
@@ -272,18 +272,18 @@ der $M$-exponierten Knoten in $G'$.
 D.h. $\nu(G) \geqq \nu(G \times C) + \frac{|V(C)|-1}{2}$\\
 b.z.w.: $def(G) \leqq def(G\times C)$
 
-\subsubsection{Der Blütenschrumpfalgorithmus}
+\subsubsection{Der BlÃ¼tenschrumpfalgorithmus}
 
-Im Original: "blossom shrinking"' für perf. Matching von Jack Edmonds, Name
+Im Original: "blossom shrinking"' fÃ¼r perf. Matching von Jack Edmonds, Name
 des Papers: "`Paths, Trees and Flowers"'.
 
 Aus $G$ entsteht durch wiederholtes Schrumpfen ungerader Kreise $G'$. $G'$
 hat also zum einen Orginalknoten von $G$ als auch Pseudoknoten, die durch
 Schrumpfen entstanden sind.
 
-$v \in V(G')$: $S(v)$ Menge der zu $v$ gehörigen Originalknoten (rekursiv
+$v \in V(G')$: $S(v)$ Menge der zu $v$ gehÃ¶rigen Originalknoten (rekursiv
 ermittelt).\\
-$|S(v)|$ ist immer ungerade ($S(v) = {v}$ für Originalknoten)\\
+$|S(v)|$ ist immer ungerade ($S(v) = {v}$ fÃ¼r Originalknoten)\\
 $\{ S(v) | v \in G' \}$ Partition von $V(G)$
 
 Analogon zu Lemma \ref{FrustKeinMatch}:
@@ -292,7 +292,7 @@ Sei $G'$ von $G$ abgeleitet, $M'$ Matching in $G'$, $T$ ein
 $M'$-alternierender Baum in G' und kein Pseudoknoten in $A(T)$. Ist $T$
 frustriert, so hat $G$ kein perf. Matching
 \end{lemma}
-Beweis: Entfernung von $A(T)$ aus $V(G)$ ergibt für alle $v\in B(T)$
+Beweis: Entfernung von $A(T)$ aus $V(G)$ ergibt fÃ¼r alle $v\in B(T)$
 ungerade Komponenten mit Knotenmenge $S(v)$.\\
 $\Rightarrow OC(G\wout A(T))\geqq |B(T)|> |A(T)|$\\
 $\stackrel{\mbox{\scriptsize Tutte Bed.}}{\Longrightarrow} G$ hat kein perf. 
@@ -301,7 +301,7 @@ Matching. q.e.d.
 \begin{itemize}
 \item Produziere abgeleitete Graphen $G'$
 \item Perf. Matching in $G'\rightarrow$ perf. Matching in $G$
-\item Gewisse frustrierte Bäume in $G' \rightarrow$ kein perf Matching 
+\item Gewisse frustrierte BÃ¤ume in $G' \rightarrow$ kein perf Matching 
 \end{itemize}
 
 Welche Kreise schrumpfen wir aber nun?
@@ -309,11 +309,11 @@ Welche Kreise schrumpfen wir aber nun?
 \includegraphics[height=3cm]{bilder/5-2Bluetenschr1}
 \begin{itemize}
 \item $M$ ist nicht optimal ($\exists$ perf. Matching!)
-\item keine Erweiterung/Augmentierung möglich
+\item keine Erweiterung/Augmentierung mÃ¶glich
 \item $T$ nicht frustriert.
 \end{itemize}
-$vw$ erzeugt ungeraden Kreis "`Blüte"' (Edmonds)\\
-Schrumpfen der Blüte.
+$vw$ erzeugt ungeraden Kreis "`BlÃ¼te"' (Edmonds)\\
+Schrumpfen der BlÃ¼te.
 
 \includegraphics[height=3cm]{bilder/5-2Bluetenschr2}
 
@@ -345,9 +345,9 @@ $E(T) \leftarrow E(T) \wout E(C)$;
 Nach Anwendung des obigen Unterprogramms "`Schrumpf"' ist $M'$ ein Matching
 in $G'$, $T$ ein $M'$-alternierender Baum in $G'$ und $c\in B(T)$.
 \end{lemma}
-Beweis: Übungen :)
+Beweis: Ãœbungen :)
 
-\paragraph{Blüten-Schrumpf-Algorithmus für perfektes Matching}\mbox{}\\
+\paragraph{BlÃ¼ten-Schrumpf-Algorithmus fÃ¼r perfektes Matching}\mbox{}\\
 Eingabe: Graph $G$ und Matching $M$ in $G$
 
 
@@ -361,7 +361,7 @@ Eingabe: Graph $G$ und Matching $M$ in $G$
 \ENDIF
 \STATE $M' \leftarrow M$;
 \STATE $G' \leftarrow G$;
-\STATE Wähle $M'$-exponierten Knoten $r$ in $G'$;
+\STATE WÃ¤hle $M'$-exponierten Knoten $r$ in $G'$;
 \STATE $T \leftarrow (\{r\},\varnothing)$;
 \WHILE{($\exists vw \in E'$ mit $v\in B(T)$, $w\notin A(T)$)}
 \CASE{($w\notin V(T)$ und $w$ ist $M'$-exponiert)}
@@ -375,7 +375,7 @@ Eingabe: Graph $G$ und Matching $M$ in $G$
 \STATE $T \leftarrow (\{r\},\varnothing)$ wobei $r$ $M'$-exponiert ist;
 \ENDIF
 \ENDCASE
-\CASE{($w \notin V(T)$ und $w$ ist $M'$-überdeckt)}
+\CASE{($w \notin V(T)$ und $w$ ist $M'$-Ã¼berdeckt)}
 \STATE Benutze $vw$ zur Baumerweiterung;
 \ENDCASE
 \CASE{($w \in B(T)$)}
@@ -386,7 +386,7 @@ Eingabe: Graph $G$ und Matching $M$ in $G$
 \end{algorithmic}
 
 \begin{satz}
-Der Blütenschrumpf-Algorithmus terminiert nach:
+Der BlÃ¼tenschrumpf-Algorithmus terminiert nach:
 $O(n)$ Augmentierungen\\
 $O(n^2)$ Schrumpf-Schritten\\
 $O(n^2)$ Baumerweiterungs-Schritten\\
@@ -398,45 +398,45 @@ exponierte Knoten $\Rightarrow O(n)$ Augmentierungen.
 Jeder Schrumpf-Schritt:
 \begin{itemize}
 \item erniedrigt die Anzahl der Knoten in $G'$
-\item erhält die Anzahl, der Nicht-Baumknoten
+\item erhÃ¤lt die Anzahl, der Nicht-Baumknoten
 \end{itemize}
 Jeder Baumerweiterungsschritt:
 \begin{itemize}
 \item erniedrigt die Anzahl der Nicht-Baumknoten
-\item erhält die Anzahl der Knoten in $G'$
+\item erhÃ¤lt die Anzahl der Knoten in $G'$
 \end{itemize}
-Zwischen den Augmentierungen höchstens $O(n)$
+Zwischen den Augmentierungen hÃ¶chstens $O(n)$
 Schrumpf/Baumerweiterungsschritte\\
 $\Rightarrow$ Insgesamt $O(n^2)$ Schrumpf/Baumerweiterungsschritte
 
 Jedes $G'$ ist aus $G$ abgeleitet\\
-Hält der Algorithmus mit "`$\nexists$ perf. Matching"'\\
-$\Rightarrow \exists$ frustrierter Baum $T$ mit Voraussetzungen für Lemma  
+HÃ¤lt der Algorithmus mit "`$\nexists$ perf. Matching"'\\
+$\Rightarrow \exists$ frustrierter Baum $T$ mit Voraussetzungen fÃ¼r Lemma  
 \ref{BSFrustKeinMatch}\\
 $\Rightarrow G$ hat kein perf. Matching q.e.d.
 
-\paragraph{Der Blüten-Schrumpf Algorithmus für maximum Matching}
+\paragraph{Der BlÃ¼ten-Schrumpf Algorithmus fÃ¼r maximum Matching}
 
-Der Blüten-Schrumpf Algorithmus für perf. Matching terminierte mit: STOP
-"`$G$ hat kein perfektes Matching"'. Wir übernehmen $G'$, $M'$ und $T$ und
+Der BlÃ¼ten-Schrumpf Algorithmus fÃ¼r perf. Matching terminierte mit: STOP
+"`$G$ hat kein perfektes Matching"'. Wir Ã¼bernehmen $G'$, $M'$ und $T$ und
 arbeiten wie folgt weiter:
 \begin{algorithmic}
 \STATE Entferne $V(T)$ aus $G'$;
-\STATE Falls ein exponierter Knoten übrig ist: Anwendung des Blütenschrumpf
+\STATE Falls ein exponierter Knoten Ã¼brig ist: Anwendung des BlÃ¼tenschrumpf
 Algorithmus auf neues $G'$ ohne entfernte Kanten. (Neues $G'$ hat keine
 Pseudoknoten.);
-\STATE Wiederhole bis kein exponierte Knoten übrig bleibt;
+\STATE Wiederhole bis kein exponierte Knoten Ã¼brig bleibt;
 \STATE Restauriere Original $G'$ mit allen produzierten Matchingkanten;
 \STATE Bestimme korrespondierendes Matching in $G$
 \end{algorithmic}
 
-Seien $T_1, T_2, T_3 \ldots T_k$ die generierten frustrierten Bäume\\
+Seien $T_1, T_2, T_3 \ldots T_k$ die generierten frustrierten BÃ¤ume\\
 $\Rightarrow k$-exponierte Knoten (die Wurzeln) in $G'$ UND $G$\\
 $\Rightarrow |M| = \frac{1}{2}(|V|-k)$
 
 Sei $A := \displaystyle \bigcup_{i=1}^k A(T_i)$\\
-Die Entfernung von $A$ aus $G$ ergibt eine ungerade Komponente für jeden
-Knoten aus $B(T_i)$ für alle $i \in \{1,2,\ldots,k\}$
+Die Entfernung von $A$ aus $G$ ergibt eine ungerade Komponente fÃ¼r jeden
+Knoten aus $B(T_i)$ fÃ¼r alle $i \in \{1,2,\ldots,k\}$
 \[\begin{array}{crcl}
 &\multicolumn{3}{l}{(\forall \; T_i) B(T_i)= A(T_i)+1} \\
 \Rightarrow & OC(G\wout A)&\geqq& \displaystyle \sum_{i=1}^k |B(T_i)|\\
@@ -458,40 +458,40 @@ Somit haben wir algorithmisch den folgenden zentralen Satz von Berge [1958]
 bewiesen.
 \begin{satz}
 Tutte Berge Formel\\
-Für $G(V,E)$ gilt:
+FÃ¼r $G(V,E)$ gilt:
 \[
 \nu(G) = \min_{A \subseteq V} \{\frac{1}{2}(|V| -OC(G\wout A) + |A|)
 \}\]
 \end{satz} 
-Daraus folgt ein älteres Resultat von Tutte [1947]
+Daraus folgt ein Ã¤lteres Resultat von Tutte [1947]
 \begin{korollar}
 (Tuttes Matching Theorem)\\
-$G=(V,E)$ hat ein perf. Matching genau dann wenn für jede Teilmenge $A
+$G=(V,E)$ hat ein perf. Matching genau dann wenn fÃ¼r jede Teilmenge $A
 \subseteq V$ gilt:
 \[OC(G\wout A) \leqq |A|\]
 \end{korollar}
 Ohne Beweis:
 \begin{satz}
 (Micali und Vazirani [1980])\\
-Es gibt eine Implementation des Blüten-Schrumpf Algorithmus mit
+Es gibt eine Implementation des BlÃ¼ten-Schrumpf Algorithmus mit
 $O(\sqrt{n}m)$. q.e.d.
 \end{satz}
 
-Im folgenden "`spielte"' Prof. Jünger mit zwei Studenten jeweils auf dem
+Im folgenden "`spielte"' Prof. JÃ¼nger mit zwei Studenten jeweils auf dem
 Overheadprojektor ein kleines Spiel auf einen Graphen auf dem ein perf.
 Matching existiert. Es ging darum dass abwechselnd ein einfacher Pfad (ein
 Knoten darf nur einmal vorkommen)
 erweitert. Wer die letzte Erweiterung macht gewinnt.
 
 \begin{satz}
-Hat $G$ ein perfektes Matching, so kann der Spieler der Anfängt seinen
+Hat $G$ ein perfektes Matching, so kann der Spieler der AnfÃ¤ngt seinen
 Gewinn erzwingen.
 \end{satz}
-Beweis: Übungen
+Beweis: Ãœbungen
 
 \section{Perfektes Matching mit minimum Gewicht}
 
-Das Lineare Problem für perfektes Matching (mit) minimum Gewicht.
+Das Lineare Problem fÃ¼r perfektes Matching (mit) minimum Gewicht.
 \[
 \left. \begin{array}{l} \left. \begin{array}{rcll}
 \multicolumn{3}{l}{\min \displaystyle \sum_{e \in E} c_e x_e}\\
@@ -506,7 +506,7 @@ x_e &\geqq& 0& \forall e \in E \end{array} \right\}
 bipartiter Fall:
 \begin{satz} \label{BipBirkoff} (Birkoff [1946])\\
 Sei $G$ ein bipartiter Graph und $c\in R^E$ dann hat $G$ ein perf. Matching
-genau dann wenn $LPPMMG'$ eine zulässige Lösung hat. Hat $G$ ein perf.
+genau dann wenn $LPPMMG'$ eine zulÃ¤ssige LÃ¶sung hat. Hat $G$ ein perf.
 Matching, so ist das minimum Gewicht eines perf. Matchings in $G$ gleich dem
 opt. ZF-Wert der Relaxierung (LPPMMG')
 \end{satz}
@@ -517,21 +517,21 @@ Beweis erfolgt durch die Korrektheit des folgenden Algorithmus
 &y_u + y_v &\leqq c_e & \forall \; e := u v \in E
 \end{array}\]
 
-Für $y\in \RR^V$ und $e = u v$ sei:
+FÃ¼r $y\in \RR^V$ und $e = u v$ sei:
 \[ \bc_{e} = \bc_{e}(y) = c_e - (y_u + y_v)\]
-$y$ zulässig für (DLPPMMG') $\Leftrightarrow \bc_e \geqq 0 \; \; \forall e
+$y$ zulÃ¤ssig fÃ¼r (DLPPMMG') $\Leftrightarrow \bc_e \geqq 0 \; \; \forall e
 \in E$\\
-Für zulässiges $y$:\\
+FÃ¼r zulÃ¤ssiges $y$:\\
 $E_{=} = E_{=}(y)= \{ e \in E | \bc_e = 0\}$ "`Gleichheitskanten bzgl.
 $y$"
 
-Komplementärer Schlupf:
+KomplementÃ¤rer Schlupf:
 \[(\mbox{KS}) \hspace{5mm} x_e > 0 \Rightarrow \bc_e = 0 \; \; (\forall \;
 e \in E)\]
 $x$ Inzidenzvektor eines perf. Matchings.
 \[(\mbox{KS}) \Leftrightarrow M \subseteq E_{=}\]
-Für ein zulässiges $y$ bestimme $E_{=}$ und benutze auf diesen den
-Blüten-Schrumpf Algorithmus. Resultat: perfektes Matching: Optimallösung
+FÃ¼r ein zulÃ¤ssiges $y$ bestimme $E_{=}$ und benutze auf diesen den
+BlÃ¼ten-Schrumpf Algorithmus. Resultat: perfektes Matching: OptimallÃ¶sung
 oder:\\
 Matching $M$ in $G_{=}$ und $M$-alternierender Baum $T$ mit
 Gleichheitskanten zwischen $B(T)$ und $A(T)$.
@@ -545,20 +545,20 @@ jeweiligen reduzierten Kosten.
 
 $\exists$ perf. Matching, aber kein perf. Matching in $G_{=}$
 
-\paragraph{Verändere $y$} \mbox{} \\
-($M$ und $T$ sollen in $E_{=}$ bleiben, $\bc_e$ soll kleiner werden für
+\paragraph{VerÃ¤ndere $y$} \mbox{} \\
+($M$ und $T$ sollen in $E_{=}$ bleiben, $\bc_e$ soll kleiner werden fÃ¼r
 Kanten mit einem Knoten $\in B(T)$ und dem anderen $\not\in
 B(T)$)
 \begin{algorithmic}
-\STATE Erhöhe $y_{v} \leftarrow y_v + \epsilon \; \; \forall v \in B(T)$
+\STATE ErhÃ¶he $y_{v} \leftarrow y_v + \epsilon \; \; \forall v \in B(T)$
 \STATE Erniedrige $y_v \leftarrow y_v - \epsilon \; \; \forall v \in A(T)$
-\STATE Wähle $\epsilon > 0$ maximal unter:
+\STATE WÃ¤hle $\epsilon > 0$ maximal unter:
 \[y_u + y_v \leqq c_{u v} \; \; (\bc_{u v} \geqq 0)\]
 \end{algorithmic}
 Ergebnis: neue Kante, mit einem Knoten $\in B(T)$, der andere $\not\in
 A(T)$ in $E_{=}$.\\
 $G$ ist bipartit $\Rightarrow v \not\in V(T) \rightarrow$
-Augmentierung/Baumerweiterung möglich. Im Beispiel $\epsilon =1$ aufgrund
+Augmentierung/Baumerweiterung mÃ¶glich. Im Beispiel $\epsilon =1$ aufgrund
 der Kante $f g$.
 
 \includegraphics[height=2.3cm]{bilder/5-3StartMax2}
@@ -567,19 +567,19 @@ Daraufhin ergibt sich wieder $\epsilon = 1$:
 
 \includegraphics[height=2.3cm]{bilder/5-3StartMax3}
 
-Diesmal haben wir zwei Möglichkeiten zu Augmentieren, entweder $h c$ oder
-$f c$, je nachdem welche wir wählen ergeben sich zwei verschiedene
+Diesmal haben wir zwei MÃ¶glichkeiten zu Augmentieren, entweder $h c$ oder
+$f c$, je nachdem welche wir wÃ¤hlen ergeben sich zwei verschiedene
 Matchings minimalen Gewichts.
 
 \includegraphics[height=2.3cm]{bilder/5-3StartMax4_1} \hspace{5mm}
 \includegraphics[height=2.3cm]{bilder/5-3StartMax4_2}
 
-\subsubsection{Minimum Kosten perf. Matching Algorithmus für bipartite
+\subsubsection{Minimum Kosten perf. Matching Algorithmus fÃ¼r bipartite
 Graphen}
 (auch bekannt unter dem Namen "`Ungarische Methode"' [Kuhn 1955])\\
 Eingabe: Graph $G$
 \begin{algorithmic}
-\STATE Sei $y$ zulässig für ($DLPPMMG'$), $M$ ein Matching in $G_{=}$;
+\STATE Sei $y$ zulÃ¤ssig fÃ¼r ($DLPPMMG'$), $M$ ein Matching in $G_{=}$;
 \IF{$M$ ist perfekt}
 \STATE STOP "`Matching $M$ perfekt mit minimum Kosten"';
 \ENDIF
@@ -609,11 +609,11 @@ V(T)\}$;
 \end{algorithmic}
 
 Laufzeit:\\
-Schlimmstenfalls eine Dualänderung pro Baumerweiterung, d.h. $O(n^2)$
-Dualänderungen mit jeweils $O(m)$ Arbeit, insgesamt $O(n^2m)$ Zeit. Kann
+Schlimmstenfalls eine DualÃ¤nderung pro Baumerweiterung, d.h. $O(n^2)$
+DualÃ¤nderungen mit jeweils $O(m)$ Arbeit, insgesamt $O(n^2m)$ Zeit. Kann
 verbessert werden zu $O(n \, S(n,m))$ Zeit.
 
-Erstes zulässiges $y$ kann in Zeit $O(n^2)$ gefunden werden:
+Erstes zulÃ¤ssiges $y$ kann in Zeit $O(n^2)$ gefunden werden:
 Sei ($V_1,\,V_2$) Bipartition von $G$.
 \begin{algorithmic}
 \STATE \textbf{forall} $(v \in V_1)$ $y_v \leftarrow \min \{c_{v w}| w \in
@@ -646,11 +646,11 @@ In jedem perf. Matching $M$ existiert eine Kante aus $\delta(S)$\\
 x Inzidenzvektor eines perf. Matchings in $G$.\\
 $\Rightarrow$ ($\forall$ ungerade Schnitte $D$ in $G$) $x(D) \geqq 1$ 
 
-Hinzufügen von $x(D) \geqq 1$ ergibt bessere Schranke. Im Beispiel wählen
+HinzufÃ¼gen von $x(D) \geqq 1$ ergibt bessere Schranke. Im Beispiel wÃ¤hlen
 wir $D=\{a b, d f, g h\}$ ergibt Optimalwert 14.
 
 $\mathscr{C} =$ Menge aller ungeraden Schnitte, die nicht der Form
-$\delta(v)$ für $v \in V$ sind.
+$\delta(v)$ fÃ¼r $v \in V$ sind.
 \[\begin{array}{lrcll}
 \mbox{(LPPMMG)} \hspace{5mm}&\multicolumn{4}{l}{\min \displaystyle \sum_{e \in E} c_e
 x_e}\\
@@ -664,9 +664,9 @@ Damit erhalten wir nicht nur eine bessere untere Schranke, sondern:
 Matching Polytop Theorem von Edmonds [1965]
 
 Sei $G=(V,E)$ ein Graph und $c \in R^E$. Dann hat $G$ ein perf. Matching
-genau dann, wenn (LPPMMG) eine zulässige Lösung hat. Hat $G$ ein perf. Matching,
+genau dann, wenn (LPPMMG) eine zulÃ¤ssige LÃ¶sung hat. Hat $G$ ein perf. Matching,
 so ist das minimum Gewicht eines perf. Matchings in $G$ gleich dem
-optimalen ZF-Wert von (LPPMMG) (vgl. Birkoff für bipartiten Fall)
+optimalen ZF-Wert von (LPPMMG) (vgl. Birkoff fÃ¼r bipartiten Fall)
 \end{satz}
 Beweis: Korrektheit durch folgenden Algorithmus. q.e.d.
 
@@ -678,13 +678,13 @@ Beweis: Korrektheit durch folgenden Algorithmus. q.e.d.
 &Y_D&\geqq&0&\forall \; D\in \mathscr{C}
 \end{array}\]
 
-Für $(y,Y)$ und $e \in E$:
+FÃ¼r $(y,Y)$ und $e \in E$:
 \[\bc_e = \bc_e(y,Y) = c_e - y_v - y_w - \sum_{e \in D \in \mathscr{C}} Y_D\]
-$(y,Y)$ zulässig für (DLPPMMG) $\Leftrightarrow \{ \begin{array}{l} Y_D \geqq
+$(y,Y)$ zulÃ¤ssig fÃ¼r (DLPPMMG) $\Leftrightarrow \{ \begin{array}{l} Y_D \geqq
 0 \; \; \forall \; D \in \mathscr{C}\\ \bc_e \geqq 0 \; \; \forall \; e \in
 E\end{array}$
 
-Komplementärer Schlupf:
+KomplementÃ¤rer Schlupf:
 \[\begin{array}{llcll}
 \mbox{(KS)}&x_e > 0 & \Rightarrow&\bc_e = 0& (\forall \; e \in E)\\
 &Y_D > 0&\Rightarrow x(D) = 1 & (\forall D \in \mathscr{C})
@@ -708,11 +708,11 @@ ungeraden Schnitt in $G$. Nur solche erhalten positive $Y_D$. D.h.
 Variablen $y_v$ reichen, hier $y_v \geqq 0$
 
 Vorgehen analog zum bipartiten Fall.\\
-$y$ Änderung: $\epsilon$ wie gehabt plus:
-\[\epsilon \leqq \frac{1}{2} \bc_e \mbox{ für } e_{vw} \mbox{ mit }v,w \in
+$y$ Ã„nderung: $\epsilon$ wie gehabt plus:
+\[\epsilon \leqq \frac{1}{2} \bc_e \mbox{ fÃ¼r } e_{vw} \mbox{ mit }v,w \in
 B(T)\]
 Bei einer Gleichheitskante sind beide Endknoten $\in B(T)$\\
-Also Schrumpfe Blüte:
+Also Schrumpfe BlÃ¼te:
 
 \includegraphics[height=2.5cm]{bilder/5-3SchrumpfAllg}
 
@@ -720,9 +720,9 @@ Komponente wird zu $c$ zusammengefasst:
 
 \includegraphics[height=2.5cm]{bilder/5-3SchrumpfAllg2}
 
-Für alle $v w$ mit $v \in V(C)$ und $w \not \in V(C)$: $c'_{v w} 
+FÃ¼r alle $v w$ mit $v \in V(C)$ und $w \not \in V(C)$: $c'_{v w} 
 \leftarrow c_{v w} -y_v$\\
-Dies erhält die reduzierten Kosten auf allen übrig gebliebenen Kanten.
+Dies erhÃ¤lt die reduzierten Kosten auf allen Ã¼brig gebliebenen Kanten.
 $(G,c) \rightarrow (G',c')$ ist "`abgeleitetes Paar"'.
 
 \paragraph{Benutze $v w$ zum Schrumpfen und adaptiere $M'$ und $T$
@@ -755,31 +755,31 @@ Matching in der oberen Zeichnung entspricht.
 
 \begin{lemma} \label{DualSchrGleich}
 $(G,c) \rightarrow (G',c')$ durch Schrumpfen eines ungeraden Kreises $C$
-aus Gleichheitskanten bzgl. dual zulässiger Lösung. 
+aus Gleichheitskanten bzgl. dual zulÃ¤ssiger LÃ¶sung. 
 \end{lemma}
 
 $M'$-perfektes Matching in $G'$:\\
-$(y',Y')$ zulässig für (DLPPMMG) für ($G',c'$)\\
-$(M',(y',Y'))$ erfülle (KS und $y'_c \geqq 0$)
+$(y',Y')$ zulÃ¤ssig fÃ¼r (DLPPMMG) fÃ¼r ($G',c'$)\\
+$(M',(y',Y'))$ erfÃ¼lle (KS und $y'_c \geqq 0$)
 
 $M$ ist perf. Matching in $G$ durch Erweiterung mit Kanten aus $E(C)$\\
 Definiere $(y,Y)$:
 \begin{itemize}
-\item Schon definiert für $v \notin V(C)$
-\item $y_v = y'_v$ für $v \in V \wout V(C)$
+\item Schon definiert fÃ¼r $v \notin V(C)$
+\item $y_v = y'_v$ fÃ¼r $v \in V \wout V(C)$
 \item $Y_D = \left\{ \begin{array}{ll}Y'_D& \mbox{falls } Y'_D > 0\\
 y'_C & \mbox{falls } D = \delta_{G'}(C)\\ 0&\mbox{sonst} \end{array}
-\right\}$ für $D \in \mathscr{C}$
+\right\}$ fÃ¼r $D \in \mathscr{C}$
 \end{itemize}
 
-dann ist $(y,Y)$ zulässig für (DLPPMMG) für $(G,c)$ und $(M,(y,Y))$
-erfüllen die KS-Bedingungen. q.e.d.
+dann ist $(y,Y)$ zulÃ¤ssig fÃ¼r (DLPPMMG) fÃ¼r $(G,c)$ und $(M,(y,Y))$
+erfÃ¼llen die KS-Bedingungen. q.e.d.
 
-\subsubsection{Dualvariablenänderung}
+\subsubsection{DualvariablenÃ¤nderung}
 Wie im bipartiten Fall:\\
-plus $\epsilon \leqq  \frac{1}{2} c_e$ für Kanten mit beiden Endknoten in
+plus $\epsilon \leqq  \frac{1}{2} c_e$ fÃ¼r Kanten mit beiden Endknoten in
 $B(T)$\\
-plus $\epsilon \leqq y_v$ für Pseudoknoten in $A(T)$
+plus $\epsilon \leqq y_v$ fÃ¼r Pseudoknoten in $A(T)$
 
 Beispiel:
 
@@ -788,13 +788,13 @@ Beispiel:
 (bei Dieser Zeichnung bin ich mir nicht sicher ob ich alles abgemalt
 habe...)
 
-$b f$ wird Gleichheitskante, danach Blütenschrumpfen.
+$b f$ wird Gleichheitskante, danach BlÃ¼tenschrumpfen.
 
-\paragraph{Ändere $y$} \mbox{}\\
+\paragraph{Ã„ndere $y$} \mbox{}\\
 Eingaben:
 \begin{itemize}
 \item abgeleitetes Paar $(G',c')$
-\item zulässige Lösung $y$ für (DLPPMMK) für $(G',c')$
+\item zulÃ¤ssige LÃ¶sung $y$ fÃ¼r (DLPPMMK) fÃ¼r $(G',c')$
 \item Matching $M'$ von $G'$ aus Gleichheitskanten
 \end{itemize}
 \begin{algorithmic}
@@ -815,11 +815,11 @@ Expandiere ungerade Pseudoknoten
 \includegraphics[height=2.3cm]{bilder/5-3Expand1}
 
 Dies ist nicht von der Form $D = \delta_{G'}(v)$, also nur "`erlaubt wenn
-$y_c = 0$. Wir müssen expandieren wenn $\epsilon_3$ "`greift'". Dann
+$y_c = 0$. Wir mÃ¼ssen expandieren wenn $\epsilon_3$ "`greift'". Dann
 entsteht keine neue Gleichheitskante zum Schrumpfen, Augmentieren, oder
 Erweitern.
 
-Wir sind dabei, einen Baum $T$ aufzubauen, deshalb außer adaptieren von
+Wir sind dabei, einen Baum $T$ aufzubauen, deshalb auÃŸer adaptieren von
 $M'$ und $c'$ auch Adaptieren von $T$.
 
 Beispiel:
@@ -857,11 +857,11 @@ Nach Anwendung des Expansions Unterprogramms ist $M'$ ein Matching in
 $E_{=}$ und $T$ ein $M'$-alternierender Baum aus Gleichheitskanten. q.e.d.
 \end{lemma}
 
-\paragraph{Blüten-Schrumpf Algorithmus für perfektes Matching mit minimum
+\paragraph{BlÃ¼ten-Schrumpf Algorithmus fÃ¼r perfektes Matching mit minimum
 Kosten}\mbox{}\\
 Eingabe: Graph $G$:
 \begin{algorithmic}
-\STATE Sei $y$ zulässig für (DLPPMMG), $M'$ ein Matching in $G_{=}$,
+\STATE Sei $y$ zulÃ¤ssig fÃ¼r (DLPPMMG), $M'$ ein Matching in $G_{=}$,
 $G'=G$;
 \IF{($M'$ ist perfekt)}
 \STATE STOP "`Matching $M'$ perfekt mit minimum Kosten"';
@@ -880,7 +880,7 @@ $M'$-exponiert)}
 \ENDIF
 \ENDCASE
 \CASE{($\exists v w \in E_{=}(G')$ mit $v \in B(T)$, $w \not \in V(T)$
-$M'$ überdeckt)}
+$M'$ Ã¼berdeckt)}
 \STATE Benutze $v w$ zur Baumerweiterung;
 \ENDCASE
 \CASE{($\exists v w \in E_{=}(G')$ mit $v \in B(T)$, $w \in B(T)$)}
@@ -893,7 +893,7 @@ $M'$ überdeckt)}
 \IF{($\forall v w \in E$ mit $v \in B(T)$ gilt $w \in A(T)$)}
 \STATE STOP "`$G$ hat kein perfektes Matching"';
 \ELSE 
-\STATE Ändere $y$;
+\STATE Ã„ndere $y$;
 \ENDIF
 \ENDCASE
 \ENDLOOP
@@ -902,7 +902,7 @@ $M'$ überdeckt)}
 \begin{satz}
 Der obige Algorithmus terminiert nach $O(n)$ Augmentierungen und $O(n^2)$
 Baumerweiterungsschritten, $O(n^2)$ Expandierungsschritten und $O(n^2)$
-Dualen Änderungsschritten.
+Dualen Ã„nderungsschritten.
 
 Er berechnet ein perf. Matching mit minimum Gewicht oder stellt korrekt
 fest, dass $G$ kein perfektes Matching hat.
@@ -912,7 +912,7 @@ $O(n)$ Augmentierungsschritte. klar.
 
 Wir zeigen $O(n)$ andere Schritte beim Aufbauen eines einzelnen Baums
 $T$:\\
-Nach jeder dualen Änderung folgt einer der anderen Schritte. Diese Zählen
+Nach jeder dualen Ã„nderung folgt einer der anderen Schritte. Diese ZÃ¤hlen
 wir:\\
 Schrumpfen erzeugt einen neuen geraden "`$B$"'-Knoten in $T$. Expandiert
 werden ungerade Pseudoknoten ("`$A$-knoten"').
@@ -928,14 +928,14 @@ S_0 &=& \displaystyle \sum_{v \notin V(T), \; v \mbox{\scriptsize
 S=S_a - S_0
 \end{array}\]
 Expansion vermindert $S$\\
-Schrumpfen und Baumerw. erhöhen $S$ nicht\\
+Schrumpfen und Baumerw. erhÃ¶hen $S$ nicht\\
 $\Rightarrow O(n)$ Expandierungen
 
-Schrumpfen erhöht $S_B$. Die anderen Schritte erniedrigen $S_B$ nicht.\\
+Schrumpfen erhÃ¶ht $S_B$. Die anderen Schritte erniedrigen $S_B$ nicht.\\
 $\Rightarrow O(n)$ Schrumpfungen
 
-Baumerweiterung erhöht $|E(T)|$ um 2. Erniedrigung von $|E(T)|$ durch
-Schrumpfen ist insgesamt höchstens $n$. Expandierung erniedrigt
+Baumerweiterung erhÃ¶ht $|E(T)|$ um 2. Erniedrigung von $|E(T)|$ durch
+Schrumpfen ist insgesamt hÃ¶chstens $n$. Expandierung erniedrigt
 $|E(T)|$ nicht.\\
 $\Rightarrow O(n)$ Baumerweiterungen.
 
@@ -947,47 +947,47 @@ q.e.d.
 
 Im Beweis von Satz \ref{MatPolyEdmonds} (Edmonds) fehlt jetzt nur noch:\\
 $\not\exists$ perf. Matching $\Leftrightarrow$ (LPPMMG) hat keine zul.
-Lösung.\\
+LÃ¶sung.\\
 "`$\Leftarrow$"' klar\\
 "`$\Rightarrow$"' man zeigt: $\nexists$ perfektes Matching $\Rightarrow$
-DLPPMMG ist unbeschränkt. q.e.d.
+DLPPMMG ist unbeschrÃ¤nkt. q.e.d.
 
 \begin{satz}
 (Gabow [1990])\\
-Es gibt eine Implementierung des Blütenschrumpf Algorithmus mit Laufzeit
+Es gibt eine Implementierung des BlÃ¼tenschrumpf Algorithmus mit Laufzeit
 $O(n m + n^2 \log n)$.
 \end{satz}
 
-\subsubsection{Optimale Duallösungen von Matchingproblemen}
+\subsubsection{Optimale DuallÃ¶sungen von Matchingproblemen}
 
 \begin{satz}
-Hat (DLPPMMG) eine Optimallösung, so auch eine verschachtelte, d.h. für
+Hat (DLPPMMG) eine OptimallÃ¶sung, so auch eine verschachtelte, d.h. fÃ¼r
 $s_1, s_2 \in \mathscr{S} = \{s \subseteq V| Y_{\delta(S)} > 0\}$ gilt
 entweder $S_1 \cap S_2 = \varnothing$ oder $S_1 \subseteq S_2$ oder $S_2
 \subseteq S_1$.\\
 \end{satz}
-Beweis: $y_v>0$ im Blütenschrumpf Algorithmus nur für Pseudoknoten in
+Beweis: $y_v>0$ im BlÃ¼tenschrumpf Algorithmus nur fÃ¼r Pseudoknoten in
 Abgeleiteten Graphen.
 
-\subsubsection{Dreiecksungleichung für die Gewichte}
+\subsubsection{Dreiecksungleichung fÃ¼r die Gewichte}
 
 \[c_{u v} + c_{v w} \geqq c_{u w} \; \; \forall \; u,v,w \in V\]
 
 \begin{satz}
-Sei $K_u = (V,E)$ ein vollständiger Graph auf $n$ Knoten, wobei $n$ gerade.
-Sei $c \in \RR^E$, $c\geqq 0$ und $c$ erfülle die Dreiecksungleichung.
+Sei $K_u = (V,E)$ ein vollstÃ¤ndiger Graph auf $n$ Knoten, wobei $n$ gerade.
+Sei $c \in \RR^E$, $c\geqq 0$ und $c$ erfÃ¼lle die Dreiecksungleichung.
 
-Startet der Blütenschrumpfalgorithmus mit $(y,Y)=0$, so gilt für die duale
-Optimallösung bei Terminierung $y \geqq 0$.
+Startet der BlÃ¼tenschrumpfalgorithmus mit $(y,Y)=0$, so gilt fÃ¼r die duale
+OptimallÃ¶sung bei Terminierung $y \geqq 0$.
 \end{satz}
-Beweis: Wir zeigen, dass $y$ während der Ausführung des Blütenschrumpf
+Beweis: Wir zeigen, dass $y$ wÃ¤hrend der AusfÃ¼hrung des BlÃ¼tenschrumpf
 Algorithmus nicht-negativ bleibt.\\
 $y_v \leftarrow y_v - \epsilon \Rightarrow v$ ist ungerader "`$A$"'-Knoten
 in $T$.
 
 \includegraphics[width=5cm]{bilder/5-3VUngerKn}
 
-Erweiterte Duallösung zu einer zulässigen Duallösung $(y,Y)$ im
+Erweiterte DuallÃ¶sung zu einer zulÃ¤ssigen DuallÃ¶sung $(y,Y)$ im
 Originalgraphen. Sei:
 \[\begin{array}{rcl}
 \mathscr{C}_e &=& \{D \in \mathscr{C} | Y_D > 0 \mbox{ und } e \in D\}\\
@@ -1010,15 +1010,15 @@ Y(\mathscr{C}_f))\\
 \hspace{4mm} y_v\mbox{ bleibt nicht-negativ}
 \end{array}\]
 
-Prima, jetzt können wir uns Zertifikate für die minimalen Matchings
-(Zeichnungen mit den Kreisscheiben und Gräben, Kapitel 1) ausstellen, indem wir die
-dualen Bedingungen dafür verwenden.
+Prima, jetzt kÃ¶nnen wir uns Zertifikate fÃ¼r die minimalen Matchings
+(Zeichnungen mit den Kreisscheiben und GrÃ¤ben, Kapitel 1) ausstellen, indem wir die
+dualen Bedingungen dafÃ¼r verwenden.
 
 Mit dem Algorithmus rechnen wir nun die Radien der Kreisscheiben aus.
-Ungerade Schnitte entsprechen ungeraden Knotenmengen. Gräben entstehen um
-ungerade Knotenmengen. $y$ und $Y$ im Blütenschrumpfalgorithmus entsprechen
-also genau den Kreisscheiben ($y$) bzw. Gräben ($Y$). Dies gilt aber nur
-für euklidische Distanzen, bei der Max-Metrik wären es z.B. Quadrate.
+Ungerade Schnitte entsprechen ungeraden Knotenmengen. GrÃ¤ben entstehen um
+ungerade Knotenmengen. $y$ und $Y$ im BlÃ¼tenschrumpfalgorithmus entsprechen
+also genau den Kreisscheiben ($y$) bzw. GrÃ¤ben ($Y$). Dies gilt aber nur
+fÃ¼r euklidische Distanzen, bei der Max-Metrik wÃ¤ren es z.B. Quadrate.
 
 
 

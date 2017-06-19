@@ -1,18 +1,18 @@
 
-\section{Flüsse und Schnitte}
+\section{FlÃ¼sse und Schnitte}
 
 \includegraphics[height=4cm]{bilder/3-0Maxfluss}
 
-Die Flüsse können nun als Kollektion von einfachen $(r,s)$-Wegen (die nicht
+Die FlÃ¼sse kÃ¶nnen nun als Kollektion von einfachen $(r,s)$-Wegen (die nicht
 notwendigerweise verschieden sind) betrachtet werden. In der Grafik sind
-allerdings nur die kumulierten Flüsse dargestellt. $\{ p_{1}, p_{2}, \ldots
+allerdings nur die kumulierten FlÃ¼sse dargestellt. $\{ p_{1}, p_{2}, \ldots
 p_{k} \}$ mit:
 \begin{enumerate}
-\item jedes $e \in E$ ist höchstens $u_{e}$
+\item jedes $e \in E$ ist hÃ¶chstens $u_{e}$
 \item die Anzahl der Wege werden maximiert
 \[ x_{e} = | \{ i | P_{i} \mbox{ benutzt } e\} |\]
 \end{enumerate}
-Bedingungen für $x$:\\
+Bedingungen fÃ¼r $x$:\\
 \[ (\ast) \hspace{3mm} \sum_{w \in V, \; w v \in E} x_{w v} - \sum_{w\in V,
 \; v w \in E} x_{v w} = 0\]
 \[(\ast \ast) \hspace{3mm} 0 \leqq x_{v w} \leqq u_{v w} \forall \; v w \in E\]
@@ -22,11 +22,11 @@ x_{s w} = k \mbox{ ( $=$ Flusswert})\]
 
 Damit haben wir das Maximum ganzzahlige Flussproblem formuliert.
 
-$x \in R^{E}$ heißt Fluss, falls $x$ $(\ast)$ erfüllt.\\
-$x \in R^{E}$ heißt zulässiger Fluss, falls $x$ $(\ast \ast)$ erfüllt.
+$x \in R^{E}$ heiÃŸt Fluss, falls $x$ $(\ast)$ erfÃ¼llt.\\
+$x \in R^{E}$ heiÃŸt zulÃ¤ssiger Fluss, falls $x$ $(\ast \ast)$ erfÃ¼llt.
 
 $f_{x} (v) := \displaystyle \sum_{w \in V, \; w v \in E} x_{w v} -  \sum_{w \in V, \; v w
-\in E} x_{v  w}$ Dies nennt man auch "`Nettofluss"' oder "`Überschuss"' bei
+\in E} x_{v  w}$ Dies nennt man auch "`Nettofluss"' oder "`Ãœberschuss"' bei
 $v$
 
 $(\ast)  = f_{x}(v) = 0 $ ist die "`Flusserhaltungsbedingung"' und $f_{s}$
@@ -35,7 +35,7 @@ ist der Flusswert.
 \begin{lemma} \label{Familie}
 Eine Familie $\{P_{1}, P_{2},\ldots, P_{k}\}$ von $(r,s)$-Wegen mit $|\{i |
 P_{i} \mbox{ benutzt }e\}| \leqq u_{e}$ existiert genau dann wenn ein
-ganzzahliger zulässiger $(r,s)$-Fluss mit Flusswert $k$ existiert.
+ganzzahliger zulÃ¤ssiger $(r,s)$-Fluss mit Flusswert $k$ existiert.
 \end{lemma}
 
 Beweis: $\exists$ Familie von Wegen $\Rightarrow \exists$ ein Fluss,
@@ -57,27 +57,27 @@ f_{x}(v) &=&0 \; \; \forall v \in V \wout \{r,s\}\\
 0 \leqq x_{e} &\leqq& u_{e} \; \; \forall\; e \in E
 \end{array}\]
 
-Für einen Kreisfluss der Menge $\alpha$ gilt: $0 < \alpha \leqq \min
+FÃ¼r einen Kreisfluss der Menge $\alpha$ gilt: $0 < \alpha \leqq \min
 \{u_{e}, e \in C\}$
 
 \begin{lemma}
-Jeder zulässige $(r,s)$-Fluss ist die Summe von höchstens $m$ Kreis und
-Weg-Flüssen.
+Jeder zulÃ¤ssige $(r,s)$-Fluss ist die Summe von hÃ¶chstens $m$ Kreis und
+Weg-FlÃ¼ssen.
 \end{lemma}
 
-Beweis: Analog zu \ref{Familie} mit Kreis und Wegeflüssen.
+Beweis: Analog zu \ref{Familie} mit Kreis und WegeflÃ¼ssen.
 
-\subsubsection{Maximale Flüsse und minimale Schnitte}
+\subsubsection{Maximale FlÃ¼sse und minimale Schnitte}
 
 Definition des gerichteten Schnittes $R$:
 \[ R \subseteq V, \; \; \delta(R) = \{v w | v w \in E, \; v \in R, \; w \not\in
 R\}\]
 Ein $(r,s)$-gerichteter Schnitt: $r \in R, \; s \not\in R$\\
-$A \subseteq V, \; \bar{A} := V \wout A \hspace{3mm} \delta(v)$ für
-$\delta(\{v\})$, $\delta(\bar{v})$ für $\delta(\bar{\{v\}})$.
+$A \subseteq V, \; \bar{A} := V \wout A \hspace{3mm} \delta(v)$ fÃ¼r
+$\delta(\{v\})$, $\delta(\bar{v})$ fÃ¼r $\delta(\bar{\{v\}})$.
 
 \begin{lemma}\label{SchnittFluss}
-Für jeden $(r,s)$-Schnitt $\delta(R)$ und jeden $(r,s)$-Fluss $x$ gilt
+FÃ¼r jeden $(r,s)$-Schnitt $\delta(R)$ und jeden $(r,s)$-Fluss $x$ gilt
 $x(\delta(R))$ - $x(\delta(\bar{R})) = f_{x}(s)$
 \end{lemma}
 
@@ -110,9 +110,9 @@ $\Rightarrow \displaystyle \sum_{v \in R} f_{x}(v) = x(\delta(R)) - x (\delta(\b
 \hspace{3mm} \mbox{q.e.d.}$
 
 \begin{korollar}\label{FlussSchnittKap}
-Für jeden zulässigen $(r,s)$-Fluss $x$ und jeden $(r,s)$-Schnitt
+FÃ¼r jeden zulÃ¤ssigen $(r,s)$-Fluss $x$ und jeden $(r,s)$-Schnitt
 $\delta(R)$ gilt:
-\[f_{x}(s) \leqq u (\delta(R)) \hspace{7mm} \mbox{$u = $ Kapazität}\]
+\[f_{x}(s) \leqq u (\delta(R)) \hspace{7mm} \mbox{$u = $ KapazitÃ¤t}\]
 \end{korollar}
 Im Beispiel: $ R = \{r,p,q\} \rightarrow f_{x}(s)\leqq 8$
 
@@ -122,7 +122,7 @@ x(\delta(R)) &\leqq & u (\delta(R))\\
 \stackrel{\ref{SchnittFluss}}{\Rightarrow} f_{x}(s) &\leqq & u (\delta(R))
 \hspace{3mm} \mbox{q.e.d.}
 \end{array}$\\
-Dies ist ähnlich zur schwachen Dualität.
+Dies ist Ã¤hnlich zur schwachen DualitÃ¤t.
 
 
 \begin{satz}\label{MaxFlowMinCut}
@@ -131,18 +131,18 @@ Gibt es einen maximalen $(r,s)$-Fluss, so gilt
 \[\max\{f_{x}(s) | x \mbox{ ist zul. $(r,s)$-Fluss}\} = 
 \min \{u(\delta(R))| \delta (R) \mbox{ ist ein $(r,s)$-Schnitt}\}\]
 \end{satz}
-(entspricht der starken Dualität)
+(entspricht der starken DualitÃ¤t)
 
 Beweisidee:
 \begin{enumerate}
 \item Finde $(r,s)$-Weg $P$ mit $x_{e} < u_{e} \forall \; e \in P$
-\item Erhöhe Fluss (alle $x_{e} \in P$) um $\min\{u_{e} - x_{e} | e \in
+\item ErhÃ¶he Fluss (alle $x_{e} \in P$) um $\min\{u_{e} - x_{e} | e \in
 P\}$
 \end{enumerate}
 Im Beispiel: kein maximaler Fluss, trotzdem funktioniert diese Idee nicht.
 
-Generalisierung: $\forall$ Vorwärtskanten $x_{e} < u_{e}$ und $\forall$
-Rückwärtskanten $x_{e} > 0$ 
+Generalisierung: $\forall$ VorwÃ¤rtskanten $x_{e} < u_{e}$ und $\forall$
+RÃ¼ckwÃ¤rtskanten $x_{e} > 0$ 
 
 \includegraphics[height=4cm]{bilder/3-0Maxfluss}
 
@@ -155,14 +155,14 @@ immer die Quelle enthalten).
 Beweis: Mit Korollar \ref{FlussSchnittKap} ist zu zeigen:
 \[\exists \mbox{ zul. Fluss x, } \exists \mbox{ Schnitt } \delta(R): \; \;
 f_{x} = u (\delta(R))\]
-Sei $x$ maximal zulässiger Fluss\\
-Def: $R:= \{ v \in V| \exists \mbox{ $x$ erhöhender $(r,v)$-Weg} \}
+Sei $x$ maximal zulÃ¤ssiger Fluss\\
+Def: $R:= \{ v \in V| \exists \mbox{ $x$ erhÃ¶hender $(r,v)$-Weg} \}
 \hspace{3mm}$ "`$(u\{r\})$"'
 
-Behauptung: $\delta(R)$ ist zugehöriger optimaler Schnitt.\\
+Behauptung: $\delta(R)$ ist zugehÃ¶riger optimaler Schnitt.\\
 Es gilt: $r \in R$, $s \not\in R$ ($x$ optimal)\\
 $\forall\;v w \in \delta(R) \; \; \; x_{v w} = u_{v w}$ (sonst
-$r\rightarrow\ldots\rightarrow v \rightarrow w$, $x$ erhöhend, aber $w \not\in
+$r\rightarrow\ldots\rightarrow v \rightarrow w$, $x$ erhÃ¶hend, aber $w \not\in
 R$)\\
 $\forall \; v w \in  \delta(\bar{R}) \; \; \; x_{v w} = 0$ (analog).
 $\stackrel{\ref{SchnittFluss}}{\Rightarrow} f_{x}(s) = \underbrace{ x
@@ -170,59 +170,59 @@ $\stackrel{\ref{SchnittFluss}}{\Rightarrow} f_{x}(s) = \underbrace{ x
 u(\delta(R))$
 
 \begin{satz}
-Ein zulässiger Fluss ist maximal genau dann, wenn kein $x$-erhöhender Weg
+Ein zulÃ¤ssiger Fluss ist maximal genau dann, wenn kein $x$-erhÃ¶hender Weg
 existiert.
 \end{satz}
 Beweis: \\
 "`$\Rightarrow$"' klar\\
 "`$\Leftarrow$"' Beweis von Satz \ref{MaxFlowMinCut} liefert Schnitt
 $\delta(R)$ mit $f_{x}(s) = u (\delta(R)) \stackrel{\ref{FlussSchnittKap}}{
-\Rightarrow} x$ ist maximaler zulässiger Fluss. q.e.d.
+\Rightarrow} x$ ist maximaler zulÃ¤ssiger Fluss. q.e.d.
 
 \begin{satz}
-Ist $u$ ganzzahlig und existiert ein maximal zulässiger Fluss, so existiert
-ein ganzzahliger maximal zulässiger Fluss.
+Ist $u$ ganzzahlig und existiert ein maximal zulÃ¤ssiger Fluss, so existiert
+ein ganzzahliger maximal zulÃ¤ssiger Fluss.
 \end{satz}
-Beweis: wähle ganzzahligen maximalen Fluss. $x$ und $u$ ganzzahlig.
-$\exists$ x-erhöhender Weg $\Rightarrow \exists$ höherer ganzzahliger Fluss.\\
-Einfacher: Existiert ein maximaler zulässiger Fluss so existiert auch der
-minimal zulässige Schnitt. Der wiederum setzt sich als Summe der
-ganzzahligen Kapazitäten zusammen $\Rightarrow$. Diese Summe ist dann auch 
+Beweis: wÃ¤hle ganzzahligen maximalen Fluss. $x$ und $u$ ganzzahlig.
+$\exists$ x-erhÃ¶hender Weg $\Rightarrow \exists$ hÃ¶herer ganzzahliger Fluss.\\
+Einfacher: Existiert ein maximaler zulÃ¤ssiger Fluss so existiert auch der
+minimal zulÃ¤ssige Schnitt. Der wiederum setzt sich als Summe der
+ganzzahligen KapazitÃ¤ten zusammen $\Rightarrow$. Diese Summe ist dann auch 
 ganzzahlig.
 
 \begin{korollar}
-Ist $x$ ein zulässiger $(r,s)$-Fluss und $\delta(R)$ ein
+Ist $x$ ein zulÃ¤ssiger $(r,s)$-Fluss und $\delta(R)$ ein
 $(r,s)$-Schnitt, so ist $f_{x}(s)$ Maximum und $u(\delta(R))$ Minimum genau
 dann wenn: 
 $x_{e} = u_{e} \; \; \forall e \in \delta(R)$\\
 $x_{e} = 0 \;\; \forall e \in \delta(\bar{R}) \mbox{ q.e.d.}$
 \end{korollar}
 
-\section{Erhöhender Weg (Augmenting Path) Algorithmus}
+\section{ErhÃ¶hender Weg (Augmenting Path) Algorithmus}
 
 \begin{algorithmic}
-\STATE Starte mit zulässigem Fluss $x$ (z.B. $x=0$)
-\WHILE{($\exists x$-erhöhender Weg $P$)}
-\STATE $E_{1} := \min \{ u_{e} - x_{e} | e \mbox{ ist Vorwärtskante in
+\STATE Starte mit zulÃ¤ssigem Fluss $x$ (z.B. $x=0$)
+\WHILE{($\exists x$-erhÃ¶hender Weg $P$)}
+\STATE $E_{1} := \min \{ u_{e} - x_{e} | e \mbox{ ist VorwÃ¤rtskante in
 }P\}$
-\STATE $E_{2} := \min \{x_{e} | e \mbox{ ist Rückwärtskante in } P \}$
+\STATE $E_{2} := \min \{x_{e} | e \mbox{ ist RÃ¼ckwÃ¤rtskante in } P \}$
 \STATE $E := \min \{E_{1}, E_{2} \}$ \hspace{3mm} "`$x$-Breite von $P$"'
 \IF{$(E = \infty)$}
 \STATE STOP \hspace{3mm} "`kein maximaler Fluss"'
 \ELSE 
-\STATE erhöhe Fluss auf $P$ um $E$
+\STATE erhÃ¶he Fluss auf $P$ um $E$
 \ENDIF
 \ENDWHILE
 \STATE STOP $x$ maximaler Fluss
-$R:= \{v \in V | \exists \mbox{$x$-erhöhender $(r,v)$-Weg} \}$ min Schnitt
+$R:= \{v \in V | \exists \mbox{$x$-erhÃ¶hender $(r,v)$-Weg} \}$ min Schnitt
 $\delta(R)$.
 \end{algorithmic}
 
-\subsubsection{Suche nach einem $x$-erhöhendem Weg}
+\subsubsection{Suche nach einem $x$-erhÃ¶hendem Weg}
 Hilfsdigraph $G(x)$: $V(G(x)) := V$\\
 $v w \in E(G(x))$ genau dann wenn $v w \in E$ und $x_{v w} < u_{v w}$ oder $w v 
 \in E$ und $x_{w v} > 0$.\\
-$(r,s)$-Wege in $G(x) \Leftrightarrow x$-erhöhende Wege in $G$\\
+$(r,s)$-Wege in $G(x) \Leftrightarrow x$-erhÃ¶hende Wege in $G$\\
 Genannt Breitensuche: Zeit $O(m)$ pro Iteration. Im Beispiel 
 (Hilfsdigraph zum ersten Fluss mit Flusswert 3):
 
@@ -231,43 +231,43 @@ Genannt Breitensuche: Zeit $O(m)$ pro Iteration. Im Beispiel
 
 \begin{satz} \label{EW}
 Ist $u$ ganzzahlig und der maximale Flusswert $k < \infty$, so terminiert
-der erhöhender Wege Algorithmus nach höchstens $k$ Erhöhungen:
+der erhÃ¶hender Wege Algorithmus nach hÃ¶chstens $k$ ErhÃ¶hungen:
 \end{satz}
-Beweis: $u$ ganzzahlig $\Rightarrow$ alle $x$ ganzzahlig und jede Erhöhung
-erhöht den Fluss mindestens um 1. q.e.d.
+Beweis: $u$ ganzzahlig $\Rightarrow$ alle $x$ ganzzahlig und jede ErhÃ¶hung
+erhÃ¶ht den Fluss mindestens um 1. q.e.d.
 
-D.h. für rationale $u$ terminiert der E-W Algorithmus (Skalierung auf ganze
-Kapazitäten) - dies gilt also nicht für irrationale Kapazitäten.
+D.h. fÃ¼r rationale $u$ terminiert der E-W Algorithmus (Skalierung auf ganze
+KapazitÃ¤ten) - dies gilt also nicht fÃ¼r irrationale KapazitÃ¤ten.
 
 Problem:
 
 \includegraphics[width=6cm]{bilder/3-0EWTermnicht}
 
-Der Algorithmus wählt immer abwechselnd $r a b s$ und $r b a s \rightarrow$
-keine Terminierung wenn $P$ immer über $a b$ geht. Wenn nicht $\infty$
-sondern große Zahl $M$, so macht der Algorithmus $M$ Iterationen und hat
+Der Algorithmus wÃ¤hlt immer abwechselnd $r a b s$ und $r b a s \rightarrow$
+keine Terminierung wenn $P$ immer Ã¼ber $a b$ geht. Wenn nicht $\infty$
+sondern groÃŸe Zahl $M$, so macht der Algorithmus $M$ Iterationen und hat
 einen Fluss von $2M$.\\
 $\Rightarrow$ Schranke in \ref{EW} ist scharf
 
-Inputlänge: $n+m+log M$
+InputlÃ¤nge: $n+m+log M$
 
-Ausweg: Kürzeste x-erhöhende, d.h. x-erhöhende Wege mit minimaler
+Ausweg: KÃ¼rzeste x-erhÃ¶hende, d.h. x-erhÃ¶hende Wege mit minimaler
 Kantenzahl.
 
 \begin{satz}\label{KEWZeit}
 Dinitz [1970], Edmonds und Kasp [1972]\\
-Wenn jede Erhöhung auf einem kürzesten, x-erhöhenden Weg statt findet, so
-erfolgen höchstens $n \cdot m$ Erhöhungen.
+Wenn jede ErhÃ¶hung auf einem kÃ¼rzesten, x-erhÃ¶henden Weg statt findet, so
+erfolgen hÃ¶chstens $n \cdot m$ ErhÃ¶hungen.
 \end{satz}
-Beweis: weiter unten nach anderen Sätzen.
+Beweis: weiter unten nach anderen SÃ¤tzen.
 
 \begin{itemize}
-\item Keine Annahmen über:
+\item Keine Annahmen Ã¼ber:
 \begin{itemize}
 \item Existenz eines maximalen Flusses
-\item Rationalität von $u$
+\item RationalitÃ¤t von $u$
 \end{itemize}
-\item Breitensuche findet einen kürzesten $x$-erhöhenden Weg in Zeit
+\item Breitensuche findet einen kÃ¼rzesten $x$-erhÃ¶henden Weg in Zeit
 $O(m)$
 
 Edmonds und Kasp: \begin{quote} "`\ldots so simple that it is likely to be
@@ -276,14 +276,14 @@ incorporated innocently into a computer implementation."'
 \end{itemize}
 
 \begin{korollar}\label{ZeitEWA}
-Der E-W-Algorithmus mit Breitensuche löst das Max Flow Problem in Zeit
+Der E-W-Algorithmus mit Breitensuche lÃ¶st das Max Flow Problem in Zeit
 $O(n m^{2})$
 \end{korollar}
 Zum Beweis von Satz \ref{KEWZeit} zwei Lemmata:
 
-Fluss $x \rightarrow x$-erhöhender Weg $P$ $\underbrace{v_{0}}_{=r}, v_{1},
+Fluss $x \rightarrow x$-erhÃ¶hender Weg $P$ $\underbrace{v_{0}}_{=r}, v_{1},
 \ldots, \underbrace{v_{k}}_{=s}$ Fluss $x'$\\
-$d_{x}(v,w)$ kürzeste Länge eines $v-w$-Weges in $G(x)$ ($=\infty$ falls
+$d_{x}(v,w)$ kÃ¼rzeste LÃ¤nge eines $v-w$-Weges in $G(x)$ ($=\infty$ falls
 keiner existiert).\\
 d.h. $\; d_{x}(r,v_{i}) = i$ \hspace{3mm} $d_{x}(v_{i}, s) = k -i$ $\;\forall\; 0
 \leqq i \leqq k$\\
@@ -293,17 +293,17 @@ v_{i}, \; v = v_{i-1}$
 Kante ist jetzt in $G(x')$ da Fluss dort aufgebaut wurde.
 
 \begin{lemma}\label{dxstrichgr}
-Für jedes $v \in V$ gilt:
+FÃ¼r jedes $v \in V$ gilt:
 \[d_{x'}(r,v) \geqq d_{x}(r,v)\mbox{ und }d_{x'}(v,s) \geqq d_{x} (v,s)\]
 \end{lemma} 
 Beweis: Annahme: $(\exists v \in V)\; \; d_{x'}(r,v) < d_{x}(r,v)$\\
-Wähle $v$ mit $d_{x'}(r,v)$ Minimum, es gilt $d_{x'} (r,v) > 0 \; \; (v
+WÃ¤hle $v$ mit $d_{x'}(r,v)$ Minimum, es gilt $d_{x'} (r,v) > 0 \; \; (v
 \not= 0)$\\
 
 Zu $G(x')$: $P'$: $r\underbrace{\rightarrow \; \rightarrow \ldots
-\rightarrow}_{\mbox{\scriptsize \begin{tabular}{c}Vorwärts- oder\\
-Rückwärtskanten\end{tabular}}}w\rightarrow v$, $w$ ist also der vorletzte Knoten.\\
-Länge des Weges $= d_{x'}(r,v)$
+\rightarrow}_{\mbox{\scriptsize \begin{tabular}{c}VorwÃ¤rts- oder\\
+RÃ¼ckwÃ¤rtskanten\end{tabular}}}w\rightarrow v$, $w$ ist also der vorletzte Knoten.\\
+LÃ¤nge des Weges $= d_{x'}(r,v)$
 
 Annahme:
 \[\begin{array}{rcl}d_{x}(r,v) &>& d_{x'}(r,v)\\
@@ -318,15 +318,15 @@ $\stackrel{\mbox{\scriptsize$(\ast)$}}{\Leftrightarrow}
 $d_{x'}(r,s) \geqq d_{x}(v,s)$ analog q.e.d.
 
 D.h. $\leqq n-1$ Phasen, in jeder Phase: Augmentierungen auf Wegen einer
-festen Länge $k$. Frage: Wie oft?
-\[E(x):= \{e \in E | e \mbox{ ist Kante eines kürzesten $x$-erhöhenden 
+festen LÃ¤nge $k$. Frage: Wie oft?
+\[E(x):= \{e \in E | e \mbox{ ist Kante eines kÃ¼rzesten $x$-erhÃ¶henden 
 Weges}\}\]
 
 \begin{lemma}\label{KWgroe}
 gilt $d_{x'}(r,s) = d_{x}(r,s)$, so gilt $E(x') \subset E(x)$
 \end{lemma}
 Beweis: Sei $k=d_{x}(r,s) = d_{x'}(r,s)$, $e \in E(x')$\\
-$\Rightarrow e = v_{i-1}v_{i}$ oder $e=v_{i}v_{i-1}$ in $x'$-erhöhendem
+$\Rightarrow e = v_{i-1}v_{i}$ oder $e=v_{i}v_{i-1}$ in $x'$-erhÃ¶hendem
 Weg:
 \[P': \; \; \underbrace{\overbrace{v_{0}}^{=v},v_{i},\ldots v_{i-1},}_{
 \mbox{\scriptsize$
@@ -340,13 +340,13 @@ Annahme: $e \not\in E(x) \Rightarrow x_{e} \not= x'_{e} \Rightarrow e \in P
 \Rightarrow e \in E(x) \hspace{3mm} \lightning$\\
 $\Rightarrow E(x') \subseteq E(x)$
 
-Noch zu Zeigen: $E(x') \neq E(x)$: $\exists e \in P$: $e$ vorwärts und $x'_{e} = u_{e}$ oder $e$ rückwärts und
+Noch zu Zeigen: $E(x') \neq E(x)$: $\exists e \in P$: $e$ vorwÃ¤rts und $x'_{e} = u_{e}$ oder $e$ rÃ¼ckwÃ¤rts und
 $x'_{e} = 0$
 
 Annahme: $e \in E(x')$\\
-$\Rightarrow$ Jeder $x'$-erhöhende Weg benutzt $e$ anders herum als in
+$\Rightarrow$ Jeder $x'$-erhÃ¶hende Weg benutzt $e$ anders herum als in
 $P$\\
-$ (\exists i)$ Länge von $P' > -\underbrace{i}_{\mbox{\scriptsize$r
+$ (\exists i)$ LÃ¤nge von $P' > -\underbrace{i}_{\mbox{\scriptsize$r
 \ldots v_{i}$}} + \underbrace{k-i+1}_{\mbox{\scriptsize $v_{i-1}\ldots s$}} +
  \underbrace{1}_{v_{i}\ldots v_{i-1}} = k+2 \hspace{3mm}\lightning$\\
 $\Rightarrow e \not\in E(x')$
@@ -354,16 +354,16 @@ $\Rightarrow e \not\in E(x')$
 Anschaulich: $e$ ist der Flaschenhals von $P$.
 
 Beweis von Satz \ref{KEWZeit}:\\
-Lemma \ref{dxstrichgr} $\Rightarrow$ höchstens $n-1$ Phasen\\
-Lemma \ref{KWgroe} $\Rightarrow$ höchstens $m$ Erhöhungen pro Phase\\
-$\Rightarrow m n$ Erhöhungen. q.e.d.
+Lemma \ref{dxstrichgr} $\Rightarrow$ hÃ¶chstens $n-1$ Phasen\\
+Lemma \ref{KWgroe} $\Rightarrow$ hÃ¶chstens $m$ ErhÃ¶hungen pro Phase\\
+$\Rightarrow m n$ ErhÃ¶hungen. q.e.d.
 
-D.h. Gesamtlaufzeit für kürzeste erhöhende Wege Algorithmus $O(n m^{2})$.
-Später noch ein Algorithmus mit Laufzeit $O(n^{2}m)$.
+D.h. Gesamtlaufzeit fÃ¼r kÃ¼rzeste erhÃ¶hende Wege Algorithmus $O(n m^{2})$.
+SpÃ¤ter noch ein Algorithmus mit Laufzeit $O(n^{2}m)$.
 
 \section{Anwendungen von Max Flow Min Cut}
 
-\subsection{Bipartite Matchings und Knotenüberdeckungen}
+\subsection{Bipartite Matchings und KnotenÃ¼berdeckungen}
 Bipartite Graphen $G(V,E)$ ungerichtet\\
 $V=P \cup Q$ \hspace{3mm} $E = \{p q| p \in P, q \in Q\}$\\
 $P \cap Q = \varnothing$ \hspace{3mm} $\{P,Q\}$ Bipartition der Graphen.
@@ -384,41 +384,41 @@ Im Beispiel z.B:
 
 \includegraphics[height=4cm]{bilder/3-0Heiraten}
 
-Hierbei verdeutlichen die Kanten ein "`sich mögen"' und es sollen möglichst
-viele Paare verheiratete werden aber nur solche die sich mögen. Eine Lösung
+Hierbei verdeutlichen die Kanten ein "`sich mÃ¶gen"' und es sollen mÃ¶glichst
+viele Paare verheiratete werden aber nur solche die sich mÃ¶gen. Eine LÃ¶sung
 ist:
 
 \includegraphics[height=4cm]{bilder/3-0Heiraten2}
 
-Hierbei können also sechs Paare verheiratet werden, wären auch mehr
-möglich?
+Hierbei kÃ¶nnen also sechs Paare verheiratet werden, wÃ¤ren auch mehr
+mÃ¶glich?
 
-$C \subseteq V$ heißt Knotenüberdeckung falls:
+$C \subseteq V$ heiÃŸt KnotenÃ¼berdeckung falls:
 \[ (\forall v w \in E) \; v \in C \mbox{ oder }w \in C\]
-Offensichtlich handelt es sich hier um Schwache Dualität.\\
+Offensichtlich handelt es sich hier um Schwache DualitÃ¤t.\\
 $M$ Matching im bipartiten Graphen $G=(V,E)$\\
-$C$ Knotenüberdeckung im bipartiten Graphen $G=(V,E)$\\
+$C$ KnotenÃ¼berdeckung im bipartiten Graphen $G=(V,E)$\\
 $\Rightarrow |M| \leqq |C|$\\
 
-nun die Knotenüberdeckung (grau gefärbte Knoten:)
+nun die KnotenÃ¼berdeckung (grau gefÃ¤rbte Knoten:)
 
 \includegraphics[height=4cm]{bilder/3-0Heiraten3}
 
-Diese hat nun auch 6 Knoten also ist die Lösung auch optimal:\\
+Diese hat nun auch 6 Knoten also ist die LÃ¶sung auch optimal:\\
 $6=\max |M| = \min |C|$
 
 \begin{satz}
-Satz von König [1931]\\
-Für bipartite Graphen $G=(V,E)$ gilt:\\
+Satz von KÃ¶nig [1931]\\
+FÃ¼r bipartite Graphen $G=(V,E)$ gilt:\\
 \[ \max \{ |M| | \mbox{ ist Matching } \} = \min \{ |C|| \mbox{
-ist Knotenüberdeckung } \}\]
+ist KnotenÃ¼berdeckung } \}\]
 \end{satz}
 Beweis: Aus ungerichtetem Graphen $G=(V,E)$ konstruieren wir einen
 gerichteten Graphen $G'(V',E')$ wie folgt:\\
 $ V':= V \cup \{r,s\} \hspace{5mm} E': \forall p q \in E,\; p \in P, q \in
-Q$ gerichtete Kanten $p q \in E'$ mit der Kapazität $u_{p q} = \infty$,
-zusätzlich $\forall p \in P$ gerichtete Kante $r p$ mit Kapazität $u_{r p}=1$
-und $\forall q \in Q$ gerichtete Kante $q s$ mit Kapazität $u_{q s}= 1$
+Q$ gerichtete Kanten $p q \in E'$ mit der KapazitÃ¤t $u_{p q} = \infty$,
+zusÃ¤tzlich $\forall p \in P$ gerichtete Kante $r p$ mit KapazitÃ¤t $u_{r p}=1$
+und $\forall q \in Q$ gerichtete Kante $q s$ mit KapazitÃ¤t $u_{q s}= 1$
 
 Im Beispiel:
 
@@ -426,14 +426,14 @@ Im Beispiel:
 
 Sei $x$ ein ganzzahliger (d.h. 0/1) Fluss in $G'$ mit Flusswert $k$.\\
 Wir definieren $M\subseteq E$ durch:
-\[\mbox{Für $p q \in E$ gilt } \left\{ \begin{array}{l}
+\[\mbox{FÃ¼r $p q \in E$ gilt } \left\{ \begin{array}{l}
 p q \in M \; \mbox{ falls } x_{p q}=1\\
 p q \not \in M \mbox{ falls } x_{p q} = 0\\
 \end{array} \right.\]
-Dann ist $M$ ein Matching in $G$ mit Kardinalität $k$.
+Dann ist $M$ ein Matching in $G$ mit KardinalitÃ¤t $k$.
 
-Umgekehrt: Sei $M$ ein Matching in $G$ mit Kardinalität $k$.\\
-Wir definieren $x_{v w}$ für $v w \in E'$ durch:
+Umgekehrt: Sei $M$ ein Matching in $G$ mit KardinalitÃ¤t $k$.\\
+Wir definieren $x_{v w}$ fÃ¼r $v w \in E'$ durch:
 \[\begin{array}{ll}
 v \in P , \; w \in Q&: x_{v w} = \left\{\begin{array}{l}
 1 \mbox{ falls } v w \in M\\
@@ -449,23 +449,23 @@ v \in P, \; w=s&: x_{v w} = \left\{\begin{array}{l}
 \end{array} \right.
 \end{array}
 \]
-Dann ist $x$ ein ganzzahliger zulässiger Fluss in $G'$ mit Flusswert $|M|$.
+Dann ist $x$ ein ganzzahliger zulÃ¤ssiger Fluss in $G'$ mit Flusswert $|M|$.
 
-D.h. wir können das maximale Kardinalität Matching mit Max-Flow Berechnung
-bestimmen mit höchstens $\min \{|P|,|Q|\} \leqq n$ Flusserhöhungen. Satz
+D.h. wir kÃ¶nnen das maximale KardinalitÃ¤t Matching mit Max-Flow Berechnung
+bestimmen mit hÃ¶chstens $\min \{|P|,|Q|\} \leqq n$ FlusserhÃ¶hungen. Satz
 \ref{EW} liefert uns die Laufzeit $O(m n)$ Sei $\delta'(\{r\} \cup A)$ mit
 $A \subseteq V$ ein minimaler $(r,s)$-Schnitt in $G'$
 
 \includegraphics[height=3cm]{bilder/3-0MinKnotenueber}
 
-Endliche Kapazität des Schnitts $\Rightarrow (\nexists v w \in G) \; v
+Endliche KapazitÃ¤t des Schnitts $\Rightarrow (\nexists v w \in G) \; v
 \in  A \cap P, \; w \in Q \wout A$.\\
 $\Rightarrow$ Jede Kante $e \in G$ ist inzident zu einem Knoten in $C := (P
 \wout A) \cup (Q \cap A)$\\
-$\Rightarrow C$ ist Knotenüberdeckung mit Kardinalität $|C| = |P \wout
-A| + | Q \cap A| = $ Kapazität des Schnitts $= \max \{|M|| M \mbox{
+$\Rightarrow C$ ist KnotenÃ¼berdeckung mit KardinalitÃ¤t $|C| = |P \wout
+A| + | Q \cap A| = $ KapazitÃ¤t des Schnitts $= \max \{|M|| M \mbox{
 Matching} \}$\\
-D.h. der Algorithmus kann auch eine minimale Knotenüberdeckung berechnen. 
+D.h. der Algorithmus kann auch eine minimale KnotenÃ¼berdeckung berechnen. 
 
 \subsection{Transportproblem}
 
@@ -479,26 +479,26 @@ P\\
 x_{p q} &\geqq& 0 \; \forall p q \in E\\
 x_{p q}&& \mbox{ganzzahlig } \forall \; p q \in E\end{array}
 \]
-Nun ist gefragt ob alle Nachfragen $b$ mit den gegebenen Kapazitäten $a$
-überhaupt befriedigt werden können. Mathematisch ist also gefragt, ob
-eine zulässige Lösung für das Problem existiert. Auch dieses Problem
-ähnlich wie das Matching-Problem wird auf ein Max-Flow Problem übertragen:
+Nun ist gefragt ob alle Nachfragen $b$ mit den gegebenen KapazitÃ¤ten $a$
+Ã¼berhaupt befriedigt werden kÃ¶nnen. Mathematisch ist also gefragt, ob
+eine zulÃ¤ssige LÃ¶sung fÃ¼r das Problem existiert. Auch dieses Problem
+Ã¤hnlich wie das Matching-Problem wird auf ein Max-Flow Problem Ã¼bertragen:
 Beispiel:
 
 \begin{tabular}{c@{\hspace{5mm}}c}
 Transportproblem&Flussproblem\\
 \includegraphics[height=3cm]{bilder/3-0Transport1}&
 \includegraphics[height=3cm]{bilder/3-0Transport2}\\
-$\exists$ Lösung $x\in \ZZ^{E}$ & $\Leftrightarrow \exists$ ganzzahliger
+$\exists$ LÃ¶sung $x\in \ZZ^{E}$ & $\Leftrightarrow \exists$ ganzzahliger
 zul. Fluss mit Wert $\displaystyle \sum_{q\in Q} b_{q}$
 \end{tabular}
 
 Nach der Umformung kann man einfach den Max-Fluss Algorithmus anwenden:\\
 Max-Flow-Min-Cut Theorem:\\
-(TB) hat Lösung genau dann wenn jeder $(r,s)$-Schnitt in $G'$ als maximale
-Kapazität wenigstens $\displaystyle \sum_{q\in Q} b_{q}$ hat.
+(TB) hat LÃ¶sung genau dann wenn jeder $(r,s)$-Schnitt in $G'$ als maximale
+KapazitÃ¤t wenigstens $\displaystyle \sum_{q\in Q} b_{q}$ hat.
 
-Für $A \subseteq P$, $B \subseteq Q$ ist die Kapazität des Schnitts:
+FÃ¼r $A \subseteq P$, $B \subseteq Q$ ist die KapazitÃ¤t des Schnitts:
 \[ \delta'(A\cup B \cup \{r\}) = \sum_{i \in P\wout A} a_{i} +
 \sum_{j\in B} b_{j}\]
 
@@ -507,23 +507,23 @@ Für $A \subseteq P$, $B \subseteq Q$ ist die Kapazität des Schnitts:
 \[\sum_{i \in P\wout A} a_{i} + \sum_{j \in B} b_{j} \geqq \sum_{q \in Q}
 b_q \mbox{ g.d.w. }  \sum_{i \in P \wout A} a_{i} \geqq \sum_{j = Q \wout
 B} b_{j}\]
-Wir können die Überprüfung beschränken auf solche $A \subseteq P$ für die
+Wir kÃ¶nnen die ÃœberprÃ¼fung beschrÃ¤nken auf solche $A \subseteq P$ fÃ¼r die
 gilt: Jeder Knoten aus $P \wout A$ ist mit einem Knoten aus $Q \wout B$
 adjazent.
 
-Für $C \subseteq V$:
-\[N(C) := \{w \in V | v w \in E \mbox{ für ein v } \in C\} =
+FÃ¼r $C \subseteq V$:
+\[N(C) := \{w \in V | v w \in E \mbox{ fÃ¼r ein v } \in C\} =
 (\mbox{ungerichtete Nachbarmenge}) \]
-also können wir annehmen:
+also kÃ¶nnen wir annehmen:
 \[N(Q \wout B) = P \wout A\]
 Fazit:
 \begin{satz}
-$\exists$ Lösung für (TB) genau dann wenn $(\forall \; C \subseteq Q)
+$\exists$ LÃ¶sung fÃ¼r (TB) genau dann wenn $(\forall \; C \subseteq Q)
 \hspace{3mm} a(N(C)) \geqq b(C)$
 \end{satz}
 
-Interpretation: Für jede Kundenteilmenge muss der Bedarf durch die
-möglichen Produzenten gedeckt sein.
+Interpretation: FÃ¼r jede Kundenteilmenge muss der Bedarf durch die
+mÃ¶glichen Produzenten gedeckt sein.
 
 \section{Minimale Schnitte und lineare Optimierung}
 
@@ -554,8 +554,8 @@ Vereinfachung durch setzen der neuen Dualvariablen:
 erhalten wir die gemeinsame Form:
 \[ -y_{v} + y_{w} + z_{v w} \geqq 0 \; \; \forall \; v w \in E\]
 
-Die Addition von 1 zu allen $y_{v} \; (v \in V)$ ändert die Restriktion
-nicht, also ist (DLPMF) äquivalent zu:
+Die Addition von 1 zu allen $y_{v} \; (v \in V)$ Ã¤ndert die Restriktion
+nicht, also ist (DLPMF) Ã¤quivalent zu:
 
 \[\begin{array}{lrcl}
 (DLPMF')& \min \displaystyle \sum_{v w \in E} u_{v w} z_{v w}\\
@@ -566,14 +566,14 @@ nicht, also ist (DLPMF) äquivalent zu:
 \end{array}\]
 
 \begin{satz}
-Falls (DLPMF') eine Optimallösung hat, so hat (DLPMF') eine Optimallösung
+Falls (DLPMF') eine OptimallÃ¶sung hat, so hat (DLPMF') eine OptimallÃ¶sung
  der folgenden Form:\\
-Für einen $(r,s)$-Schnitt $\delta(R)$ ist $y$ der charakteristische Vektor
+FÃ¼r einen $(r,s)$-Schnitt $\delta(R)$ ist $y$ der charakteristische Vektor
 von $R$ und $z$ der charakteristische Vektor von $\delta(R)$
 \end{satz}
 
 Beweis:\\
-Wähle $\delta(R)$ MIT $r \in R$ als minimalen Schnitt und $y,z$ als die
+WÃ¤hle $\delta(R)$ MIT $r \in R$ als minimalen Schnitt und $y,z$ als die
 entsprechenden charakteristischen Vektoren. Dann gilt:
 
 \[ y_{r} = 1, \; \; y_{s} = 0, \; \; z_{v w } \geqq 0 \; \; \forall v w
@@ -589,14 +589,14 @@ und:
 =-1+0+1&=&0&=0+1+0&>&0\\
 \end{array}\]
 
-Somit ist $y_{z}$ zulässig für (DLPMF') und der ZF-Wert ist:
+Somit ist $y_{z}$ zulÃ¤ssig fÃ¼r (DLPMF') und der ZF-Wert ist:
 
 \[\begin{array}{rcl}
 \displaystyle \sum_{v w \in E} u_{v w} z_{v w } &=& u(\delta(R))\\
 &\stackrel{\mbox{\scriptsize Max-Flow-Min-Cut}}{=}&\mbox{Wert des max.
 Flusses}\\
 &=& \mbox{Optimaler Wert (LPMF)}\\
-&\stackrel{\mbox{\scriptsize Dualitätsth.}}{=}& \mbox{Optimaler Wert von
+&\stackrel{\mbox{\scriptsize DualitÃ¤tsth.}}{=}& \mbox{Optimaler Wert von
 (DLPMF')} 
 \end{array}\] 
 
@@ -610,12 +610,12 @@ Flusses}\\
 \]
 Offensichtlich: Jeder charakteristische Vektor eines $(r,s)$-Schnittes
 $\delta(R)$ $z_{e}=\left\{ \begin{array}{l}\mbox{1 falls $e \in \delta(R)$}\\
-\mbox{0 sonst}\end{array}\right.$ ist zulässig für (LPMC).
+\mbox{0 sonst}\end{array}\right.$ ist zulÃ¤ssig fÃ¼r (LPMC).
 \begin{satz}
-Falls (LPMC) eine Optimallösung hat, so hat (LPMC) eine Optimallösung, die
+Falls (LPMC) eine OptimallÃ¶sung hat, so hat (LPMC) eine OptimallÃ¶sung, die
 charakteristischer Vektor eines $(r,s)$-Schnittes ist.
 \end{satz}
-Beweis: Wäre $u_{e} < 0$ für ein $e \in E$, so wäre (LPMC) unbeschränkt,
+Beweis: WÃ¤re $u_{e} < 0$ fÃ¼r ein $e \in E$, so wÃ¤re (LPMC) unbeschrÃ¤nkt,
 also gilt: $u_{e} \geqq 0 \; \forall \; e \in E$\\
 Sei $z'$ charakteristischer Vektor eines minimalen $(r,s)$-Schnittes
 $\delta(R)$. Das duale LP lautet:
@@ -633,35 +633,35 @@ Finde einfachen $(r,s)$-Weg $P$ der Form:
 \stackrel{x_{e_{k-1}}>0}{\longrightarrow}\bullet
 \stackrel{x_{e_{k}}>0}{\longrightarrow}s\]
 Setze $w_{p} := \min\{x_{e_{i}} | 1 \leqq i \leqq k\}$\\
-Setze für $1 \leqq i \leqq k: \; x_{e_{i}} := x_{e_{i}} -w_{p}$ bis $f_{x} = 0$. Nun gilt $\displaystyle \sum_{P} w_{p} = F$\\
+Setze fÃ¼r $1 \leqq i \leqq k: \; x_{e_{i}} := x_{e_{i}} -w_{p}$ bis $f_{x} = 0$. Nun gilt $\displaystyle \sum_{P} w_{p} = F$\\
 Die Prozedur terminiert, da immer wenigstens ein $x_{e}$ Null wird.\\
-$w$ ist zulässig für (DLPMC) und 
+$w$ ist zulÃ¤ssig fÃ¼r (DLPMC) und 
 \[\sum_{P} w_{p} = \sum u_{e} z'_{e}\]
-$\Rightarrow z'$ ist optimal für (LPMC)
+$\Rightarrow z'$ ist optimal fÃ¼r (LPMC)
 
 \section{Der Algorithmus von Goldberg und Tarjan [1988]}
 Vereinbarung: Falls $v w \in E$ und $ w v \not\in E$ setzen wir $u_{w v} =
-x_{w v}=0$ (nur für Beschreibung des Algorithmus, die Implementierung fügt
+x_{w v}=0$ (nur fÃ¼r Beschreibung des Algorithmus, die Implementierung fÃ¼gt
 Kante nicht hinzu).
 
-Für $x \in R^{e}$ (nicht notwendigerweise Fluss) mit $0 \leqq x_{e} \leqq
+FÃ¼r $x \in R^{e}$ (nicht notwendigerweise Fluss) mit $0 \leqq x_{e} \leqq
 u_{e} \; \forall \; e \in E$ definieren wir den Hilfsdigraphen $G(x)$.\\
 $v w \in E(G(x)) \Leftrightarrow x_{v w} < u_{v w}$ oder $x_{w v} > 0$.
 Parallele Kanten in $G(x)$ sind nicht erlaubt.
 
-Restkapazität von $v w$: $\bar{u}_{v w} := u_{v w } - x_{v w} + x_{w v}$\\
-($\bar{u}_{v w}$ kann auf $v w$ zusätzlich fließen ohne $0 \leqq x_{v w}
-\leqq u_{v w}$ zu verletzen. Eine solche Lösung verletzt im Allgemeinen aber
+RestkapazitÃ¤t von $v w$: $\bar{u}_{v w} := u_{v w } - x_{v w} + x_{w v}$\\
+($\bar{u}_{v w}$ kann auf $v w$ zusÃ¤tzlich flieÃŸen ohne $0 \leqq x_{v w}
+\leqq u_{v w}$ zu verletzen. Eine solche LÃ¶sung verletzt im Allgemeinen aber
 die Flusserhaltungsbedingung)
 
-$x$ heißt Präfluss (Preflow) falls:
+$x$ heiÃŸt PrÃ¤fluss (Preflow) falls:
 \[f_{x}(v) \geqq 0 \; \; \forall \; v \in V \wout \{r,s\}\]
 
-\paragraph{Push Operation} für $v w \in E$ mit $\bar{u}_{v w} > 0$ und
+\paragraph{Push Operation} fÃ¼r $v w \in E$ mit $\bar{u}_{v w} > 0$ und
 $f_{x}(v)>0$ 
 \[x_{v w}\ \leftarrow x_{v w} + \underbrace{\min (\bar{u}_{v w},\; f_{x}(v))
 }_{:= \epsilon}\]
-Erhält die "`zulässiger Präfluss"' Eigenschaft. (Falls auch $w v \in E$ und
+ErhÃ¤lt die "`zulÃ¤ssiger PrÃ¤fluss"' Eigenschaft. (Falls auch $w v \in E$ und
 $\epsilon < \bar{u}_{v w })$\\
 \[\begin{array}{rcl}
 x_{w v} &\leftarrow& x_{w v} - \underbrace{\min(\epsilon, \; x_{w v})}_{ :=
@@ -680,31 +680,31 @@ $\stackrel{\mbox{push}(a,b)}{\Longrightarrow}$
 \end{tabular}
 
 
-Zu erkennen ist dass hier auch die "`zulässiger Präfluss"' Eigenschaft
+Zu erkennen ist dass hier auch die "`zulÃ¤ssiger PrÃ¤fluss"' Eigenschaft
 erhalten bleibt.\\
 Knoten $v \in V \wout \{r,s\}$ ist {\em aktiv} falls $f_{x}(v) > 0$\\
-$\Rightarrow$ Ein Präfluss ist ein Fluss, falls es keine aktiven Knoten
+$\Rightarrow$ Ein PrÃ¤fluss ist ein Fluss, falls es keine aktiven Knoten
 gibt.
 
 Grundoperationen:
 \begin{enumerate}
-\item Wähle einen aktiven Knoten $v$
-\item Wähle $v w \in G(x)$
+\item WÃ¤hle einen aktiven Knoten $v$
+\item WÃ¤hle $v w \in G(x)$
 \item push $v w$
 \end{enumerate} 
-Wesentlich ist die richtige Reihenfolge, sonst könnte der Algorithmus
+Wesentlich ist die richtige Reihenfolge, sonst kÃ¶nnte der Algorithmus
 unendlich operieren: push$(v w)$, push$(w v)$, push$(v w)$, push$(w v),
 \ldots$
 
-$d \in (\ZZ^{+} \cup \{\infty\})^{V}$ ist eine gültige Nummerierung (valid
-labeling) bezüglich eines Präflusses $x$ falls:
+$d \in (\ZZ^{+} \cup \{\infty\})^{V}$ ist eine gÃ¼ltige Nummerierung (valid
+labeling) bezÃ¼glich eines PrÃ¤flusses $x$ falls:
 \[\begin{array}{rcl}
 d(r)&=&n\\
 d(s)&=& 0\\
 d(v) &\leqq& d(w) +1 \; \; \forall \; v w \in G(x)  
 \end{array}\]
 
-Invariante des GT-Algorithmus: Zulässiger Präfluss mit gültiger Nummerierung.
+Invariante des GT-Algorithmus: ZulÃ¤ssiger PrÃ¤fluss mit gÃ¼ltiger Nummerierung.
 
 {\bf Initialisierung:}\\
 Initialisiere $(x,d)$;\\
@@ -713,57 +713,57 @@ falls } i=r\\ 0 \mbox{ sonst}\end{array} \right.$\\
 $\forall \; i \in V$ setze $d_{i} = \left\{ \begin{array}{l}n, \mbox{
 falls } i=r\\ 0 \mbox{ sonst}\end{array} \right.$
 
-$x$, $d$ erfüllen gültige Nummerierung (wir müssen annehmen, dass alle
+$x$, $d$ erfÃ¼llen gÃ¼ltige Nummerierung (wir mÃ¼ssen annehmen, dass alle
 $u_{r v} < \infty$ falls nicht, so kann man diese Bedingung herstellen. In
-der Übungsaufgabe...)
+der Ãœbungsaufgabe...)
 
 Beispiel:
 
 \includegraphics[height=4cm]{bilder/3-0GoldbTarjan}
 
 \begin{lemma}
-Ist $x$ ein zulässiger Präfluss und $d$ eine gültige Nummerierung bezüglich
+Ist $x$ ein zulÃ¤ssiger PrÃ¤fluss und $d$ eine gÃ¼ltige Nummerierung bezÃ¼glich
 $x$, so existiert ein $(r,s)$-Schnitt $\delta(R)$, so dass\\
 \[\begin{array}{rcl}
 x_{v w}&=& u_{v w} \; \; \forall \; v w \in \delta(R)\\
 x_{v w}&=& 0 \; \; \forall \; v w \in \delta(\bar{R})
 \end{array}\]
 \end{lemma}
-Beweis: In einer gültigen Nummerierung $\exists k, \; 0 < k < n, \; d(v)
+Beweis: In einer gÃ¼ltigen Nummerierung $\exists k, \; 0 < k < n, \; d(v)
 \not= k \forall \; v \in V$ ($n-1$ Zahlen auf $n-2$ Knoten, einer bleibt
-über)\\
+Ã¼ber)\\
 Setze $R:= \{v \in V | d(v) > k\}$\\
-dann ist $r \in R, \; s \not\in R$ und wegen gültiger Nummerierung kann
+dann ist $r \in R, \; s \not\in R$ und wegen gÃ¼ltiger Nummerierung kann
 keine Kante in $G(x)$ $R$ verlassen $\Rightarrow$ Behauptung.
 
 \begin{korollar}\label{GueltmaxFluss}
-Hat ein zulässiger Fluss eine gültige Nummerierung, so ist $x_{e}$ ein
+Hat ein zulÃ¤ssiger Fluss eine gÃ¼ltige Nummerierung, so ist $x_{e}$ ein
 maximum Fluss.
 \end{korollar}
 Korollar \ref{GueltmaxFluss} liefert Terminierungsbedingung.
 Invariante:
 \begin{enumerate}
-\item zulässiger Präfluss
-\item gültige Nummerierung (d.h. saturierter Schnitt)
+\item zulÃ¤ssiger PrÃ¤fluss
+\item gÃ¼ltige Nummerierung (d.h. saturierter Schnitt)
 \end{enumerate} 
 Terminierung sobald Fluss.
 
-vgl. Erhöhender Wege-Algorithmus:
+vgl. ErhÃ¶hender Wege-Algorithmus:
 Invariante:
 \begin{enumerate}
-\item zulässiger Fluss
+\item zulÃ¤ssiger Fluss
 \item Terminierung, sobald ein Schnitt saturiert ist.
 \end{enumerate}
-Die gültige Nummerierung approximiert Distanzen in $G(x)$
+Die gÃ¼ltige Nummerierung approximiert Distanzen in $G(x)$
 \begin{lemma}
-Für jeden zulässigen Präfluss $x$ und jede gültige Nummerierung $D$
-bezüglich $x$ gilt:
+FÃ¼r jeden zulÃ¤ssigen PrÃ¤fluss $x$ und jede gÃ¼ltige Nummerierung $D$
+bezÃ¼glich $x$ gilt:
 \[d_{x}(v,w) \geqq d(v) - d(w) \; \; \forall v, w \in V\]
 \end{lemma}
-Beweis: für $d_{x}(v,w) = \infty$ trivial.\\
-für $d_{x}(v,w) < \infty$, $P$ ein kürzester gerichteter (v,w)-Weg in
+Beweis: fÃ¼r $d_{x}(v,w) = \infty$ trivial.\\
+fÃ¼r $d_{x}(v,w) < \infty$, $P$ ein kÃ¼rzester gerichteter (v,w)-Weg in
 $G(x)$.\\
-Wir addieren die Ungleichungen $d(p) - d(q) \leqq 1$ für alle $p q \in P$.
+Wir addieren die Ungleichungen $d(p) - d(q) \leqq 1$ fÃ¼r alle $p q \in P$.
 \\ Summe: $d(v) - d(w)$ q.e.d.
 
 Insbesondere gilt:
@@ -774,19 +774,19 @@ D.h. in diesem Fall sollte der Fluss Richtung Quelle "`gepusht"' werden.
 
 \paragraph{Strategie}: $push(v w)$ mit $d(w) < d(v)$\\
 \[\left.\begin{array}{l}
-\mbox{gültige Nummerierung}\\
+\mbox{gÃ¼ltige Nummerierung}\\
 v w \in G(x)\\
 d(w) < d(v)\end{array} \right\}\rightarrow d(w) = d(v) -1\]
 $v w$ eine {\em zugelassene Kante} (admissible arc) falls $v w \in E(G(x)), d(v) =
 d(w) +1$\\
-Ein $push(v w)$ auf $v w$ erhält die gültige Nummerierung. $w v$ könnte in
+Ein $push(v w)$ auf $v w$ erhÃ¤lt die gÃ¼ltige Nummerierung. $w v$ kÃ¶nnte in
 $E(G(x'))$ sein, aber $d(w) \leqq d(v)+1$ gilt bereits vorher.
 
 Was ist aber nun wenn $v$ aktiv ist aber $(\nexists v w \in G(x)) \; d(v) =
 d(w) +1$? Antwort: $relabel(v)$: $d(v) \leftarrow min\{d(w) +1| v w \in
 E(G(x))\}$.
 
-Auch danach ist die Nummerierung in $G(x)$ noch gültig:
+Auch danach ist die Nummerierung in $G(x)$ noch gÃ¼ltig:
 
 \includegraphics[height=3cm]{bilder/3-0PushOp}
 \\$\begin{array}{l}l_{u} \geqq k -1\\
@@ -794,7 +794,7 @@ Auch danach ist die Nummerierung in $G(x)$ noch gültig:
 l_{w} \geqq k -1\\
 \mbox{hier: }l_{w}\geqq k\end{array}$
 
-Wenn $l_{w}$ Minimum ist, dann erhält $v$ also die Nummer $l_{w}+1$
+Wenn $l_{w}$ Minimum ist, dann erhÃ¤lt $v$ also die Nummer $l_{w}+1$
 
 $process(v)$
 \begin{algorithmic}
@@ -815,14 +815,14 @@ $process(v)$
 \ENDWHILE
 \end{algorithmic}
 
-Beispiel: Wir wählen immer $v$ mit größter Distanz $d(v)$ "`maximum
+Beispiel: Wir wÃ¤hlen immer $v$ mit grÃ¶ÃŸter Distanz $d(v)$ "`maximum
 distance"'-Version des GT-Algorithmus. 
-%Vielen Dank an Prof. Jünger dafür,
-%dass er freundlicherweise Scans der Zeichnungen zur Verfügung gestellt hat.
-Vielen Dank an Daniel Teske für die Zeichnungen...
+%Vielen Dank an Prof. JÃ¼nger dafÃ¼r,
+%dass er freundlicherweise Scans der Zeichnungen zur VerfÃ¼gung gestellt hat.
+Vielen Dank an Daniel Teske fÃ¼r die Zeichnungen...
 
 An den Knoten sind die grauen Zahlen die Distanzlabel, die dunklen
-Nettofluss/Überschuss, an den Kanten sind die Kapazitäten hell und der
+Nettofluss/Ãœberschuss, an den Kanten sind die KapazitÃ¤ten hell und der
 Fluss dunkel.
 
 %\begin{tabular}{ccc}\includegraphics[width=5cm]{bilder/3-0Tarjan1}
@@ -849,13 +849,13 @@ Fluss dunkel.
 
 
 \begin{satz}
-Der (max-distance) GT-Algorithmus ist korrekt. Der GT-Algorithmus führt
+Der (max-distance) GT-Algorithmus ist korrekt. Der GT-Algorithmus fÃ¼hrt
 $O(n^{2})$ relabel Operationen durch, sowie $O(n^{2}m)$ push-Operationen in
 der Urversion und $O(n^{2}\sqrt{m})$ in der max-dist-Version.
 
 Die Urversion kann so implementiert werden, dass sie $O(n^{2}m)$ Zeit
-benötigt, die max-dist-Version so, dass sie $O(n^{2}\sqrt{m})$ Zeit
-benötigt.
+benÃ¶tigt, die max-dist-Version so, dass sie $O(n^{2}\sqrt{m})$ Zeit
+benÃ¶tigt.
 \end{satz}
 Beweis: Korrektheit folgt aus Korollar \ref{GueltmaxFluss}: Falls
 GT-Algorithmus terminiert, so mit einem maximalen Fluss.
@@ -868,20 +868,20 @@ erzielt.
 
 \section{Minimale Schnitte in ungerichteten Graphen ("`Min-Cut"')}
 
-Gegeben: ungerichteter Graph $G=(V,E)$ mit Kantenkapazitäten $z_{e} \geqq 0
+Gegeben: ungerichteter Graph $G=(V,E)$ mit KantenkapazitÃ¤ten $z_{e} \geqq 0
 \; \; \forall \; e \in E$.
 
 Gesucht: $\varnothing \neq S \subset V$ mit $z(\delta(S))$ Minimum.\\
 Dieses Problem tritt z.B. als Teilproblem des TSP auf.
 
 Spezialfall: $z_{e} = 1 \forall \; e \in E$: Bestimmung des
-Knotenzusammenhangs. (minimale Anzahl von Kanten die entfernt werden müssen
-um $G$ unzusammenhängend zu machen).
+Knotenzusammenhangs. (minimale Anzahl von Kanten die entfernt werden mÃ¼ssen
+um $G$ unzusammenhÃ¤ngend zu machen).
 
-Sei $G$ zusammenhängend (sonst ist es trivial), z.B. Breitensuche findet in
+Sei $G$ zusammenhÃ¤ngend (sonst ist es trivial), z.B. Breitensuche findet in
 Linearzeit ein $S$ mit $z(\delta(S))=0$. Das Problem kann
 offensichtlich via ${n \choose 2}$ $(r,s)$-Max Flow-Min-Cut Berechnungen
-gelöst werden. $\rightarrow$ Laufzeit $O(n^{5})$
+gelÃ¶st werden. $\rightarrow$ Laufzeit $O(n^{5})$
 
 \paragraph{Schrumpfen eines Knotenpaares $i,j \in V$} \mbox{} \\
 \begin{enumerate}
@@ -898,8 +898,8 @@ Beispiel:
 
 \includegraphics[height=3cm]{bilder/3-0KnotenSchrumpf}
 
-$\lambda(G)$: Kapazität eines minimum Schnittes in $G$\\
-$\lambda(G;i,j)$: Kapazität eines minimum i-j Schnittes in $G$
+$\lambda(G)$: KapazitÃ¤t eines minimum Schnittes in $G$\\
+$\lambda(G;i,j)$: KapazitÃ¤t eines minimum i-j Schnittes in $G$
 
 \begin{lemma}
 $\lambda(G) = \min(\lambda(G_{i j}), \; \lambda(G;i,j))$
@@ -917,7 +917,7 @@ Beweis: trivial
 \item $z^{\ast} := \infty$;
 \item wiederhole $n-1$ mal:
 \begin{itemize}
-\item wähle $r,s \in V$;
+\item wÃ¤hle $r,s \in V$;
 \item Bestimme $(r,s)$-min-cut $\delta(S)$;
 \item Falls $z(\delta(s)) < z^{\ast}$
 \begin{itemize}
@@ -928,7 +928,7 @@ Beweis: trivial
 \end{itemize}
 \end{itemize}
 }
-liefert (mit G-T Algorithmus) eine Lösung in $O(n^{4})$ Zeit.
+liefert (mit G-T Algorithmus) eine LÃ¶sung in $O(n^{4})$ Zeit.
 
 \subsubsection{Ein einfacher Min-Cut Algorithmus}
 
@@ -937,35 +937,35 @@ Effiziente Implementierung von Nagamochi, Ono und Iberaki [1993]\\
 einfache Korrektheitsbeweise: Frank [1994], Stoer u. Wagner [1994]\\
 Beschreibung von Stoer und Wagner:\\
 Notation $z(A:B)$: $\displaystyle \sum_{\begin{array}{c}a \in A\\b \in B
-\end{array}} z_{ab} \; \; \mbox{ für } A, B \subseteq V$\\
+\end{array}} z_{ab} \; \; \mbox{ fÃ¼r } A, B \subseteq V$\\
 $z(A:b)$ statt $z(A,\{b\})$
 
-Erinnerung: Prims Algorithmus für einen minimum spannenden Baum: Min
+Erinnerung: Prims Algorithmus fÃ¼r einen minimum spannenden Baum: Min
 Spanning Tree (G,z,a) [$a\in V$ beliebig].
 
 \begin{algorithmic}
 \STATE $W := \{a\}$;
 \STATE $T := \varnothing$;
 \WHILE{$W \not=V$}
-\STATE wähle $v \not\in W$ mit $z_{w v} = \min \{z_{w v} | w \in W, w v \in
+\STATE wÃ¤hle $v \not\in W$ mit $z_{w v} = \min \{z_{w v} | w \in W, w v \in
 E\}$
-\STATE $W := W \cup \{v\}$; \hspace{3mm} (Füge einen am schwächsten mit W
+\STATE $W := W \cup \{v\}$; \hspace{3mm} (FÃ¼ge einen am schwÃ¤chsten mit W
 verbundenen Knoten hinzu)
 \STATE $T := T \cup \{u v\}$;
 \ENDWHILE
 \end{algorithmic}
-ähnlich:\\
+Ã¤hnlich:\\
 {\bf Min\_Cut\_Phase}
 \begin{algorithmic}
 \STATE $W:= \{a\}$;
 \WHILE{$W \neq V$}
-\STATE wähle $v\not\in W $ mit $z(W:v) = \max\{z(W:v)|v \not\in W\}$;
-\STATE $W:= W \cup \{v\}$; \hspace{3mm}(Füge einen am stärksten mit $W$ 
+\STATE wÃ¤hle $v\not\in W $ mit $z(W:v) = \max\{z(W:v)|v \not\in W\}$;
+\STATE $W:= W \cup \{v\}$; \hspace{3mm}(FÃ¼ge einen am stÃ¤rksten mit $W$ 
 verb. Knoten hinzu)
 \ENDWHILE
-\STATE Sei $s$ der vorletzte, $t$ der vorletzte zu $W$ hinzugefügte Knoten.
+\STATE Sei $s$ der vorletzte, $t$ der vorletzte zu $W$ hinzugefÃ¼gte Knoten.
 \STATE $z^{\ast} := z(\delta(t))$;
-\STATE $\delta^{\ast} :=$ Menge der von $t$ repräsentierten Orginalknoten
+\STATE $\delta^{\ast} :=$ Menge der von $t$ reprÃ¤sentierten Orginalknoten
 (Phasenschnitt);
 \STATE Schrumpfe $s$ und $t$
 \end{algorithmic}
@@ -985,29 +985,29 @@ verb. Knoten hinzu)
 \begin{lemma}
 Jeder Phasenschnitt ist ein minimum $(s,t)$-Schnitt im jeweiligen
 "`Phasengraphen"', wobei $s$ vorletzter und $t$ letzter zu $W$
-hinzugefügter Knoten ist.
+hinzugefÃ¼gter Knoten ist.
 \end{lemma}
 
 Beweis:\\
 Situation: $\begin{array}{c}\stackrel{\mbox{\scriptsize
-Hinzufügungsreihenfolge}}{\Longrightarrow}\\a \rightarrow \bullet \rightarrow 
+HinzufÃ¼gungsreihenfolge}}{\Longrightarrow}\\a \rightarrow \bullet \rightarrow 
 \ldots \rightarrow s \rightarrow t\end{array}$\\
 Sei $C \subseteq E$ ein beliebiger$(s,t)$-Schnitt in $G$\\
 Wir zeigen $z(C) \geqq z^{\ast}=z(\delta(t))$\\
-$v\neq a$ heißt {\it aktiv} bezüglich $C$, falls $w v \in C$ mit
-$w=$ direkter Vorgänger von $v$.\\
-$A_{v} \subseteq V$: Menge aller Vorgänger von $v$ (ohne $v$)\\
+$v\neq a$ heiÃŸt {\it aktiv} bezÃ¼glich $C$, falls $w v \in C$ mit
+$w=$ direkter VorgÃ¤nger von $v$.\\
+$A_{v} \subseteq V$: Menge aller VorgÃ¤nger von $v$ (ohne $v$)\\
 $C_{v} := \left\{x y \in C | x,y \in A_{v} \cup \{v\}\right\} \subseteq C$
 
 Beispiel:
 
 \includegraphics[width=12cm]{bilder/3-0Phasenschnitt1}
 
-Behauptung: Für jeden aktiven Knoten gilt $z(A_{v}:v) \leqq z(C_{v})$.
-Beweis: Induktion über aktive Knoten:\\
-Für den ersten aktiven Knoten $v_{1}$ gilt $z(A_{v_{1}}:v_{1}) =
-z(C_{v_{1}})$. Die Behauptung gelte für alle aktiven Knoten bis zu $v$. Sei
-$n$ der nächste aktive Knoten.
+Behauptung: FÃ¼r jeden aktiven Knoten gilt $z(A_{v}:v) \leqq z(C_{v})$.
+Beweis: Induktion Ã¼ber aktive Knoten:\\
+FÃ¼r den ersten aktiven Knoten $v_{1}$ gilt $z(A_{v_{1}}:v_{1}) =
+z(C_{v_{1}})$. Die Behauptung gelte fÃ¼r alle aktiven Knoten bis zu $v$. Sei
+$n$ der nÃ¤chste aktive Knoten.
 
 Situation:\\
 \[\underbrace{\underbrace{a \bullet\ldots \bullet}_{A_{v}\bullet}
@@ -1017,7 +1017,7 @@ A_{v}}}_{A_{u}}
 
 Es gilt: $\begin{array}{rcl}z(A_{u}:u) &=& z(A_{v}:u) + z(A_{u} \wout A_{v} : 
 u)\\
-&\leqq& z(A_{v}:v) \hspace{5mm} (\mbox{Da $v$ stärkster mit $A_{v}$ verb.
+&\leqq& z(A_{v}:v) \hspace{5mm} (\mbox{Da $v$ stÃ¤rkster mit $A_{v}$ verb.
 Knoten})\\
 &\leqq& z (C_{v})\\
 &\leqq& z (C_{v}) + z ( A_{u} \wout A_{v} : u)
@@ -1031,23 +1031,23 @@ $s t \in C \Rightarrow t \mbox{ aktiv } \Rightarrow  z^{\ast} = z(\delta(t))
 
 \paragraph{Laufzeit} \mbox{}\\
 MINIMUM\_CUT\_PHASE\\
-Prioritätsschlange für Knoten in $V\wout \{a\}$\\
-\mbox{} \hspace{3mm}Schlüssel für $v \in V \wout \{a\}$\\
-\mbox{} \hspace{6mm} key$(v) = z(W:v)$: Gesamtkapazität der Kanten zwischen
+PrioritÃ¤tsschlange fÃ¼r Knoten in $V\wout \{a\}$\\
+\mbox{} \hspace{3mm}SchlÃ¼ssel fÃ¼r $v \in V \wout \{a\}$\\
+\mbox{} \hspace{6mm} key$(v) = z(W:v)$: GesamtkapazitÃ¤t der Kanten zwischen
 $v$ und derzeitigem $W$.
-Neu hinzuzufügender Knoten $v$ via EXTRACT\_MAX\\
-Update: key$(u) := key(u) + z_{v u}$ für $u \not \in W$ falls $v u \in E
-\rightarrow$ INCREASE\_KEY\_OPERATION für jede Kante $e \in E$ genau einmal
+Neu hinzuzufÃ¼gender Knoten $v$ via EXTRACT\_MAX\\
+Update: key$(u) := key(u) + z_{v u}$ fÃ¼r $u \not \in W$ falls $v u \in E
+\rightarrow$ INCREASE\_KEY\_OPERATION fÃ¼r jede Kante $e \in E$ genau einmal
 
 insgesamt:\\
 $\left. \begin{array}{rcll} n&=& |V| &\mbox{ EXTRACT\_MAX}\\
 m&=& |E| &\mbox{ INCREASE\_KEY}\end{array} \right\}$ Operationen\\
-mit Binär-Heaps (Informatik I) je:
+mit BinÃ¤r-Heaps (Informatik I) je:
 $\left. \begin{array}{l} O(\log n)\\O(\log n)\end{array}\right\}$ Zeit\\
 mit Fibonacci-Heaps je
 $\left. \begin{array}{l}O(\log n)\\O(1)\end{array}\right\}$ Zeit
 
-d.h. $O(m+n \log n)$ Zeit für MIN\_CUT\_PHASE\\
+d.h. $O(m+n \log n)$ Zeit fÃ¼r MIN\_CUT\_PHASE\\
 $O(n)$-Phasen $\rightarrow  O(m n + n^{2}\log n)$ Gesamtzeit.
 
 \begin{satz}
@@ -1055,8 +1055,8 @@ Der Phasenschnitt-Algorithmus findet einen minimum Schnitt in einem
 ungerichteten Graphen in $O(n m+n^{2}\log n)$ Zeit.
 \end{satz}
 
-In dieser Vorlesung teilte Prof. Jünger noch ein Blatt mit Beispielen zum
-Phasenschnittalgorithmus sowie einen Artikel (Jünger M.; Rinaldi G.;
+In dieser Vorlesung teilte Prof. JÃ¼nger noch ein Blatt mit Beispielen zum
+Phasenschnittalgorithmus sowie einen Artikel (JÃ¼nger M.; Rinaldi G.;
 Thienel S. (2000). {\it Practical performance of efficient minimum cut
 algorithms}. Algorithmica v26n1 S. 172-195).
 

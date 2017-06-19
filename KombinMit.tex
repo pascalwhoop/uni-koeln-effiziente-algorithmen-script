@@ -10,8 +10,8 @@
 
 \documentclass[12pt,titlepage,a4paper] {book}
 \pagestyle{headings}
-\usepackage[latin1]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ifpdf}
 \usepackage{url}
@@ -28,17 +28,17 @@
 \usepackage{mathrsfs}
 
 \usepackage{pstricks}
-\usepackage{tweaklist}
-\renewcommand{\itemhook}{\addtolength{\itemsep}{-2.2mm}
-\setlength{\topsep}{0.4ex plus0.2ex minus0.2ex}}
+%\usepackage{tweaklist}
+%\renewcommand{\itemhook}{\addtolength{\itemsep}{-2.2mm}
+%\setlength{\topsep}{0.4ex plus0.2ex minus0.2ex}}
 
-\usepackage{algorithmic}  
+\usepackage{algorithmic}
 
 \ifpdf
 \usepackage[pdftex,xdvi]{graphicx}
 \usepackage{makeidx,xspace}
 \usepackage{hyperref}
-\hypersetup{ 
+\hypersetup{
 pdftitle={Kombinatorische Polynomielle Optimierungsalgorithmen},
 pdfauthor={Hartmut Wahl},
 colorlinks=true,
@@ -50,11 +50,11 @@ bookmarksopen=true,
 bookmarksopenlevel=0,
 bookmarksnumbered=true
 }
-%\usepackage[pdftex]{color} 
+%\usepackage[pdftex]{color}
 \else
 \usepackage[dvips,xdvi]{graphicx}
 \usepackage[hyperindex]{hyperref}
-%\usepackage{color} 
+%\usepackage{color}
 \fi
 
 
@@ -75,9 +75,9 @@ bookmarksnumbered=true
 
 \parskip5pt plus3pt
 \parindent0pt
-%\doublespace      
+%\doublespace
 \linespread{1.2}
-%\onehalfspacing  
+%\onehalfspacing
 \title{Polynomielle Kombinatorische Optimierungsalgorithmen}
 \author{Hartmut Wahl}
 %\setcounter{tocdepth}{4}
@@ -98,7 +98,7 @@ bookmarksnumbered=true
 \newcommand{\entspricht}{\; \hat{=}\; }
 \newcommand{\wout}{\;\backslash\;}
 
-%Hack um case für algorithmic zu haben
+%Hack um case fÃ¼r algorithmic zu haben
 \newenvironment{ALC@case}{\begin{ALC@g}}{\end{ALC@g}}
 
 \newcommand{\CASE}[1]{\item\textbf{case} #1 %
@@ -113,13 +113,13 @@ bookmarksnumbered=true
 \fi
 \begin{singlespacing}
 \begin{tabular}{l}
-{\Large Universität zu Köln}\\
+{\Large UniversitÃ¤t zu KÃ¶ln}\\
 
 \vspace{9cm}\\
 
 
 {\bf \large Polynomielle Kombinatorische Optimierungsalgorithmen }\\
-Mitschrift der Vorlesung von Prof. M. Jünger\\
+Mitschrift der Vorlesung von Prof. M. JÃ¼nger\\
 WS 2002/2003
 \\
 \vspace{9cm}
@@ -137,25 +137,25 @@ hwahl (at) hwahl (dot) de\\
 %\begin{abstract}
 Diese Mitschrift wurde von angefertigt, um mir das Lernen des Stoffes zu
 erleichtern und ist keine offizielle Mitschrift des Lehrstuhls. Sie ist
-nicht fehlerkorrigiert und sollte mit einer gehörigen Portion Misstrauen
+nicht fehlerkorrigiert und sollte mit einer gehÃ¶rigen Portion Misstrauen
 genossen werden. Korrekturen und Anregungen bitte an mich.
 
-Ich habe beim Lernen noch einige Fehler entdeckt und korrigiert aber 
-übernehme keine Garantie für Richtigkeit: Wer eine Garantie will kaufe
+Ich habe beim Lernen noch einige Fehler entdeckt und korrigiert aber
+Ã¼bernehme keine Garantie fÃ¼r Richtigkeit: Wer eine Garantie will kaufe
 sich einen Toaster!
 
-Wer kleine Korrekurvorschläge hat, kann sie mir gerne schicken. Wenn jemand
-noch größere Änderungen hat (z.B. ein Stichwortverzeichnis wäre fein) kann
-ich auch gerne den \LaTeX--Code und die Grafiken zur Verfügung stellen.
+Wer kleine KorrekurvorschlÃ¤ge hat, kann sie mir gerne schicken. Wenn jemand
+noch grÃ¶ÃŸere Ã„nderungen hat (z.B. ein Stichwortverzeichnis wÃ¤re fein) kann
+ich auch gerne den \LaTeX--Code und die Grafiken zur VerfÃ¼gung stellen.
 Allerding ist dies mein erstes Dokument mit solchen Umfang in \LaTeX, der
-Code mag einem Profi etwas unbeholfen und umständlich vorkommen.
+Code mag einem Profi etwas unbeholfen und umstÃ¤ndlich vorkommen.
 
 Literatur:\\
-Prof. Jünger wies auf dem Semesterapparat hin, der sich in der Bibliothek
+Prof. JÃ¼nger wies auf dem Semesterapparat hin, der sich in der Bibliothek
 der Informatik im Polighaus befindet in dem sich ein Buch befindet:\\
-{ Willam J. Cook, William H. Cunningham, William R. Pulleyblank, 
+{ Willam J. Cook, William H. Cunningham, William R. Pulleyblank,
 Alexander \mbox{Schrijver}} "`Combinatorial Optimization"', New York: Wiley 1998.\\
-Dieses Buch umfasst einen Großteil des Stoffes der Vorlesung.\\ Anders als
+Dieses Buch umfasst einen GroÃŸteil des Stoffes der Vorlesung.\\ Anders als
 im Buch angegeben befindet sich das Erratum unter:\\
 \url{http://www.math.uwaterloo.ca/~whcunnin/bookpage.html}
 %http://www.math.uwaterloo.ca/$\sim$whcunnin/bookpage.html
@@ -186,7 +186,7 @@ http://www.informatik.uni-koeln.de/ls_juenger/people/liers/Poly/index.html}
 \newtheorem{korollar}[satz]{Korollar}
 
 
-\chapter{Einführung}
+\chapter{EinfÃ¼hrung}
 
 {\input{KombinMitChap0}}
 
@@ -195,7 +195,7 @@ http://www.informatik.uni-koeln.de/ls_juenger/people/liers/Poly/index.html}
 {\input{KombinMitChap1}}
 
 
-\chapter{Optimale Bäume und Wege}
+\chapter{Optimale BÃ¤ume und Wege}
 
 
 {\input{KombinMitChap2}}
@@ -204,7 +204,7 @@ http://www.informatik.uni-koeln.de/ls_juenger/people/liers/Poly/index.html}
 
 {\input{KombinMitChap3}}
 
-\chapter{Minimale Kostenflüsse}
+\chapter{Minimale KostenflÃ¼sse}
 
 {\input{KombinMitChap4}}
 
@@ -215,13 +215,3 @@ http://www.informatik.uni-koeln.de/ls_juenger/people/liers/Poly/index.html}
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
